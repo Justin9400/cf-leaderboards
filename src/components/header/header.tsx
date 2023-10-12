@@ -12,7 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 import logo from '../../img/logo.svg'
 
-const pages = ['Magic The Gathering', 'Foosball'];
+const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}];
 
 
 function Header() {
@@ -102,11 +102,12 @@ function Header() {
           <Box sx={{ ml: 5, flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.key}
                 // onClick={handleCloseNavMenu}
+                href={`${page.key}`}
                 sx={{ fontSize: '20px', my: 2, color: 'black', display: 'block', mx: 2}}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
