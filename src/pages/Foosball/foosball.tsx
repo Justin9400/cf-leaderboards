@@ -1,6 +1,10 @@
+import { Stack } from "@mui/system";
+
 function Foosball() {
     return (
-        <div>WHATS UP FOOSY BOYS</div>
+        <Stack sx={{display: 'flex', height: '100vh'}}>
+            <h1>FOOS</h1>
+        </Stack>
     );
 }
 
