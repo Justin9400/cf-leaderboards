@@ -114,7 +114,7 @@ function Header() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Brandon Camerer">
             <IconButton sx={{ p: 0, border: '1px solid lightgray', borderRadius: '50%' }}>
   <Avatar alt="Brandon Camerer" src={brandon} />
 </IconButton>
