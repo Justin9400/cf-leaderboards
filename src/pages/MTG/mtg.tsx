@@ -1,10 +1,11 @@
 import { Stack } from "@mui/system";
+import Leaderboard from "../../components/leaderboard/leaderboard";
 
 function MTG() {
     return (
-        // <div style={{display: 'flex', height: '100vh'}}>WHATS UP BOYS</div>
-        <Stack sx={{display: 'flex', height: '100vh'}}>
-            <h1>MTG</h1>
+        <Stack sx={{display: 'flex', height: '100vh', margin: '0 auto'}}>
+            <h1 style={{margin:'5% auto'}}>Magic The Gathering Leaderboard</h1>
+            <Leaderboard/>
         </Stack>
     );
 }
