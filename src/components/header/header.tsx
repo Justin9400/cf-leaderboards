@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import logo from '../../img/logo.svg'
 import brandon from '../../img/brandon.jpg'
 
-const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}];
+const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}, {key:'fit', title:'Fitness Challenge'}];
 
 
 function Header() {
