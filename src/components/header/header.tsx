@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
@@ -51,10 +52,11 @@ function Header() {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-            //   onClick={handleOpenNavMenu}
+              sx={{color:'black'}}
+        
               color="inherit"
             >
-              {/* <MenuIcon /> */}
+              <MenuIcon />
             </IconButton>
             {/* <Menu
               id="menu-appbar"
