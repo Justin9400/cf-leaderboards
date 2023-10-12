@@ -10,16 +10,16 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import logo from '../../img/logo.png'
+import logo from '../../img/logo.svg'
 
 const pages = ['Magic The Gathering', 'Foosball'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
   return (
-    <AppBar position="static">
+    <AppBar sx={{ backgroundColor: 'white', boxShadow: 'none', borderBottom: '1px solid lightgray' }} position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar  disableGutters>
           <Typography
             variant="h6"
             noWrap
@@ -35,7 +35,12 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            <img src={logo} alt="" style={{width: '150px', height: '100px'}}/>
+            <img src={logo} alt="" style={{width: '40px', height: '100px'}}/>
+            <Typography sx={{ml: 2, fontSize: '24px', display: 'flex', alignItems: 'center', color: 'black'}}>
+  <span style={{ fontWeight: 'bold' }}>CloudFit</span>
+  <span style={{ fontWeight: 'lighter' }}>Leaderboards</span>
+
+</Typography>
 
           </Typography>
 
@@ -94,12 +99,12 @@ function Header() {
           >
             {/* <img src={logo} alt="" style={{width: '500px', height: '500px'}}/> */}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ ml: 5, flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 // onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', mx: 2}}
+                sx={{ fontSize: '20px', my: 2, color: 'black', display: 'block', mx: 2}}
               >
                 {page}
               </Button>
