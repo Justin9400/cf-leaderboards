@@ -1,8 +1,7 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Container from '@mui/material/Container';
-import { Stack, Toolbar } from '@mui/material';
-import { bodyStyles } from './Body.styles';
+
+import { Stack } from '@mui/material';
+
 
 function Body() {
   return (
