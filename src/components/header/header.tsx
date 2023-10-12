@@ -11,8 +11,9 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 
 import logo from '../../img/logo.svg'
+import brandon from '../../img/brandon.jpg'
 
-const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}, {key:'fit', title:'Fitness Challenge'}];
+const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}];
 
 
 function Header() {
@@ -114,9 +115,10 @@ function Header() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
+            <IconButton sx={{ p: 0, border: '1px solid lightgray', borderRadius: '50%' }}>
+  <Avatar alt="Brandon Camerer" src={brandon} />
+</IconButton>
+
             </Tooltip>
             {/* <Menu
               sx={{ mt: '45px' }}
