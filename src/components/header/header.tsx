@@ -5,14 +5,16 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 
 import logo from '../../img/logo.svg'
+import brandon from '../../img/brandon.jpg'
 
-const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}];
+const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}, {key:'fit', title:'Fitness Challenge'}];
 
 
 function Header() {
@@ -50,10 +52,11 @@ function Header() {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-            //   onClick={handleOpenNavMenu}
+              sx={{color:'black'}}
+        
               color="inherit"
             >
-              {/* <MenuIcon /> */}
+              <MenuIcon />
             </IconButton>
             {/* <Menu
               id="menu-appbar"
@@ -113,10 +116,11 @@ function Header() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
+            <Tooltip title="Brandon Camerer">
+            <IconButton sx={{ p: 0, border: '1px solid lightgray', borderRadius: '50%' }}>
+  <Avatar alt="Brandon Camerer" src={brandon} />
+</IconButton>
+
             </Tooltip>
             {/* <Menu
               sx={{ mt: '45px' }}
