@@ -1,5 +1,5 @@
 export const footerStyles = {
-    root: {
-        position: 'fixed'
-    }
+    position: 'absolute',
+    bottom: '50px',
+    height: '50px'
 }
