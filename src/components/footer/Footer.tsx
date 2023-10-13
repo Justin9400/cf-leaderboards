@@ -5,12 +5,9 @@ import { Toolbar } from '@mui/material';
 
 function Footer() {
   return (
-    <AppBar position="static" sx={{}}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <div>
+      
+    </div>
   );
 }
 export default Footer;
