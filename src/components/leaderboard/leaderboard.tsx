@@ -42,7 +42,7 @@ export default function Leaderboard() {
           {rows.map((row) => (
             <TableRow
               key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 }, '&:first-child td, &:first-child th': { color: 'green', fontWeight:'600' } }}
             >
               <TableCell component="th" scope="row">
                 {row.name}
