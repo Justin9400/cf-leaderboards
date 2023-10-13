@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
-import React, { useState } from "react";
+import React from "react";
 
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
@@ -21,15 +21,15 @@ const pages = [
 ];
 
 function Header() {
-  const [showContent, setShowContent] = useState(false);
+  // const [showContent, setShowContent] = useState(false);
 
-  const handleHover = () => {
-    setShowContent(true);
-  };
+  // const handleHover = () => {
+  //   setShowContent(true);
+  // };
 
-  const handleMouseLeave = () => {
-    setShowContent(false);
-  };
+  // const handleMouseLeave = () => {
+  //   setShowContent(false);
+  // };
   return (
     <AppBar sx={styles.appBar} position="static">
       <Container maxWidth="xl">
@@ -141,8 +141,8 @@ function Header() {
           <div>
             <div
               className="avatar-wrapper"
-              onMouseEnter={handleHover}
-              onMouseLeave={handleMouseLeave}
+              // onMouseEnter={handleHover}
+              // onMouseLeave={handleMouseLeave}
             >
               <IconButton sx={styles.avatar}>
                 <Avatar alt="Brandon Camerer" src={brandon} />
