@@ -6,6 +6,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { GameInfoMap } from '../../maps/GameInfoMap';
+import { Game } from '../../models/models';
+
 
 function createData(
   name: string,
@@ -25,17 +28,26 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function Leaderboard() {
+export type ILeaderboardProps = {
+  pageName: Game
+}
+
+export default function Leaderboard(props: ILeaderboardProps) {
+  const temp = props.pageName
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Rank</TableCell>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">W/L Ratio</TableCell>
-            <TableCell align="right">Wins</TableCell>
-            <TableCell align="right">Losses</TableCell>
+            {props.pageName === GameInfoMap.MagicTheGathering
+              ? GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
+              : props.pageName === GameInfoMap.Foosball
+              ? GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>)) &&
+                GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
+              : props.pageName === GameInfoMap.Fitness
+              ? GameInfoMap.Fitness.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
+              : <div>Default content</div>
+            }
           </TableRow>
         </TableHead>
         <TableBody>
@@ -44,13 +56,13 @@ export default function Leaderboard() {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              {/* <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
               <TableCell align="right">{row.calories}</TableCell>
               <TableCell align="right">{row.fat}</TableCell>
               <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>
