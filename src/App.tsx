@@ -13,7 +13,8 @@ function App() {
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      height: '100vh'
+      height: '100vh',
+      backgroundColor: '#f6f6f6'
       }}>
     <BrowserRouter>
       <Routes>
