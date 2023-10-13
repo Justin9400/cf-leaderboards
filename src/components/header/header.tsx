@@ -49,11 +49,11 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            <img src={logo} alt="" style={{ width: "40px", height: "100px" }} />
+            <img src={logo} alt="" style={{ width: "30px", height: "50px" }} />
             <Typography
               sx={{
                 ml: 2,
-                fontSize: "24px",
+                fontSize: "18px",
                 display: "flex",
                 alignItems: "center",
                 color: "black",
@@ -119,14 +119,15 @@ function Header() {
           >
             {/* <img src={logo} alt="" style={{width: '500px', height: '500px'}}/> */}
           </Typography>
-          <Box sx={{ ml: 5, flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          
+          <Box sx={{ margin: '0 auto', display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page.key}
                 // onClick={handleCloseNavMenu}
                 href={`${page.key}`}
                 sx={{
-                  fontSize: "20px",
+                  fontSize: "14px",
                   my: 2,
                   color: "black",
                   display: "block",
