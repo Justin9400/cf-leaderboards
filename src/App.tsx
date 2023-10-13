@@ -10,10 +10,10 @@ import { Stack } from '@mui/material';
 function App() {
   return (
     <Stack sx={{
-      minHeight: '100vh',
+
       display: 'flex',
       flexDirection: 'column',
-      height: '100vh',
+
       backgroundColor: '#f6f6f6'
       }}>
     <BrowserRouter>
