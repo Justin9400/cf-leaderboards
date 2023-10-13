@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 
 function createData(
   name: string,
-  calories: number,
+  calories: string,
   fat: number,
   carbs: number,
   protein: number,
@@ -18,11 +18,11 @@ function createData(
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('1', 'Brandon Camerer', 6.0, 985, 0),
+  createData('2', 'JK', 9.0, 37, 500),
+  createData('3', 'BB', 16.0, 24, 600),
+  createData('4', 'Morgan', 3.7, 67, 700),
+  createData('5', 'Nick', 16.0, 49, 800),
 ];
 
 export default function Leaderboard() {
@@ -32,7 +32,7 @@ export default function Leaderboard() {
         <TableHead>
           <TableRow>
             <TableCell>Rank</TableCell>
-            <TableCell align="right">Name</TableCell>
+            <TableCell align="left">Name</TableCell>
             <TableCell align="right">W/L Ratio</TableCell>
             <TableCell align="right">Wins</TableCell>
             <TableCell align="right">Losses</TableCell>
@@ -47,7 +47,7 @@ export default function Leaderboard() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="left">{row.calories}</TableCell>
               <TableCell align="right">{row.fat}</TableCell>
               <TableCell align="right">{row.carbs}</TableCell>
               <TableCell align="right">{row.protein}</TableCell>
