@@ -139,29 +139,27 @@ function Header() {
           </Box>
 
           <div>
-           
-              <div
-                className="avatar-wrapper"
-                onMouseEnter={handleHover}
-                onMouseLeave={handleMouseLeave}
-              >
-                <IconButton sx={styles.avatar}>
-                  <Avatar alt="Brandon Camerer" src={brandon} />
-                </IconButton>
-              </div>
- 
+            <div
+              className="avatar-wrapper"
+              onMouseEnter={handleHover}
+              onMouseLeave={handleMouseLeave}
+            >
+              <IconButton sx={styles.avatar}>
+                <Avatar alt="Brandon Camerer" src={brandon} />
+              </IconButton>
+            </div>
 
-            <Box
+            {/* <Box
               id="hover-content"
               sx={{
                 ...styles.card,
                 display: showContent ? "block" : "none",
-                position: "fixed", 
-                left: '88%',
-                top: 330,        
+                position: "fixed",
+                left: "88%",
+                top: 330,
                 backgroundColor: "#ffffff",
-                zIndex: 1000,  
-                fontFamily: 'beleren, serif'   
+                zIndex: 1000,
+                fontFamily: "beleren, serif",
               }}
             >
               <Box sx={styles.card}>
@@ -179,19 +177,17 @@ function Header() {
                   <Box sx={styles.desc}>
                     <p>
                       At the beginning of your draw step, you may draw two
-                      additional UX Designs. If you do, choose two UX Designs in your hand
-                      drawn this turn.
+                      additional UX Designs. If you do, choose two UX Designs in
+                      your hand drawn this turn.
                     </p>
-                  
                   </Box>
                   <Box sx={styles.str}>8/8</Box>
-                  
+
                   <Box sx={styles.sticker}></Box>
                   <Box sx={styles.sticker2}></Box>
-                  
                 </Box>
               </Box>
-            </Box>
+            </Box> */}
           </div>
 
           {/* <Menu
