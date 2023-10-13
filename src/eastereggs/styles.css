@@ -1,0 +1,267 @@
+body {
+    background: #222;
+    font-family: beleren, serif;
+    overflow: hidden;
+  }
+  .hand {
+    position: absolute;
+    bottom: 25%;
+    right: 50%;
+  }
+  .card {
+    position: relative;
+    height: 500px;
+    width: 360px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 100%;
+    transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translate(-50%, -50%);
+  }
+  .card:hover {
+    transform: translate(-50%, -50%) rotate(0) scale(1.2);
+    z-index: 6;
+  }
+  .cardgrid {
+    height: 100%;
+    width: 100%;
+    filter: blur(0vmin);
+    background: #000;
+    border-radius: 5%;
+    display: grid;
+    grid-template-columns: 5% 2.5% 35% 15% 20% 15% 2.5% 5%;
+    grid-template-rows: 4% 1.5% 5% 45% 5% 23% 3% 6.5% 4% 3%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-animation: cardwobble 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite;
+            animation: cardwobble 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite;
+  }
+  .title {
+    background: #bdd2c9;
+    position: relative;
+    width: auto;
+    vertical-align: center;
+    border-radius: 3%;
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    padding: 3.378378378378379px;
+    border: #008000 2px solid;
+    border-width: 2px 0 2px 0;
+  }
+  .title::before {
+    width: 7px;
+    display: inline-block;
+    position: absolute;
+    background: #bdd2c9;
+    height: 100%;
+    top: -2px;
+    left: -7px;
+    content: '';
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    border: 2px #008000 solid;
+    border-width: 2px 0 2px 2px;
+  }
+  .title::after {
+    width: 7px;
+    display: inline-block;
+    position: absolute;
+    background: #bdd2c9;
+    height: 100%;
+    top: -2px;
+    right: -7px;
+    content: '';
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 2px #008000 solid;
+    border-width: 2px 2px 2px 0;
+  }
+  .bg--green {
+    background: rgba(255,255,255,0.1) url("https://media-dominaria.cursecdn.com/attachments/88/812/635032494788529192.jpg");
+    background-blend-mode: lighten;
+  }
+  .background {
+    grid-column-start: 2;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 9;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+  }
+  .image-holder {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    position: relative;
+    border: #008000 2px solid;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 5px inset rgba(0,0,0,0.8);
+  }
+  .image {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    position: absolute;
+    left: -20%;
+    top: -12%;
+    width: 130%;
+    height: 130%;
+    background: #f5fffa url("https://i.imgur.com/sWApwyM.png");
+    background-position: bottom;
+    background-size: cover;
+    transform-origin: bottom 60%;
+    -webkit-animation: cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite;
+            animation: cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite;
+  }
+  .cardtype {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    position: relative;
+    background: #bdd2c9;
+    border: #008000 2px solid;
+    padding: 0.8vmin;
+  }
+  .cardtype::before {
+    width: 7px;
+    display: inline-block;
+    position: absolute;
+    background: #bdd2c9;
+    height: 100%;
+    top: -2px;
+    left: -7px;
+    content: '';
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    border: 2px #008000 solid;
+    border-width: 2px 0 2px 2px;
+  }
+  .cardtype::after {
+    width: 7px;
+    display: inline-block;
+    position: absolute;
+    background: #bdd2c9;
+    height: 100%;
+    top: -2px;
+    right: -7px;
+    content: '';
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 2px #008000 solid;
+    border-width: 2px 2px 2px 0;
+  }
+  .mana {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/mana.png");
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center right;
+  }
+  .series {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/m15.png");
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: 72%;
+    background-position: center right;
+  }
+  .desc {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 9;
+    background: #d3e4da;
+    border: #008000 2px solid;
+    padding: 3vmin;
+    font-family: planting, serif;
+  }
+  .sticker {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 9;
+    grid-row-end: 10;
+    background: #000;
+    position: absolute;
+    top: -60%;
+    width: 100%;
+    height: 120%;
+    border-radius: 50%;
+    border: #008000 2px solid;
+  }
+  .sticker2 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 9;
+    grid-row-end: 10;
+    background: #000 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/sticker.jpg");
+    background-size: cover;
+    background-position: -20% 30%;
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 120%;
+    border-radius: 50%;
+    border: #000 2px solid;
+  }
+  .str {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    background: #b7ccc3;
+    position: absolute;
+    top: 50%;
+    width: 90%;
+    height: 65%;
+    border-radius: 30%;
+    border: #618978 2px solid;
+    text-align: center;
+    padding: 2pt;
+    box-shadow: inset -1px 2px 3px 0px #4d5450;
+  }
+  .copyright {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 10;
+    grid-row-end: 10;
+    color: #fff;
+    text-align: right;
+    vertical-align: bottom;
+    font-family: Times New Roman, serif;
+  }
+  .artist {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 9;
+    grid-row-end: 10;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    vertical-align: bottom;
+    font-family: Times New Roman, serif;
+  }
+  @font-face {
+    font-family: planting;
+    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/Plantin.otf");
+  }
+  @font-face {
+    font-family: beleren;
+    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/beleren-bold_P1.01.ttf");
+  }
+  

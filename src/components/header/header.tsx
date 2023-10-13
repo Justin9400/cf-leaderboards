@@ -1,27 +1,39 @@
 import { Button } from "@mui/material";
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import MenuIcon from "@mui/icons-material/Menu";
+import React, { useState } from "react";
 
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
 
-import logo from '../../img/logo.svg'
-import brandon from '../../img/brandon.jpg'
+import logo from "../../img/logo.svg";
+import brandon from "../../img/brandon.jpg";
+import { styles } from "./styles";
 
-const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}, {key:'fit', title:'Fitness Challenge'}];
-
+const pages = [
+  { key: "mtg", title: "Magic The Gathering" },
+  { key: "foos", title: "Foosball" },
+  { key: "fit", title: "Fitness Challenge" },
+];
 
 function Header() {
+  const [showContent, setShowContent] = useState(false);
+
+  const handleHover = () => {
+    setShowContent(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowContent(false);
+  };
   return (
-    <AppBar sx={{ backgroundColor: 'white', boxShadow: 'none', borderBottom: '1px solid lightgray' }} position="static">
+    <AppBar sx={styles.appBar} position="static">
       <Container maxWidth="xl">
-        <Toolbar  disableGutters>
+        <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
@@ -29,31 +41,36 @@ function Header() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
-            <img src={logo} alt="" style={{width: '40px', height: '100px'}}/>
-            <Typography sx={{ml: 2, fontSize: '24px', display: 'flex', alignItems: 'center', color: 'black'}}>
-  <span style={{ fontWeight: 'bold' }}>CloudFit</span>
-  <span style={{ fontWeight: 'lighter' }}>Leaderboards</span>
-
-</Typography>
-
+            <img src={logo} alt="" style={{ width: "40px", height: "100px" }} />
+            <Typography
+              sx={{
+                ml: 2,
+                fontSize: "24px",
+                display: "flex",
+                alignItems: "center",
+                color: "black",
+              }}
+            >
+              <span style={{ fontWeight: "bold" }}>CloudFit</span>
+              <span style={{ fontWeight: "lighter" }}>Leaderboards</span>
+            </Typography>
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              sx={{color:'black'}}
-        
+              sx={styles.iconButton}
               color="inherit"
             >
               <MenuIcon />
@@ -76,7 +93,7 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             > */}
-              {/* {pages.map((page) => (
+            {/* {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
@@ -91,38 +108,93 @@ function Header() {
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             {/* <img src={logo} alt="" style={{width: '500px', height: '500px'}}/> */}
           </Typography>
-          <Box sx={{ ml: 5, flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ ml: 5, flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page.key}
                 // onClick={handleCloseNavMenu}
                 href={`${page.key}`}
-                sx={{ fontSize: '20px', my: 2, color: 'black', display: 'block', mx: 2}}
+                sx={{
+                  fontSize: "20px",
+                  my: 2,
+                  color: "black",
+                  display: "block",
+                  mx: 2,
+                }}
               >
                 {page.title}
               </Button>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Brandon Camerer">
-            <IconButton sx={{ p: 0, border: '1px solid lightgray', borderRadius: '50%' }}>
-  <Avatar alt="Brandon Camerer" src={brandon} />
-</IconButton>
+          <div>
+           
+              <div
+                className="avatar-wrapper"
+                onMouseEnter={handleHover}
+                onMouseLeave={handleMouseLeave}
+              >
+                <IconButton sx={styles.avatar}>
+                  <Avatar alt="Brandon Camerer" src={brandon} />
+                </IconButton>
+              </div>
+ 
 
-            </Tooltip>
-            {/* <Menu
+            <Box
+              id="hover-content"
+              sx={{
+                ...styles.card,
+                display: showContent ? "block" : "none",
+                position: "fixed", 
+                left: '88%',
+                top: 330,        
+                backgroundColor: "#ffffff",
+                zIndex: 1000,  
+                fontFamily: 'beleren, serif'   
+              }}
+            >
+              <Box sx={styles.card}>
+                <Box sx={styles.cardgrid}>
+                  <Box sx={styles.background} className="bg--green"></Box>
+                  <Box sx={styles.title}>Brandon Camerer</Box>
+                  <Box sx={styles.mana}> </Box>
+                  <Box sx={styles.imageHolder}>
+                    <Box sx={styles.image}></Box>
+                  </Box>
+                  <Box sx={styles.cardType}>
+                    Creature - Legendary UX Designer
+                  </Box>
+                  <Box sx={styles.series}> </Box>
+                  <Box sx={styles.desc}>
+                    <p>
+                      At the beginning of your draw step, you may draw two
+                      additional UX Designs. If you do, choose two UX Designs in your hand
+                      drawn this turn.
+                    </p>
+                  
+                  </Box>
+                  <Box sx={styles.str}>8/8</Box>
+                  
+                  <Box sx={styles.sticker}></Box>
+                  <Box sx={styles.sticker2}></Box>
+                  
+                </Box>
+              </Box>
+            </Box>
+          </div>
+
+          {/* <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
             //   anchorEl={anchorElUser}
@@ -144,7 +216,6 @@ function Header() {
                 </MenuItem>
               ))}
             </Menu> */}
-          </Box>
         </Toolbar>
       </Container>
     </AppBar>

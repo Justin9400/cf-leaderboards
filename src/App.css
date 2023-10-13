@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: beleren, serif;
 }
 
 .App-link {
@@ -35,4 +36,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: planting;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/Plantin.otf");
+}
+@font-face {
+  font-family: beleren;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/beleren-bold_P1.01.ttf");
 }
