@@ -1,16 +1,7 @@
-import { Button } from "@mui/material";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import { IconButton, Stack , Typography, Tooltip} from "@mui/material";
+import { AppBar, IconButton, Stack, Toolbar, Box, Typography, Tooltip, Container} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import React from "react";
-
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 
 import logo from "../../img/logo.svg";
-import brandon from "../../img/brandon.jpg";
 import { styles } from "./styles";
 import SplitButton from "../dropDown-menu-button/DropDown-Menu-Button";
 import { GameInfoMap } from "../../maps/GameInfoMap";

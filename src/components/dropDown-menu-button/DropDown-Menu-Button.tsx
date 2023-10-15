@@ -1,13 +1,5 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Grow from '@mui/material/Grow';
-import Paper from '@mui/material/Paper';
-import Popper from '@mui/material/Popper';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
+import { Grow, Paper, Popper, MenuList, ButtonGroup, Button, ClickAwayListener } from '@mui/material';
 import { Game } from '../../models/models';
 
 const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
@@ -22,19 +14,19 @@ export default function SplitButton(props: ISplitButtonProps) {
   const anchorRef = React.useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
-  const handleClick = (page: string) => {
-    const selectedOption = options[selectedIndex];
-    const url = `/target-page/${selectedOption}`;
-    // history.push(url); 
-  };
+  // const handleClick = (page: string) => {
+  //   const selectedOption = options[selectedIndex];
+  //   const url = `/target-page/${selectedOption}`;
+  //   // history.push(url); 
+  // };
 
-  const handleMenuItemClick = (
-    event: React.MouseEvent<HTMLLIElement, MouseEvent>,
-    index: number,
-  ) => {
-    setSelectedIndex(index);
-    setOpen(false);
-  };
+  // const handleMenuItemClick = (
+  //   event: React.MouseEvent<HTMLLIElement, MouseEvent>,
+  //   index: number,
+  // ) => {
+  //   setSelectedIndex(index);
+  //   setOpen(false);
+  // };
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
