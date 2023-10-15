@@ -43,8 +43,8 @@ export default function Leaderboard(props: ILeaderboardProps) {
               : props.pageName === GameInfoMap.Foosball
               ? GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>)) &&
                 GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".teams"} align="center">{column}</TableCell>))
-              : props.pageName === GameInfoMap.Fitness
-              ? GameInfoMap.Fitness.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>))
+              : props.pageName === GameInfoMap.FitnessChallenge
+              ? GameInfoMap.FitnessChallenge.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>))
               : <div key={""}>Default content</div>
             }
           </TableRow>

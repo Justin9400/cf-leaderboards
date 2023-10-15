@@ -1,4 +1,4 @@
-import { Button, Stack } from "@mui/material";
+import { Button } from "@mui/material";
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -7,24 +7,32 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
 
 import logo from '../../img/logo.svg'
 import brandon from '../../img/brandon.jpg'
-import AccountMenu from "../account-icon-menu/account-icon-menu";
-import SplitButton from "../split-button/split-button";
-import { GameInfoMap } from "../../maps/GameInfoMap";
 
-const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}, {key:'fit', title:'Fitness Challenge'}];
-
+const pages = [
+  { key: "mtg", title: "Magic The Gathering" },
+  { key: "foos", title: "Foosball" },
+  { key: "fit", title: "Fitness Challenge" },
+];
 
 function Header() {
+  // const [showContent, setShowContent] = useState(false);
+
+  // const handleHover = () => {
+  //   setShowContent(true);
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setShowContent(false);
+  // };
   return (
-    <AppBar sx={{ backgroundColor: 'white', boxShadow: 'none', borderBottom: '1px solid lightgray' }} position="static">
+    <AppBar sx={styles.appBar} position="static">
       <Container maxWidth="xl">
-        <Toolbar  disableGutters>
+        <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
@@ -32,8 +40,8 @@ function Header() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -50,14 +58,13 @@ function Header() {
 
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              sx={{color:'black'}}
-        
+              sx={styles.iconButton}
               color="inherit"
             >
               <MenuIcon />
@@ -80,7 +87,7 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             > */}
-              {/* {pages.map((page) => (
+            {/* {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
@@ -95,13 +102,13 @@ function Header() {
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             {/* <img src={logo} alt="" style={{width: '500px', height: '500px'}}/> */}
@@ -163,7 +170,6 @@ function Header() {
                 </MenuItem>
               ))}
             </Menu> */}
-          </Box>
         </Toolbar>
       </Container>
     </AppBar>
