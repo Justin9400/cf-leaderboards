@@ -1,17 +1,20 @@
 import { Button } from "@mui/material";
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import { IconButton, Stack , Typography, Tooltip} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import React from "react";
 
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 
-import logo from '../../img/logo.svg'
-import brandon from '../../img/brandon.jpg'
+import logo from "../../img/logo.svg";
+import brandon from "../../img/brandon.jpg";
+import { styles } from "./styles";
+import SplitButton from "../dropDown-menu-button/DropDown-Menu-Button";
+import { GameInfoMap } from "../../maps/GameInfoMap";
+import AccountMenu from "../account-icon-menu/account-icon-menu";
 
 const pages = [
   { key: "mtg", title: "Magic The Gathering" },
@@ -43,19 +46,24 @@ function Header() {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-              marginLRight: '30px'
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
-            <img src={logo} alt="" style={{width: '40px', height: '100px'}}/>
-            <Typography sx={{ml: 2, fontSize: '24px', display: 'flex', alignItems: 'center', color: 'black'}}>
-            <span style={{ fontWeight: 'bold' }}>CloudFit</span>
-            <span style={{ fontWeight: 'lighter' }}>Leaderboards</span>
-
-          </Typography>
-
+            <img src={logo} alt="" style={{ width: "30px", height: "50px" }} />
+            <Typography
+              sx={{
+                ml: 2,
+                fontSize: "18px",
+                display: "flex",
+                alignItems: "center",
+                color: "black",
+              }}
+            >
+              <span style={{ fontWeight: "bold" }}>CloudFit</span>
+              <span style={{ fontWeight: "lighter" }}>Leaderboards</span>
+            </Typography>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -69,32 +77,7 @@ function Header() {
             >
               <MenuIcon />
             </IconButton>
-            {/* <Menu
-              id="menu-appbar"
-            //   anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-            //   open={Boolean(anchorElNav)}
-            //   onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            > */}
-            {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
-            {/* </Menu> */}
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -111,19 +94,18 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            {/* <img src={logo} alt="" style={{width: '500px', height: '500px'}}/> */}
           </Typography>
-          {/* <Box sx={{ ml: 5, flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: '10px' }}> */}
+          
           <Stack direction={'row'} spacing={5}  >
             {Object.values(GameInfoMap).map((page) => (
-                          <SplitButton game={page} href={page.url}/>
+                          <SplitButton game={page} href={page.GameHistoryUrl!}/>
             ))}
 
           </Stack>
-            {/* {pages.map((page) => (
+          {/* <Box sx={{ margin: '0 auto', display: { xs: "none", md: "flex" } }}>
+            {pages.map((page) => (
               <Button
                 key={page.key}
-                // onClick={handleCloseNavMenu}
                 href={`${page.key}`}
                 sx={{
                   fontSize: "14px",
@@ -135,41 +117,13 @@ function Header() {
               >
                 {page.title}
               </Button>
-            ))} */}
-          {/* </Box> */}
-
+            ))}
+          </Box> */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Brandon Camerer">
-            {/* <IconButton sx={{ p: 0, border: '1px solid lightgray', borderRadius: '50%' }}>
-              <Avatar alt="Brandon Camerer" src={brandon} />
-            </IconButton> */}
-
               <AccountMenu/>
-
-
             </Tooltip>
-            {/* <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-            //   anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-            //   open={Boolean(anchorElUser)}
-            //   onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu> */}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

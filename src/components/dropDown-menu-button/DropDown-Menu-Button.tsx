@@ -9,8 +9,6 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import { Game } from '../../models/models';
-import { GameInfoMap } from '../../maps/GameInfoMap';
-import  { redirect } from 'react-router-dom' 
 
 const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
 
@@ -56,8 +54,9 @@ export default function SplitButton(props: ISplitButtonProps) {
   return (
     <React.Fragment>
       <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
-        <Button onClick={() => handleClick(props.href)}>{props.game.PageName}</Button>
-        <Button
+        {/* <Button onClick={() => handleClick(props.href)}>{props.game.PageName}</Button> */}
+        <Button onClick={handleToggle}>{props.game.PageName}</Button>
+        {/* <Button
           size="small"
           aria-controls={open ? 'split-button-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
@@ -66,7 +65,7 @@ export default function SplitButton(props: ISplitButtonProps) {
           onClick={handleToggle}
         >
           <ArrowDropDownIcon />
-        </Button>
+        </Button> */}
       </ButtonGroup>
       <Popper
         sx={{
@@ -89,7 +88,7 @@ export default function SplitButton(props: ISplitButtonProps) {
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList id="split-button-menu" autoFocusItem>
-                  {props.game.DropDownOptions.map((dropDownOption) => (
+                  {/* {props.game.DropDownOptions.map((dropDownOption) => (
                     <MenuItem
                     // key={option}
                     // disabled={index === 2}
@@ -98,6 +97,21 @@ export default function SplitButton(props: ISplitButtonProps) {
                   >
                     {dropDownOption}
                   </MenuItem>
+                  ))} */}
+                  {props.game.DropDownOptions.map((dropDownOption) => (
+                    <Button
+                      key={dropDownOption}
+                      href={dropDownOption === 'Leaderboard' ? `${props.game.LeaderBoardUrl}` : `${props.game.GameHistoryUrl}`}
+                      sx={{
+                        fontSize: "14px",
+                        // my: 2,
+                        color: "black",
+                        display: "block",
+                        // mx: 2,
+                      }}
+                    >
+                    {dropDownOption}
+                  </Button>
                   ))}
                 </MenuList>
               </ClickAwayListener>
@@ -108,59 +122,3 @@ export default function SplitButton(props: ISplitButtonProps) {
     </React.Fragment>
   );
 }
-
-// import React, { useState } from 'react';
-// import { Button, Popover, Typography } from '@mui/material';
-// import { makeStyles } from '@mui/styles';
-
-// const useStyles = makeStyles((theme) => ({
-//   button: {
-//     textTransform: 'none',
-//     margin: theme.spacing(1),
-//   },
-//   popoverContent: {
-//     padding: theme.spacing(2),
-//   },
-// }));
-
-// const HoverDropdownButton = ({ buttonText, popoverContent }) => {
-//   const classes = useStyles();
-//   const [anchorEl, setAnchorEl] = useState(null);
-
-//   const handleMouseEnter = (event) => {
-//     setAnchorEl(event.currentTarget);
-//   };
-
-//   const handleMouseLeave = () => {
-//     setAnchorEl(null);
-//   };
-
-//   return (
-//     <div>
-//       <Button
-//         className={classes.button}
-//         onMouseEnter={handleMouseEnter}
-//         onMouseLeave={handleMouseLeave}
-//       >
-//         {buttonText}
-//       </Button>
-//       <Popover
-//         open={Boolean(anchorEl)}
-//         anchorEl={anchorEl}
-//         onClose={handleMouseLeave}
-//         anchorOrigin={{
-//           vertical: 'bottom',
-//           horizontal: 'left',
-//         }}
-//         transformOrigin={{
-//           vertical: 'top',
-//           horizontal: 'left',
-//         }}
-//       >
-//         <div className={classes.popoverContent}>
-//           <Typography>{popoverContent}</Typography>
-//         </div>
-//       </Popover>
-//     </div>
-//   );
-// };

@@ -1,7 +1,6 @@
 import { Stack } from "@mui/system";
 import Leaderboard from "../../components/leaderboard/leaderboard";
 import { GameInfoMap } from "../../maps/GameInfoMap";
-import SplitButton from "../../components/split-button/split-button";
 
 function MTGLeaderBoard() {
     return (

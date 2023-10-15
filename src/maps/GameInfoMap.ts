@@ -4,7 +4,8 @@ export const GameInfoMap: GamesMap = {
     MagicTheGathering: {
         key: 'MagicTheGathering',
         PageName: 'Magic The Gathering',
-        url: 'MagicTheGathering',
+        LeaderBoardUrl: 'mtg-leaderboard',
+        GameHistoryUrl: 'mtg-game-history',
         DropDownOptions: ['Leaderboard', 'Game History'],
         SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses', 'Losses'],
         GameHistoryColumnNames: ['Winner', 'Deck Strategy', 'Mana Color(s)', "Loser", 'Deck Strategy', 'Mana Color(s)', 'Remaining Health', 'Duration'],
@@ -13,7 +14,8 @@ export const GameInfoMap: GamesMap = {
     Foosball: {
         key: 'Foosball',
         PageName: 'Foosball',
-        url: 'Foosball',
+        LeaderBoardUrl: 'Foosball-leaderboard',
+        GameHistoryUrl: 'Foosball-game-history',
         DropDownOptions: ['Leaderboard', 'Game History'],
         SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
         TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
@@ -23,7 +25,7 @@ export const GameInfoMap: GamesMap = {
     FitnessChallenge: {
         key: 'FitnessChallenge',
         PageName: 'Fitness Challenge',
-        url: 'FitnessChallenge',
+        LeaderBoardUrl: 'Fitness-leaderboard',
         DropDownOptions: ['Leaderboard'],
         SoloLeaderboardColumnNames: ['Rank', 'Name', 'Total Minutes'],
         PlayersList: ['Brandon', 'Justin']

@@ -7,7 +7,8 @@ export enum Games {
 export type Game = {
     key: keyof typeof Games
     PageName: string
-    url: string
+    LeaderBoardUrl: string
+    GameHistoryUrl?: string
     DropDownOptions: string[]
     SoloLeaderboardColumnNames?: string[]
     TeamLeaderboardColumnNames?: string[]
