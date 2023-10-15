@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Grow, Paper, Popper, MenuList, ButtonGroup, Button, ClickAwayListener } from '@mui/material';
 import { Game } from '../../models/models';
 
-const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
+// const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
 
 export type ISplitButtonProps = {
   game: Game
@@ -12,7 +12,7 @@ export type ISplitButtonProps = {
 export default function SplitButton(props: ISplitButtonProps) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  // const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   // const handleClick = (page: string) => {
   //   const selectedOption = options[selectedIndex];

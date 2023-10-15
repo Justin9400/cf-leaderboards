@@ -7,12 +7,6 @@ import SplitButton from "../dropDown-menu-button/DropDown-Menu-Button";
 import { GameInfoMap } from "../../maps/GameInfoMap";
 import AccountMenu from "../account-icon-menu/account-icon-menu";
 
-const pages = [
-  { key: "mtg", title: "Magic The Gathering" },
-  { key: "foos", title: "Foosball" },
-  { key: "fit", title: "Fitness Challenge" },
-];
-
 function Header() {
   // const [showContent, setShowContent] = useState(false);
 
