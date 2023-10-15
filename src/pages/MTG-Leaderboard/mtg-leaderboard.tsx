@@ -1,8 +1,9 @@
 import { Stack } from "@mui/system";
 import Leaderboard from "../../components/leaderboard/leaderboard";
 import { GameInfoMap } from "../../maps/GameInfoMap";
+import SplitButton from "../../components/split-button/split-button";
 
-function MTG() {
+function MTGLeaderBoard() {
     return (
         <Stack sx={{display: 'flex', height: '100vh', margin: '0 auto'}}>
             <h1 style={{margin:'5% auto'}}>Magic The Gathering Leaderboard</h1>
@@ -11,4 +12,4 @@ function MTG() {
     );
 }
 
-export default MTG;
+export default MTGLeaderBoard;

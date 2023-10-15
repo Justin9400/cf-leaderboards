@@ -1,11 +1,14 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './pages/Layout';
-import MTG from './pages/MTG/mtg';
-import Fitness from './pages/Fitness/fitness';
+import MTGLeaderboard from './pages/MTG-Leaderboard/mtg-leaderboard';
+import FitnessLeaderboard from './pages/Fitness-Leaderboard/fitness-leaderboard';
 import Home from './pages/Home';
-import Foosball from './pages/Foosball/foosball';
+import FoosballLeaderboard from './pages/Foosball-Leaderboard/foosball-leaderboard';
+
 import { Stack } from '@mui/material';
+import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-History';
+import MTGGameHistory from './pages/MTG-Game-History/MTG-Game-History';
 
 function App() {
   return (
@@ -20,9 +23,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
-          <Route path="mtg" element={<MTG/>}/>
-          <Route path="foos" element={<Foosball/>}/>
-          <Route path="fit" element={<Fitness/>}/>
+          <Route path="mtg-leaderboard" element={<MTGLeaderboard/>}/>
+          <Route path="mtg-game-history" element={<MTGGameHistory/>}/>
+          <Route path="foosball-leaderboard" element={<FoosballLeaderboard/>}/>
+          <Route path="foosball-game-history" element={<FoosballGameHistory/>}/>
+          <Route path="fitness-leaderboard" element={<FitnessLeaderboard/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

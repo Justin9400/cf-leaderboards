@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -13,6 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 
 import logo from '../../img/logo.svg'
 import brandon from '../../img/brandon.jpg'
+import AccountMenu from "../account-icon-menu/account-icon-menu";
+import SplitButton from "../split-button/split-button";
+import { GameInfoMap } from "../../maps/GameInfoMap";
 
 const pages = [{key:'mtg', title:'Magic The Gathering'}, {key:'foos', title:'Foosball'}, {key:'fit', title:'Fitness Challenge'}];
 
@@ -35,14 +38,15 @@ function Header() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+              marginLRight: '30px'
             }}
           >
             <img src={logo} alt="" style={{width: '40px', height: '100px'}}/>
             <Typography sx={{ml: 2, fontSize: '24px', display: 'flex', alignItems: 'center', color: 'black'}}>
-  <span style={{ fontWeight: 'bold' }}>CloudFit</span>
-  <span style={{ fontWeight: 'lighter' }}>Leaderboards</span>
+            <span style={{ fontWeight: 'bold' }}>CloudFit</span>
+            <span style={{ fontWeight: 'lighter' }}>Leaderboards</span>
 
-</Typography>
+          </Typography>
 
           </Typography>
 
@@ -102,24 +106,39 @@ function Header() {
           >
             {/* <img src={logo} alt="" style={{width: '500px', height: '500px'}}/> */}
           </Typography>
-          <Box sx={{ ml: 5, flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+          {/* <Box sx={{ ml: 5, flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: '10px' }}> */}
+          <Stack direction={'row'} spacing={5}  >
+            {Object.values(GameInfoMap).map((page) => (
+                          <SplitButton game={page} href={page.url}/>
+            ))}
+
+          </Stack>
+            {/* {pages.map((page) => (
               <Button
                 key={page.key}
                 // onClick={handleCloseNavMenu}
                 href={`${page.key}`}
-                sx={{ fontSize: '20px', my: 2, color: 'black', display: 'block', mx: 2}}
+                sx={{
+                  fontSize: "14px",
+                  my: 2,
+                  color: "black",
+                  display: "block",
+                  mx: 2,
+                }}
               >
                 {page.title}
               </Button>
-            ))}
-          </Box>
+            ))} */}
+          {/* </Box> */}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Brandon Camerer">
-            <IconButton sx={{ p: 0, border: '1px solid lightgray', borderRadius: '50%' }}>
-  <Avatar alt="Brandon Camerer" src={brandon} />
-</IconButton>
+            {/* <IconButton sx={{ p: 0, border: '1px solid lightgray', borderRadius: '50%' }}>
+              <Avatar alt="Brandon Camerer" src={brandon} />
+            </IconButton> */}
+
+              <AccountMenu/>
+
 
             </Tooltip>
             {/* <Menu
