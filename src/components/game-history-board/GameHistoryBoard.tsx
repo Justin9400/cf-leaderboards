@@ -39,13 +39,13 @@ export default function Leaderboard(props: ILeaderboardProps) {
         <TableHead>
           <TableRow>
             {props.pageName === GameInfoMap.MagicTheGathering
-              ? GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>))
+              ? GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>))
               : props.pageName === GameInfoMap.Foosball
-              ? GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>)) &&
-                GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
-              : props.pageName === GameInfoMap.FitnessChallenge
-              ? GameInfoMap.FitnessChallenge.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
-              : <div>Default content</div>
+              ? GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>)) &&
+                GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".teams"} align="center">{column}</TableCell>))
+              : props.pageName === GameInfoMap.Fitness
+              ? GameInfoMap.Fitness.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>))
+              : <div key={""}>Default content</div>
             }
           </TableRow>
         </TableHead>
@@ -69,3 +69,4 @@ export default function Leaderboard(props: ILeaderboardProps) {
     </TableContainer>
   );
 }
+
