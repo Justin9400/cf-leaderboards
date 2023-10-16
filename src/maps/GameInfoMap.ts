@@ -4,6 +4,7 @@ export const GameInfoMap: GamesMap = {
     MagicTheGathering: {
         key: 'MagicTheGathering',
         PageName: 'Magic The Gathering',
+        Pages: ['Leaderboard', 'History'],
         LeaderBoardUrl: 'mtg-leaderboard',
         GameHistoryUrl: 'mtg-game-history',
         DropDownOptions: ['Leaderboard', 'Game History'],
@@ -14,6 +15,7 @@ export const GameInfoMap: GamesMap = {
     Foosball: {
         key: 'Foosball',
         PageName: 'Foosball',
+        Pages: ['Leaderboard', 'History'],
         LeaderBoardUrl: 'Foosball-leaderboard',
         GameHistoryUrl: 'Foosball-game-history',
         DropDownOptions: ['Leaderboard', 'Game History'],
@@ -25,9 +27,10 @@ export const GameInfoMap: GamesMap = {
     FitnessChallenge: {
         key: 'FitnessChallenge',
         PageName: 'Fitness Challenge',
+        Pages: ['Leaderboard'],
         LeaderBoardUrl: 'Fitness-leaderboard',
         DropDownOptions: ['Leaderboard'],
-        SoloLeaderboardColumnNames: ['Rank', 'Name', 'Total Minutes'],
+        LeaderboardColumnNames: ['Rank', 'Name', 'Total Minutes'],
         PlayersList: ['Brandon', 'Justin']
     }
 }

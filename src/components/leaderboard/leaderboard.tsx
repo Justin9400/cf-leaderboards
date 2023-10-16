@@ -29,7 +29,8 @@ const rows = [
 ];
 
 export type ILeaderboardProps = {
-  pageName: Game
+  game: Game
+  pageName: 'Leaderboard' | 'History'
 }
 
 export default function Leaderboard(props: ILeaderboardProps) {
@@ -38,14 +39,31 @@ export default function Leaderboard(props: ILeaderboardProps) {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            {props.pageName === GameInfoMap.MagicTheGathering
-              ? GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>))
-              : props.pageName === GameInfoMap.Foosball
-              ? GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>)) &&
-                GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
-              : props.pageName === GameInfoMap.FitnessChallenge
-              ? GameInfoMap.FitnessChallenge.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
-              : <div>Default content</div>
+            {(() => {
+                switch (props.game) {
+                  case GameInfoMap.MagicTheGathering:
+                    if(props.pageName === 'Leaderboard') {
+                      return GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
+                    } else {
+                      return GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".gh"} align="center">{column}</TableCell>))
+                    }
+                  case GameInfoMap.Foosball:
+                    if(props.pageName === 'Leaderboard') {
+                      return GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>)) &&
+                      GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
+                    } else {
+                      return GameInfoMap.Foosball.GameHistoryColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
+                    }
+                  case GameInfoMap.FitnessChallenge:
+                    if(props.pageName === 'Leaderboard') {
+                      return GameInfoMap.FitnessChallenge.LeaderboardColumnNames?.map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
+                    } else {
+                      return GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".gh"} align="center">{column}</TableCell>))
+                    }
+                  default:
+                    return <></>
+                }
+              })()
             }
           </TableRow>
         </TableHead>

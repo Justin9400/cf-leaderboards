@@ -5,10 +5,10 @@ import { GameInfoMap } from "../../maps/GameInfoMap";
 function FoosballLeaderBoard() {
     return (
         <Stack sx={{display: 'flex', height: '100vh', margin: '0 auto'}}>
-            <h1 style={{margin:'5% auto'}}>Foosball Game History</h1>
+            <h1 style={{margin:'5% auto', fontFamily: 'Arial, Helvetica, sans-serif'}}>Foosball Game History</h1>
             <Stack direction="row" spacing={10}>
-                <Leaderboard pageName={GameInfoMap.Foosball}/>
-                <Leaderboard pageName={GameInfoMap.Foosball}/>
+                <Leaderboard game={GameInfoMap.Foosball} pageName="History"/>
+                <Leaderboard game={GameInfoMap.Foosball} pageName="History"/>
             </Stack>
             {/* <Leaderboard pageName={GameInfoMap.Foosball}/> */}
 
