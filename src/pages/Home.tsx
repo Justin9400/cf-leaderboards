@@ -43,8 +43,7 @@ function Home() {
             Foosball
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.
           </Typography>
         </CardContent>
         <CardActions>
@@ -63,8 +62,7 @@ function Home() {
             Fitness Challenge
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          This diverse mix of enthusiasts converges on a virtual platform where they unite in their shared pursuit of health and well-being.
           </Typography>
         </CardContent>
         <CardActions>
