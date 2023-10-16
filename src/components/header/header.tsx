@@ -81,12 +81,12 @@ function Header() {
           >
           </Typography>
           
-          <Stack direction={'row'} spacing={5}  >
+          {/* <Stack direction={'row'} spacing={5}  >
             {Object.values(GameInfoMap).map((page) => (
                           <SplitButton game={page} href={page.GameHistoryUrl!}/>
             ))}
 
-          </Stack>
+          </Stack> */}
           {/* <Box sx={{ margin: '0 auto', display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -104,7 +104,7 @@ function Header() {
               </Button>
             ))}
           </Box> */}
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ marginLeft: 'auto' }}>
             <Tooltip title="Brandon Camerer">
               <AccountMenu/>
             </Tooltip>
