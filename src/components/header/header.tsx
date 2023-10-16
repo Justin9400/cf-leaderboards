@@ -1,10 +1,9 @@
-import { AppBar, IconButton, Stack, Toolbar, Box, Typography, Tooltip, Container} from "@mui/material";
+import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import logo from "../../img/logo.svg";
 import { styles } from "./styles";
-import SplitButton from "../dropDown-menu-button/DropDown-Menu-Button";
-import { GameInfoMap } from "../../maps/GameInfoMap";
+
 import AccountMenu from "../account-icon-menu/account-icon-menu";
 
 function Header() {
