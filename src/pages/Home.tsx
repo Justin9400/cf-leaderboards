@@ -10,6 +10,9 @@ import mtg from "../img/mtg.png";
 import fb from "../img/fb.png";
 import fit from "../img/fit.png";
 
+import Leaderboard from "../components/leaderboard/leaderboard";
+import { GameInfoMap } from "../maps/GameInfoMap";
+
 function Home() {
   return (
     <Stack direction="row" spacing={3} sx={{ mt:3, ml: 3, mr: 3, display: "flex",  }}>
@@ -23,12 +26,13 @@ function Home() {
           <Typography gutterBottom variant="h5" component="div">
             Magic the Gathering
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-          Magic the Gathering leaderboards is a diverse collection of skilled players, spanning numerous formats and strategies.
-          </Typography>
+          
+           
+            <Leaderboard game={GameInfoMap.MagicTheGathering} pageName="Leaderboard"/>
+
         </CardContent>
         <CardActions>
-          <Button size="small">Leaderboards</Button>
+          <Button size="small">More Details</Button>
           <Button size="small">Game History</Button>
         </CardActions>
       </Card>
