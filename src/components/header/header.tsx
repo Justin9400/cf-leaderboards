@@ -5,6 +5,7 @@ import logo from "../../img/logo.svg";
 import { styles } from "./styles";
 
 import AccountMenu from "../account-icon-menu/account-icon-menu";
+import React from "react";
 
 function Header() {
   // const [showContent, setShowContent] = useState(false);
