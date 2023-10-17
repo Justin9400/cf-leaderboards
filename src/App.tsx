@@ -9,6 +9,7 @@ import FoosballLeaderboard from './pages/Foosball-Leaderboard/foosball-leaderboa
 import { Stack } from '@mui/material';
 import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-History';
 import MTGGameHistory from './pages/MTG-Game-History/MTG-Game-History';
+import React from 'react';
 
 function App() {
   return (

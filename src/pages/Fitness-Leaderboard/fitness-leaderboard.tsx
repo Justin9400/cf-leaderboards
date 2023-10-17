@@ -1,6 +1,7 @@
 import { Stack } from "@mui/system";
 import Leaderboard from "../../components/leaderboard/leaderboard";
 import { GameInfoMap } from "../../maps/GameInfoMap";
+import React from "react";
 
 function FitnessLeaderboard() {
     return (

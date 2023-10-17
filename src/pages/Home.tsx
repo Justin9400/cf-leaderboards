@@ -12,6 +12,14 @@ import fit from "../img/fit.png";
 
 import Leaderboard from "../components/leaderboard/leaderboard";
 import { GameInfoMap } from "../maps/GameInfoMap";
+import { supabase } from "../supabaseClient";
+
+
+let { data: mtgGameHistory, error } = await supabase
+  .from('mtgGameHistory')
+  .select('*');
+
+console.log(error ?? mtgGameHistory);
 
 function Home() {
   return (
