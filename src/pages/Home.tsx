@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card sx={{ mt: 3 }}>
+        <Card sx={{ minHeight:'400px', mt: 3 }}>
           <CardMedia
             sx={{ height: 140 }}
             image={mtg}
@@ -55,7 +55,7 @@ export default function Home() {
       </Grid>
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card sx={{ mt: 3 }}>
+        <Card sx={{ minHeight:'400px', mt: 3 }}>
           <CardMedia
             sx={{ height: 140 }}
             image={fb}
@@ -78,7 +78,7 @@ export default function Home() {
       </Grid>
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card sx={{ mt: 3 }}>
+        <Card sx={{ minHeight:'400px', mt: 3 }}>
           <CardMedia
             sx={{ height: 140 }}
             image={corn}
@@ -101,7 +101,7 @@ export default function Home() {
       </Grid>
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card sx={{ mt: 3 }}>
+        <Card sx={{ minHeight:'400px', mt: 3 }}>
           <CardMedia
             sx={{ height: 140 }}
             image={fit}
@@ -115,7 +115,7 @@ export default function Home() {
               This diverse mix of enthusiasts converges on a virtual platform where they unite in their shared pursuit of health and well-being.
             </Typography>
           </CardContent>
-          <CardActions>
+          <CardActions sx={{mt: 7}}>
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.GameHistoryUrl!)}>Badges</Button>
           </CardActions>
