@@ -32,7 +32,7 @@ export default function Home() {
   }
   
   return (
-    <Stack sx={{maxWidth: '70%', margin: '0 auto'}}>
+    <Stack sx={{maxWidth: '100%', margin: '0 auto'}}>
       <Stack direction="row" spacing={3} sx={{ mt:3, ml: 3, mr: 3, display: "flex",  }}>
         <Card sx={{ mt: 3, width:'50%' }}>
           <CardMedia
@@ -77,9 +77,9 @@ export default function Home() {
             <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.GameHistoryUrl!)}>Game History</Button>
           </CardActions>
         </Card>
-      </Stack>
 
-      <Stack direction="row" spacing={3} sx={{ mt:3, ml: 3, mr: 3, display: "flex",  }}>
+
+      
         <Card sx={{ mt: 3, width:'50%' }}>
           <CardMedia
             sx={{ height: 140 }}
@@ -91,7 +91,7 @@ export default function Home() {
               Cornhole
             </Typography>
             <Typography variant="body2" color="text.secondary" style={{paddingBottom: '20px'}}>
-              Cornhole Leaderboard, where legends are born, and bags find their true mark.
+            Cornhole Leaderboard, where legends are born, bags find their true mark, and champions emerge with unparalleled skill and precision.
             </Typography>
             
             <Leaderboard game={GameInfoMap.Foosball} pageName="Home"/>

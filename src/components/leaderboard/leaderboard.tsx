@@ -35,8 +35,8 @@ export type ILeaderboardProps = {
 
 export default function Leaderboard(props: ILeaderboardProps) {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer sx={{border:'1px solid #bcbcbc'}}>
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
             {(() => {
