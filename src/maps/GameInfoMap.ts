@@ -24,6 +24,18 @@ export const GameInfoMap: GamesMap = {
         GameHistoryColumnNames: ['Winner', "Loser"],
         PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred']
     },
+    Cornhole: {
+        key: 'Cornhole',
+        PageName: 'Cornhole',
+        Pages: ['Leaderboard', 'History'],
+        LeaderBoardUrl: 'Cornhole-leaderboard',
+        GameHistoryUrl: 'Cornhole-game-history',
+        DropDownOptions: ['Leaderboard', 'Game History'],
+        SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
+        TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
+        GameHistoryColumnNames: ['Winner', "Loser"],
+        PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred']
+    },
     FitnessChallenge: {
         key: 'FitnessChallenge',
         PageName: 'Fitness Challenge',

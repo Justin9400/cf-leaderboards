@@ -30,7 +30,7 @@ const rows = [
 
 export type ILeaderboardProps = {
   game: Game
-  pageName: 'Leaderboard' | 'History'
+  pageName: 'Home' | 'Leaderboard' | 'History'
 }
 
 export default function Leaderboard(props: ILeaderboardProps) {
@@ -42,23 +42,38 @@ export default function Leaderboard(props: ILeaderboardProps) {
             {(() => {
                 switch (props.game) {
                   case GameInfoMap.MagicTheGathering:
-                    if(props.pageName === 'Leaderboard') {
+                    if (props.pageName === 'Home') {
+                      return GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.slice(0,3).map((column) => (<TableCell key={column + ".s"} align="center" size='medium'>{column}</TableCell>))
+                    } else if (props.pageName === 'Leaderboard') {
                       return GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
                     } else {
                       return GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".gh"} align="center">{column}</TableCell>))
                     }
                   case GameInfoMap.Foosball:
-                    if(props.pageName === 'Leaderboard') {
+                    if (props.pageName === 'Home') {
+                      return GameInfoMap.Foosball.SoloLeaderboardColumnNames?.slice(0,3).map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
+                    } else if (props.pageName === 'Leaderboard') {
                       return GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>)) &&
                       GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
                     } else {
                       return GameInfoMap.Foosball.GameHistoryColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
                     }
+                  case GameInfoMap.Cornhole:
+                    if (props.pageName === 'Home') {
+                      return GameInfoMap.Cornhole.SoloLeaderboardColumnNames?.slice(0,3).map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
+                    } else if (props.pageName === 'Leaderboard') {
+                      return GameInfoMap.Cornhole.SoloLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>)) &&
+                      GameInfoMap.Cornhole.TeamLeaderboardColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
+                    } else {
+                      return GameInfoMap.Cornhole.GameHistoryColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))
+                    }
                   case GameInfoMap.FitnessChallenge:
-                    if(props.pageName === 'Leaderboard') {
+                    if (props.pageName === 'Home') {
+                      return GameInfoMap.FitnessChallenge.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
+                    } else if (props.pageName === 'Leaderboard') {
                       return GameInfoMap.FitnessChallenge.LeaderboardColumnNames?.map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
                     } else {
-                      return GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".gh"} align="center">{column}</TableCell>))
+                      return GameInfoMap.FitnessChallenge.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".gh"} align="center">{column}</TableCell>))
                     }
                   default:
                     return <></>

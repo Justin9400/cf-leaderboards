@@ -1,6 +1,7 @@
 export enum Games {
     MagicTheGathering = 'MagicTheGathering',
     Foosball = 'Foosball',
+    Cornhole = 'Cornhole',
     FitnessChallenge = 'FitnessChallenge'
 }
 
