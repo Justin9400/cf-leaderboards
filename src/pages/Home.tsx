@@ -47,7 +47,7 @@ export default function Home() {
             </Typography>
             <Leaderboard game={GameInfoMap.MagicTheGathering} pageName="Home" />
           </CardContent>
-          <CardActions style={{justifyContent: 'center'}}>
+          <CardActions >
             <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.LeaderBoardUrl)}>More Details</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.GameHistoryUrl!)}>Game History</Button>
           </CardActions>
@@ -70,7 +70,7 @@ export default function Home() {
             </Typography>
             <Leaderboard game={GameInfoMap.Foosball} pageName="Home" />
           </CardContent>
-          <CardActions style={{justifyContent: 'center'}}>
+          <CardActions >
             <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.GameHistoryUrl!)}>Game History</Button>
           </CardActions>
@@ -93,7 +93,7 @@ export default function Home() {
             </Typography>
             <Leaderboard game={GameInfoMap.Foosball} pageName="Home" />
           </CardContent>
-          <CardActions style={{justifyContent: 'center'}}>
+          <CardActions>
             <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.GameHistoryUrl!)}>Game History</Button>
           </CardActions>
@@ -115,7 +115,7 @@ export default function Home() {
               This diverse mix of enthusiasts converges on a virtual platform where they unite in their shared pursuit of health and well-being.
             </Typography>
           </CardContent>
-          <CardActions sx={{mt: 7}} style={{justifyContent: 'center'}}>
+          <CardActions sx={{mt: 7}} >
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.GameHistoryUrl!)}>Badges</Button>
           </CardActions>
