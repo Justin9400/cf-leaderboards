@@ -173,7 +173,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                   sx={{ backgroundColor: "#ffe0e0" }}
                                   align="center"
                                 >
-                                  {game.WDeck.Mana.map(
+                                  {game.L1Deck.Mana.map(
                                     (mana: string, index: string) => (
                                       <img
                                         key={index}
