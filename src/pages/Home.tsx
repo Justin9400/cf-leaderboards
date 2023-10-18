@@ -10,11 +10,25 @@ import Leaderboard from "../components/leaderboard/leaderboard";
 import { GameInfoMap } from "../maps/GameInfoMap";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from 'react-router-dom';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
 
 import mtg from "../img/mtg.png";
 import fb from "../img/fb.png";
 import fit from "../img/fit.png";
 import corn from "../img/cornhole.png";
+
+const rows = [
+  { rank: 1, name: 'Jordan Olachea' },
+  { rank: 2, name: 'Bryan Berardi' },
+  { rank: 3, name: 'Tres Langhorne' },
+  // Add more rows as needed
+];
 
 let { data: mtgGameHistory, error } = await supabase
   .from('mtgGameHistory')
@@ -114,9 +128,21 @@ export default function Home() {
             <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
               This diverse mix of enthusiasts converges on a virtual platform where they unite in their shared pursuit of health and well-being.
             </Typography>
-            <Leaderboard game={GameInfoMap.FitnessChallenge} pageName="Home" />
+            <TableContainer sx={{border:'1px solid gray'}}>
+          <Table>
+             <TableBody>
+              {rows.map((row) => (
+                <TableRow key={row.rank}>
+                  <TableCell>{row.rank}</TableCell>
+                  <TableCell>{row.name}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+           
           </CardContent>
-          <CardActions sx={{mt: 7}} >
+          <CardActions >
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.GameHistoryUrl!)}>Badges</Button>
           </CardActions>
