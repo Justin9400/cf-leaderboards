@@ -14,6 +14,8 @@ let { data: mtgGameHistory, error } = await supabase
   .from('mtgGameHistory')
   .select('*');
 
+console.log(mtgGameHistory ?? error)
+
 function createData(
   name: string,
   calories: string,
@@ -139,12 +141,5 @@ export default function Leaderboard(props: ILeaderboardProps) {
       </Table>
     </TableContainer>
   );
-}
-
-function useState(arg0: never[]): [any, any] {
-  throw new Error('Function not implemented.');
-}
-function useEffect(arg0: () => void, arg1: never[]) {
-  throw new Error('Function not implemented.');
 }
 
