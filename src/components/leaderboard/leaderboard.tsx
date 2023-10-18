@@ -152,7 +152,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                         key={index}
                                         src={mapManaToImage(mana)}
                                         alt={mana}
-                                        style={{ width: "25px" }}
+                                        style={{ marginLeft: 5, width: "25px" }}
                                       />
                                     )
                                   )}
@@ -179,7 +179,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                         key={index}
                                         src={mapManaToImage(mana)}
                                         alt={mana}
-                                        style={{ width: "25px" }}
+                                        style={{ marginLeft: 5, width: "25px" }}
                                       />
                                     )
                                   )}
