@@ -32,6 +32,12 @@ const rows = [
   { rank: 3, name: 'Tres Langhorne', medal: 3 },
   // Add more rows as needed
 ];
+const rowss = [
+  { rank: 1, name: 'Chris Knoll', medal: 1 },
+  { rank: 2, name: 'Mike Mercer', medal: 2 },
+  { rank: 3, name: 'Dusty Brenning', medal: 3 },
+  // Add more rows as needed
+];
 
 let { data: mtgGameHistory, error } = await supabase
   .from('mtgGameHistory')
@@ -103,17 +109,29 @@ export default function Home() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Cornhole
+              2023 March Madness
             </Typography>
             <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
-              Cornhole Leaderboards, where bags find their true mark, and champions emerge with unparalleled skill and precision.
+            March Madness, where basketball dreams take center stage, and champions rise through the ranks with unrivaled passion and strategy.
             </Typography>
-            <Leaderboard game={GameInfoMap.Foosball} pageName="Home" />
+            <TableContainer sx={{border:'1px solid gray'}}>
+          <Table>
+             <TableBody>
+              {rowss.map((row) => (
+                <TableRow key={row.rank}>
+                  <TableCell align="center">{row.rank}</TableCell>
+                  <TableCell align="center">{row.name}</TableCell>
+                  <TableCell> <img style={{width: '25px'}} src={medalImages[row.medal - 1]} alt={`Medal ${row.medal}`} /></TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
           </CardContent>
-          <CardActions>
-            <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.LeaderBoardUrl)}>Leaderboards</Button>
-            <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.GameHistoryUrl!)}>Game History</Button>
-          </CardActions>
+          {/* <CardActions> */}
+            {/* <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.LeaderBoardUrl)}>Full Leaderboard</Button> */}
+            {/* <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.GameHistoryUrl!)}>Game History</Button> */}
+          {/* </CardActions> */}
         </Card>
       </Grid>
 
