@@ -15,18 +15,21 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-
-
+import goldMedal from "../img/medals/gold.svg";
+import silverMedal from "../img/medals/silver.svg";
+import bronzeMedal from "../img/medals/bronze.svg";
 
 import mtg from "../img/mtg.png";
 import fb from "../img/fb.png";
 import fit from "../img/fit.png";
 import corn from "../img/cornhole.png";
 
+const medalImages = [goldMedal, silverMedal, bronzeMedal];
+
 const rows = [
-  { rank: 1, name: 'Jordan Olachea' },
-  { rank: 2, name: 'Bryan Berardi' },
-  { rank: 3, name: 'Tres Langhorne' },
+  { rank: 1, name: 'Jordan Olachea', medal: 1 },
+  { rank: 2, name: 'Bryan Berardi', medal: 2 },
+  { rank: 3, name: 'Tres Langhorne', medal: 3 },
   // Add more rows as needed
 ];
 
@@ -133,8 +136,9 @@ export default function Home() {
              <TableBody>
               {rows.map((row) => (
                 <TableRow key={row.rank}>
-                  <TableCell>{row.rank}</TableCell>
-                  <TableCell>{row.name}</TableCell>
+                  <TableCell align="center">{row.rank}</TableCell>
+                  <TableCell align="center">{row.name}</TableCell>
+                  <TableCell> <img style={{width: '25px'}} src={medalImages[row.medal - 1]} alt={`Medal ${row.medal}`} /></TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -142,10 +146,10 @@ export default function Home() {
         </TableContainer>
            
           </CardContent>
-          <CardActions >
+          {/* <CardActions >
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.GameHistoryUrl!)}>Badges</Button>
-          </CardActions>
+          </CardActions> */}
         </Card>
       </Grid>
     </Grid>
