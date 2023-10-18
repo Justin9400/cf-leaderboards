@@ -73,7 +73,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
 
   // async function getGameHistory() {
   //   const { data } = await supabase.from("mtgGameHistory").select('*');
-  //   setGameHistory(data);
+  //   setGameHistory(data)
   // }
 
   return (
