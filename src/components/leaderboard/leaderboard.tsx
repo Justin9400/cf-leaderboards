@@ -75,12 +75,12 @@ export default function Leaderboard(props: ILeaderboardProps) {
                           <TableBody>
                             {mtgGameHistory?.map((game: any) => (
                               <TableRow key={game.id}>
-                                <TableCell align="center">{game.Winner}</TableCell>
-                                <TableCell align="center">{game.WDeck.strat}</TableCell>
-                                <TableCell align="center">{game.WDeck.Mana}</TableCell>
-                                <TableCell align="center">{game.Loser1}</TableCell>
-                                <TableCell align="center">{game.L1Deck.strat}</TableCell>
-                                <TableCell align="center">{game.L1Deck.Mana}</TableCell>
+                                <TableCell sx={{backgroundColor:'#dafada'}} align="center">{game.Winner}</TableCell>
+                                <TableCell sx={{backgroundColor:'#dafada'}} align="center">{game.WDeck.strat}</TableCell>
+                                <TableCell sx={{backgroundColor:'#dafada'}} align="center">{game.WDeck.Mana}</TableCell>
+                                <TableCell sx={{backgroundColor:'#ffe0e0'}} align="center">{game.Loser1}</TableCell>
+                                <TableCell sx={{backgroundColor:'#ffe0e0'}} align="center">{game.L1Deck.strat}</TableCell>
+                                <TableCell sx={{backgroundColor:'#ffe0e0'}} align="center">{game.L1Deck.Mana}</TableCell>
                                 <TableCell align="center">{game.remainingLife}</TableCell>
                                 <TableCell align="center">{game.length}</TableCell>
                               </TableRow>
