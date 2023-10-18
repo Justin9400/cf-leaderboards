@@ -9,7 +9,7 @@ export const GameInfoMap: GamesMap = {
         GameHistoryUrl: 'mtg-game-history',
         DropDownOptions: ['Leaderboard', 'Game History'],
         SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses', 'Losses'],
-        GameHistoryColumnNames: ['Winner', 'Deck Strategy', 'Mana Color(s)', "Loser", 'Deck Strategy', 'Mana Color(s)', 'Winner Remaining Health', 'Duration'],
+        GameHistoryColumnNames: ['Winner', 'Deck Strategy', 'Mana Color(s)', "Loser", 'Deck Strategy', 'Mana Color(s)', 'Remaining Health', 'Duration'],
         PlayersList: ['Bryan', 'Morgan', 'Justin', 'Nick', 'Jeff', 'Lucas', 'Tye']
     },
     Foosball: {
