@@ -109,11 +109,12 @@ export default function Home() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Fitness Challenge
+              2023 Fitness Challenge
             </Typography>
             <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
               This diverse mix of enthusiasts converges on a virtual platform where they unite in their shared pursuit of health and well-being.
             </Typography>
+            <Leaderboard game={GameInfoMap.FitnessChallenge} pageName="Home" />
           </CardContent>
           <CardActions sx={{mt: 7}} >
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.LeaderBoardUrl)}>Leaderboards</Button>
