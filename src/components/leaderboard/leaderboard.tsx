@@ -122,7 +122,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                             <TableRow>
                               {GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map(
                                 (column) => (
-                                  <TableCell align="center">{column}</TableCell>
+                                  <TableCell align="left">{column}</TableCell>
                                 )
                               )}
                             </TableRow>
@@ -131,20 +131,20 @@ export default function Leaderboard(props: ILeaderboardProps) {
                             {mtgGameHistory?.map((game: any) => (
                               <TableRow key={game.id}>
                                 <TableCell
-                                  sx={{ backgroundColor: "#dafada" }}
-                                  align="center"
+                                  sx={{ backgroundColor: "#f0fff0", fontWeight:'600' }}
+                                  align="left"
                                 >
                                   {game.Winner}
                                 </TableCell>
                                 <TableCell
-                                  sx={{ backgroundColor: "#dafada" }}
-                                  align="center"
+                                  sx={{ backgroundColor: "#f0fff0" }}
+                                  align="left"
                                 >
                                   {game.WDeck.strat}
                                 </TableCell>
                                 <TableCell
-                                  sx={{ backgroundColor: "#dafada" }}
-                                  align="center"
+                                  sx={{ backgroundColor: "#f0fff0" }}
+                                  align="left"
                                 >
                                   {game.WDeck.Mana.map(
                                     (mana: string, index: string) => (
@@ -158,20 +158,20 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                   )}
                                 </TableCell>
                                 <TableCell
-                                  sx={{ backgroundColor: "#ffe0e0" }}
-                                  align="center"
+                                  sx={{ backgroundColor: "#fff2f2" }}
+                                  align="left"
                                 >
                                   {game.Loser1}
                                 </TableCell>
                                 <TableCell
-                                  sx={{ backgroundColor: "#ffe0e0" }}
-                                  align="center"
+                                  sx={{ backgroundColor: "#fff2f2" }}
+                                  align="left"
                                 >
                                   {game.L1Deck.strat}
                                 </TableCell>
                                 <TableCell
-                                  sx={{ backgroundColor: "#ffe0e0" }}
-                                  align="center"
+                                  sx={{ backgroundColor: "#fff2f2" }}
+                                  align="left"
                                 >
                                   {game.L1Deck.Mana.map(
                                     (mana: string, index: string) => (
