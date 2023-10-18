@@ -7,7 +7,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { GameInfoMap } from '../../maps/GameInfoMap';
 import { Game } from '../../models/models';
+import { supabase } from '../../supabaseClient';
+import Paper from '@mui/material/Paper';
 
+let { data: mtgGameHistory, error } = await supabase
+  .from('mtgGameHistory')
+  .select('*');
 
 function createData(
   name: string,
@@ -33,6 +38,17 @@ export type ILeaderboardProps = {
 }
 
 export default function Leaderboard(props: ILeaderboardProps) {
+  // const [gameHistory, setGameHistory] = useState([]);
+
+  // useEffect(() => {
+  //   getGameHistory();
+  // }, []);
+
+  // async function getGameHistory() {
+  //   const { data } = await supabase.from("mtgGameHistory").select('*');
+  //   setGameHistory(data);
+  // }
+
   return (
     <TableContainer sx={{border:'1px solid #bcbcbc'}}>
       <Table aria-label="simple table">
@@ -44,9 +60,32 @@ export default function Leaderboard(props: ILeaderboardProps) {
                     if (props.pageName === 'Home') {
                       return GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.slice(0,3).map((column) => (<TableCell key={column + ".s"} align="center" size='medium'>{column}</TableCell>))
                     } else if (props.pageName === 'Leaderboard') {
-                      return GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
+                      return GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>)) &&
+                      GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".s"} align="center">{column}</TableCell>))
                     } else {
-                      return GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".gh"} align="center">{column}</TableCell>))
+                      return (<TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                          <TableHead>
+                            <TableRow>
+                              {GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (<TableCell align="center">{column}</TableCell>))}
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            {mtgGameHistory?.map((game: any) => (
+                              <TableRow key={game.id}>
+                                <TableCell align="center">{game.Winner}</TableCell>
+                                <TableCell align="center">{game.WDeck.strat}</TableCell>
+                                <TableCell align="center">{game.WDeck.Mana}</TableCell>
+                                <TableCell align="center">{game.Loser1}</TableCell>
+                                <TableCell align="center">{game.L1Deck.strat}</TableCell>
+                                <TableCell align="center">{game.L1Deck.Mana}</TableCell>
+                                <TableCell align="center">{game.remainingLife}</TableCell>
+                                <TableCell align="center">{game.length}</TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </TableContainer>)
                     }
                   case GameInfoMap.Foosball:
                     if (props.pageName === 'Home') {
@@ -101,3 +140,11 @@ export default function Leaderboard(props: ILeaderboardProps) {
     </TableContainer>
   );
 }
+
+function useState(arg0: never[]): [any, any] {
+  throw new Error('Function not implemented.');
+}
+function useEffect(arg0: () => void, arg1: never[]) {
+  throw new Error('Function not implemented.');
+}
+

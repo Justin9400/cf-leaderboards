@@ -47,7 +47,7 @@ export default function Home() {
             </Typography>
             <Leaderboard game={GameInfoMap.MagicTheGathering} pageName="Home" />
           </CardContent>
-          <CardActions>
+          <CardActions style={{justifyContent: 'center'}}>
             <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.LeaderBoardUrl)}>More Details</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.GameHistoryUrl!)}>Game History</Button>
           </CardActions>
@@ -70,7 +70,7 @@ export default function Home() {
             </Typography>
             <Leaderboard game={GameInfoMap.Foosball} pageName="Home" />
           </CardContent>
-          <CardActions>
+          <CardActions style={{justifyContent: 'center'}}>
             <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.GameHistoryUrl!)}>Game History</Button>
           </CardActions>
@@ -89,11 +89,11 @@ export default function Home() {
               Cornhole
             </Typography>
             <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
-              Cornhole Leaderboard, where legends are born, bags find their true mark, and champions emerge with unparalleled skill and precision.
+              Cornhole Leaderboards, where bags find their true mark, and champions emerge with unparalleled skill and precision.
             </Typography>
             <Leaderboard game={GameInfoMap.Foosball} pageName="Home" />
           </CardContent>
-          <CardActions>
+          <CardActions style={{justifyContent: 'center'}}>
             <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.GameHistoryUrl!)}>Game History</Button>
           </CardActions>
@@ -115,7 +115,7 @@ export default function Home() {
               This diverse mix of enthusiasts converges on a virtual platform where they unite in their shared pursuit of health and well-being.
             </Typography>
           </CardContent>
-          <CardActions sx={{mt: 7}}>
+          <CardActions sx={{mt: 7}} style={{justifyContent: 'center'}}>
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.GameHistoryUrl!)}>Badges</Button>
           </CardActions>
