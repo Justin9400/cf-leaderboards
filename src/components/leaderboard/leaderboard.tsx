@@ -15,7 +15,7 @@ import WhiteManaImage from "../../img/mana/white.svg";
 import GreenManaImage from "../../img/mana/green.svg";
 import BlueManaImage from "../../img/mana/blue.svg";
 import DefaultManaImage from "../../img/mana/blue.svg";
-import { Stack } from "@mui/material";
+
 
 let { data: mtgGameHistory, error } = await supabase
   .from("mtgGameHistory")
@@ -40,11 +40,11 @@ function mapManaToImage(mana: string) {
     case "Black":
       return BlackManaImage;
     case "White":
-      return BlackManaImage;
+      return WhiteManaImage;
     case "Blue":
-      return BlackManaImage;
+      return BlueManaImage;
     case "Green":
-      return BlackManaImage;
+      return GreenManaImage;
     // Add more cases for other mana symbols
     default:
       return DefaultManaImage; // Provide a default image if the mana symbol is not recognized
