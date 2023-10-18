@@ -146,10 +146,10 @@ export default function Home() {
         </TableContainer>
            
           </CardContent>
-          <CardActions >
+          {/* <CardActions >
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.LeaderBoardUrl)}>Leaderboards</Button>
             <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.GameHistoryUrl!)}>Badges</Button>
-          </CardActions>
+          </CardActions> */}
         </Card>
       </Grid>
     </Grid>
