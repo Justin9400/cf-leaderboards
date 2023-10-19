@@ -30,13 +30,13 @@ const rows = [
   { rank: 1, name: 'Jordan Olachea', medal: 1 },
   { rank: 2, name: 'Bryan Berardi', medal: 2 },
   { rank: 3, name: 'Tres Langhorne', medal: 3 },
-  // Add more rows as needed
+  // Add more rows as neededs
 ];
 const rowss = [
   { rank: 1, name: 'Chris Knoll', medal: 1 },
   { rank: 2, name: 'Mike Mercer', medal: 2 },
   { rank: 3, name: 'Dusty Brenning', medal: 3 },
-  // Add more rows as needed
+  // Add more rows as neededs
 ];
 
 let { data: mtgGameHistory, error } = await supabase
