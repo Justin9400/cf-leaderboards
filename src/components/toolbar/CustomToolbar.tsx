@@ -1,6 +1,6 @@
 import AddIcon from '@mui/icons-material/Add';
 
-import { Button, Divider, Grid, Paper, Stack, Toolbar } from '@mui/material';
+import { Button, Divider, Grid, Paper, Stack, Toolbar, Typography } from '@mui/material';
 
 import * as React from 'react'
 import { List, Box, TextField, Drawer } from '@mui/material'
@@ -50,21 +50,23 @@ export const CustomToolbar = () => {
           // onKeyDown={toggleDrawer(anchor, false)}
         >
           <List>
-            <Stack>
+            <Typography sx={{pl:3, pt: 3, fontSize: '18px', fontWeight: '500'}}>Add a MTG game</Typography>
+            <Stack sx={{p:3}}>
               <TextField id="outlined-basic" label="Winner" variant="outlined" />
-              <TextField id="outlined-basic" label="Deck Strategy" variant="outlined" />
+              <TextField sx={{mt:3}} id="outlined-basic" label="Deck Strategy" variant="outlined" />
               <MultiSelectDropDown label='Mana'/>
   
             </Stack>
   
-            <Stack>
+            <Stack sx={{pl:3, pr: 3}}>
               <TextField id="outlined-basic" label="Loser" variant="outlined" />
-              <TextField id="outlined-basic" label="Deck Strategy" variant="outlined" />
+              <TextField sx={{mt:3}} id="outlined-basic" label="Deck Strategy" variant="outlined" />
               <MultiSelectDropDown label='Mana'/>
               
-              <TextField id="date-textfield" type="date" sx={{margin: '0 auto'}} defaultValue={'10/10/2023'} value={date} onChange={handleChange} required/>
+              <TextField sx={{mt:3}} id="date-textfield" type="date" defaultValue={'10/10/2023'} value={date} onChange={handleChange} required/>
+              <Button sx={{mt:3}} variant="contained">Add</Button>
             </Stack>
-            <Button variant="contained">Add</Button>
+           
           </List>
         </Box>
       );
