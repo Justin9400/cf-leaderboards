@@ -79,7 +79,7 @@ export const CustomToolbar = () => {
                         <div>
       {(['right'] as const).map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{"Add Game"}<AddIcon/></Button>
+          <Button startIcon={<AddIcon />} onClick={toggleDrawer(anchor, true)}>{"Add Game"}</Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
