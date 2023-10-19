@@ -48,7 +48,7 @@ export default function MultiSelectDropDown(props: MenuProps) {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300, mt: 3 }}>
+      <FormControl sx={{ width: '100%', mt: 3 }}>
         <Select
           multiple
           displayEmpty
