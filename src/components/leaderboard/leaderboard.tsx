@@ -77,7 +77,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
   // }
 
   return (
-    <TableContainer sx={{ border: "1px solid #bcbcbc" }}>
+    <TableContainer>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
