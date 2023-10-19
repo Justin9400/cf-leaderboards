@@ -9,10 +9,6 @@ import BlackManaImage from "../../img/mana/black.svg";
 import WhiteManaImage from "../../img/mana/white.svg";
 import GreenManaImage from "../../img/mana/green.svg";
 import BlueManaImage from "../../img/mana/blue.svg";
-import finalPropsSelectorFactory from 'react-redux/es/connect/selectorFactory';
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
 
 export type MenuProps = {
   label: string

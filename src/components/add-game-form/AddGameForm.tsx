@@ -1,22 +1,14 @@
-import * as React from 'react';
-import AddIcon from '@mui/icons-material/Add';
-import { List, Box, TextField, Drawer, Button, Stack } from '@mui/material';
-import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown';
-import RedManaImage from "../../img/mana/red.svg";
-import BlackManaImage from "../../img/mana/black.svg";
-import WhiteManaImage from "../../img/mana/white.svg";
-import GreenManaImage from "../../img/mana/green.svg";
-import BlueManaImage from "../../img/mana/blue.svg";
+import * as React from 'react'
+import AddIcon from '@mui/icons-material/Add'
+import { List, Box, TextField, Drawer, Button, Stack } from '@mui/material'
+import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown'
+import RedManaImage from "../../img/mana/red.svg"
+import BlackManaImage from "../../img/mana/black.svg"
+import WhiteManaImage from "../../img/mana/white.svg"
+import GreenManaImage from "../../img/mana/green.svg"
+import BlueManaImage from "../../img/mana/blue.svg"
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
-
-const mana = [
-  { name: 'Red', image: RedManaImage },
-  { name: 'Black', image: BlackManaImage },
-  { name: 'White', image: WhiteManaImage },
-  { name: 'Green', image: GreenManaImage },
-  { name: 'Blue', image: BlueManaImage }
-];
+type Anchor = 'top' | 'left' | 'bottom' | 'right'
 
 export default function TemporaryDrawer() {
   const [date, setDate] = React.useState('');
