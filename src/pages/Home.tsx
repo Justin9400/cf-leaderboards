@@ -53,52 +53,53 @@ export default function Home() {
   }
   
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card sx={{ minHeight:'400px', mt: 3 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image={mtg}
-            title="Magic the Gathering"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Magic the Gathering
-            </Typography>
-            <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
-              Magic the Gathering Leaderboards, where legends are forged and destinies are sealed with every card drawn.
-            </Typography>
-            <Leaderboard game={GameInfoMap.MagicTheGathering} pageName="Home" />
-          </CardContent>
-          <CardActions >
-            <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.LeaderBoardUrl)}>More Details</Button>
-            <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.GameHistoryUrl!)}>Game History</Button>
-          </CardActions>
-        </Card>
-      </Grid>
+    <>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <Card sx={{ minHeight:'400px', mt: 3 }}>
+            <CardMedia
+              sx={{ height: 140 }}
+              image={mtg}
+              title="Magic the Gathering"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Magic the Gathering
+              </Typography>
+              <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
+                Magic the Gathering Leaderboards, where legends are forged and destinies are sealed with every card drawn.
+              </Typography>
+              <Leaderboard game={GameInfoMap.MagicTheGathering} pageName="Home" />
+            </CardContent>
+            <CardActions >
+              <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.LeaderBoardUrl)}>More Details</Button>
+              <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.GameHistoryUrl!)}>Game History</Button>
+            </CardActions>
+          </Card>
+        </Grid>
 
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card sx={{ minHeight:'400px', mt: 3 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image={fb}
-            title="Foosball"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Foosball
-            </Typography>
-            <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
-              Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.
-            </Typography>
-            <Leaderboard game={GameInfoMap.Foosball} pageName="Home" />
-          </CardContent>
-          <CardActions >
-            <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.LeaderBoardUrl)}>Leaderboards</Button>
-            <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.GameHistoryUrl!)}>Game History</Button>
-          </CardActions>
-        </Card>
-      </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <Card sx={{ minHeight:'400px', mt: 3 }}>
+            <CardMedia
+              sx={{ height: 140 }}
+              image={fb}
+              title="Foosball"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Foosball
+              </Typography>
+              <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
+                Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.
+              </Typography>
+              <Leaderboard game={GameInfoMap.Foosball} pageName="Home" />
+            </CardContent>
+            <CardActions >
+              <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.LeaderBoardUrl)}>Leaderboards</Button>
+              <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.GameHistoryUrl!)}>Game History</Button>
+            </CardActions>
+          </Card>
+        </Grid>
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
         <Card sx={{ minHeight:'400px', mt: 3 }}>
