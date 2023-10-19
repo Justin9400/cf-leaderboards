@@ -113,7 +113,7 @@ export default function Home() {
               2023 March Madness
             </Typography>
             <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
-            March Madness, where basketball dreams take center stage, and champions rise through the ranks with unrivaled passion and strategy.
+             March Madness, where basketball dreams take center stage, and champions rise through the ranks with unrivaled passion and strategy.
             </Typography>
             <TableContainer sx={{border:'1px solid gray'}}>
           <Table>

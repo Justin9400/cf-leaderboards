@@ -225,9 +225,9 @@ export default function Leaderboard(props: ILeaderboardProps) {
                       (column) => <TableCell align="center">{column}</TableCell>
                     );
                   }
-                case GameInfoMap.Cornhole:
+                case GameInfoMap.MarchMadness:
                   if (props.pageName === "Home") {
-                    return GameInfoMap.Cornhole.SoloLeaderboardColumnNames?.slice(
+                    return GameInfoMap.MarchMadness.SoloLeaderboardColumnNames?.slice(
                       0,
                       3
                     ).map((column) => (
@@ -237,19 +237,19 @@ export default function Leaderboard(props: ILeaderboardProps) {
                     ));
                   } else if (props.pageName === "Leaderboard") {
                     return (
-                      GameInfoMap.Cornhole.SoloLeaderboardColumnNames?.map(
+                      GameInfoMap.MarchMadness.SoloLeaderboardColumnNames?.map(
                         (column) => (
                           <TableCell align="center">{column}</TableCell>
                         )
                       ) &&
-                      GameInfoMap.Cornhole.TeamLeaderboardColumnNames?.map(
+                      GameInfoMap.MarchMadness.TeamLeaderboardColumnNames?.map(
                         (column) => (
                           <TableCell align="center">{column}</TableCell>
                         )
                       )
                     );
                   } else {
-                    return GameInfoMap.Cornhole.GameHistoryColumnNames?.map(
+                    return GameInfoMap.MarchMadness.GameHistoryColumnNames?.map(
                       (column) => <TableCell align="center">{column}</TableCell>
                     );
                   }
