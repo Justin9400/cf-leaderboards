@@ -172,5 +172,6 @@ export default function Home() {
         </Card>
       </Grid>
     </Grid>
+  </>
   );
 }
