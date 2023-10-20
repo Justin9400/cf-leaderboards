@@ -119,10 +119,10 @@ export default function Leaderboard(props: ILeaderboardProps) {
                       <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                           <TableHead>
-                            <TableRow>
+                            <TableRow key={""}>
                               {GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map(
                                 (column) => (
-                                  <TableCell align="left">{column}</TableCell>
+                                  <TableCell align="left" key={column}>{column}</TableCell>
                                 )
                               )}
                             </TableRow>
@@ -140,13 +140,13 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                   sx={{ backgroundColor: "#f0fff0" }}
                                   align="left"
                                 >
-                                  {game.WDeck.strat}
+                                  {game.WDeckStrat}
                                 </TableCell>
                                 <TableCell
                                   sx={{ backgroundColor: "#f0fff0" }}
                                   align="left"
                                 >
-                                  {game.WDeck.Mana.map(
+                                  {game.WDeckColor.map(
                                     (mana: string, index: string) => (
                                       <img
                                         key={index}
@@ -167,13 +167,13 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                   sx={{ backgroundColor: "#fff2f2" }}
                                   align="left"
                                 >
-                                  {game.L1Deck.strat}
+                                  {game.L1DeckStrat}
                                 </TableCell>
                                 <TableCell
                                   sx={{ backgroundColor: "#fff2f2" }}
                                   align="left"
                                 >
-                                  {game.L1Deck.Mana.map(
+                                  {game.L1DeckColor.map(
                                     (mana: string, index: string) => (
                                       <img
                                         key={index}
