@@ -1,4 +1,4 @@
-import { GamesMap } from '../models/models';
+import { GamesMap } from '../models/models'
 
 export const GameInfoMap: GamesMap = {
   MagicTheGathering: {
@@ -53,4 +53,4 @@ export const GameInfoMap: GamesMap = {
     LeaderboardColumnNames: ['Rank', 'Name', 'Total Minutes'],
     PlayersList: ['Brandon', 'Justin']
   }
-};
+}

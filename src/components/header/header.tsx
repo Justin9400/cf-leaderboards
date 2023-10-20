@@ -1,11 +1,11 @@
-import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
 
-import logo from '../../img/logo.svg';
-import { styles } from './styles';
+import logo from '../../img/logo.svg'
+import { styles } from './styles'
 
-import AccountMenu from '../account-icon-menu/account-icon-menu';
-import React from 'react';
+import AccountMenu from '../account-icon-menu/account-icon-menu'
+import React from 'react'
 
 function Header() {
   // const [showContent, setShowContent] = useState(false);
@@ -111,6 +111,6 @@ function Header() {
         </Toolbar>
       </Container>
     </AppBar>
-  );
+  )
 }
-export default Header;
+export default Header

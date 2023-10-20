@@ -1,10 +1,10 @@
-import * as React from 'react';
-import AddIcon from '@mui/icons-material/Add';
-import { List, Box, TextField, Drawer, Button, Stack } from '@mui/material';
-import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown';
-import { supabase } from '../../supabaseClient';
+import * as React from 'react'
+import AddIcon from '@mui/icons-material/Add'
+import { List, Box, TextField, Drawer, Button, Stack } from '@mui/material'
+import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown'
+import { supabase } from '../../supabaseClient'
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
+type Anchor = 'top' | 'left' | 'bottom' | 'right'
 
 const dataMap = {
   Winner: undefined,
@@ -19,71 +19,71 @@ const dataMap = {
   length: undefined,
   date: undefined
   // Add more keys as needed
-};
+}
 
 async function insert(data: []) {
-  let { data: game, error } = await supabase.from('mtgGameHistory').insert([data]);
+  let { data: game, error } = await supabase.from('mtgGameHistory').insert([data])
 }
 export default function TemporaryDrawer() {
-  const [winner, setWinner] = React.useState('');
-  const [wdeck, setWDeck] = React.useState({ Mana: [], strat: null });
-  const [loser1, setLoser1] = React.useState('');
-  const [l1deck, setL1Deck] = React.useState({ Mana: [], strat: null });
-  const [loser2, setLoser2] = React.useState('');
-  const [l2deck, setL2Deck] = React.useState({ Mana: [], strat: null });
-  const [loser3, setLoser3] = React.useState('');
-  const [l3deck, setL3Deck] = React.useState({ Mana: [], strat: null });
-  const [remaininglife, setRemainingLife] = React.useState('');
-  const [date, setDate] = React.useState('');
-  const currentDate = new Date().toISOString().split('T')[0];
+  const [winner, setWinner] = React.useState('')
+  const [wdeck, setWDeck] = React.useState({ Mana: [], strat: null })
+  const [loser1, setLoser1] = React.useState('')
+  const [l1deck, setL1Deck] = React.useState({ Mana: [], strat: null })
+  const [loser2, setLoser2] = React.useState('')
+  const [l2deck, setL2Deck] = React.useState({ Mana: [], strat: null })
+  const [loser3, setLoser3] = React.useState('')
+  const [l3deck, setL3Deck] = React.useState({ Mana: [], strat: null })
+  const [remaininglife, setRemainingLife] = React.useState('')
+  const [date, setDate] = React.useState('')
+  const currentDate = new Date().toISOString().split('T')[0]
 
   // function handleChange(event: any) {
   //   setDate(event.target.value);
   // }
 
   const handleWinnerChange = (e: any) => {
-    setWinner(e.target.value);
-    dataMap.Winner = e;
-    console.log(dataMap.Winner);
-  };
+    setWinner(e.target.value)
+    dataMap.Winner = e
+    console.log(dataMap.Winner)
+  }
 
   const handleLoser1Change = (e: any) => {
-    setLoser1(e.target.value);
-    dataMap.Loser1 = e;
-    console.log(dataMap.Loser1);
-  };
+    setLoser1(e.target.value)
+    dataMap.Loser1 = e
+    console.log(dataMap.Loser1)
+  }
 
   const handleDateChange = (e: any) => {
-    setDate(e.target.value);
-    dataMap.date = e;
-    console.log(dataMap.date);
-  };
+    setDate(e.target.value)
+    dataMap.date = e
+    console.log(dataMap.date)
+  }
 
   React.useEffect(() => {
     // Get the current date in the format YYYY-MM-DD
-    const currentDate = new Date().toISOString().split('T')[0];
+    const currentDate = new Date().toISOString().split('T')[0]
 
     // Set the default value to the current date
-    setDate(currentDate);
-  }, []);
+    setDate(currentDate)
+  }, [])
 
   const [state, setState] = React.useState({
     top: false,
     left: false,
     bottom: false,
     right: false
-  });
+  })
 
   const toggleDrawer = (anchor: Anchor, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
       event.type === 'keydown' &&
       ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
     ) {
-      return;
+      return
     }
 
-    setState({ ...state, [anchor]: open });
-  };
+    setState({ ...state, [anchor]: open })
+  }
 
   const list = (anchor: Anchor) => (
     <Box sx={{ width: 500 }} role="permanent">
@@ -142,7 +142,7 @@ export default function TemporaryDrawer() {
         </Button>
       </List>
     </Box>
-  );
+  )
 
   return (
     <div>
@@ -158,7 +158,7 @@ export default function TemporaryDrawer() {
         </React.Fragment>
       ))}
     </div>
-  );
+  )
 }
 
 // import React, { useState } from 'react';

@@ -1,44 +1,44 @@
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import { GameInfoMap } from '../../maps/GameInfoMap';
-import { Game } from '../../models/models';
-import { supabase } from '../../supabaseClient';
-import Paper from '@mui/material/Paper';
-import RedManaImage from '../../img/mana/red.svg';
-import BlackManaImage from '../../img/mana/black.svg';
-import WhiteManaImage from '../../img/mana/white.svg';
-import GreenManaImage from '../../img/mana/green.svg';
-import BlueManaImage from '../../img/mana/blue.svg';
-import DefaultManaImage from '../../img/mana/blue.svg';
+import * as React from 'react'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import { GameInfoMap } from '../../maps/GameInfoMap'
+import { Game } from '../../models/models'
+import { supabase } from '../../supabaseClient'
+import Paper from '@mui/material/Paper'
+import RedManaImage from '../../img/mana/red.svg'
+import BlackManaImage from '../../img/mana/black.svg'
+import WhiteManaImage from '../../img/mana/white.svg'
+import GreenManaImage from '../../img/mana/green.svg'
+import BlueManaImage from '../../img/mana/blue.svg'
+import DefaultManaImage from '../../img/mana/blue.svg'
 
-let { data: mtgGameHistory, error } = await supabase.from('mtgGameHistory').select('*');
+let { data: mtgGameHistory, error } = await supabase.from('mtgGameHistory').select('*')
 
-console.log(mtgGameHistory ?? error);
+console.log(mtgGameHistory ?? error)
 
 function createData(name: string, calories: string, fat: number, carbs: number, protein: number) {
-  return { name, calories, fat, carbs, protein };
+  return { name, calories, fat, carbs, protein }
 }
 
 function mapManaToImage(mana: string) {
   switch (mana) {
     case 'Red':
-      return RedManaImage;
+      return RedManaImage
     case 'Black':
-      return BlackManaImage;
+      return BlackManaImage
     case 'White':
-      return WhiteManaImage;
+      return WhiteManaImage
     case 'Blue':
-      return BlueManaImage;
+      return BlueManaImage
     case 'Green':
-      return GreenManaImage;
+      return GreenManaImage
     // Add more cases for other mana symbols
     default:
-      return DefaultManaImage; // Provide a default image if the mana symbol is not recognized
+      return DefaultManaImage // Provide a default image if the mana symbol is not recognized
   }
 }
 
@@ -48,12 +48,12 @@ const rows = [
   createData('3', 'BB', 16.0, 24, 600),
   createData('4', 'Morgan', 3.7, 67, 700),
   createData('5', 'Nick', 16.0, 49, 800)
-];
+]
 
 export type ILeaderboardProps = {
-  game: Game;
-  pageName: 'Home' | 'Leaderboard' | 'History';
-};
+  game: Game
+  pageName: 'Home' | 'Leaderboard' | 'History'
+}
 
 export default function Leaderboard(props: ILeaderboardProps) {
   // const [gameHistory, setGameHistory] = useState([]);
@@ -80,7 +80,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                       <TableCell key={column + '.s'} align="center" size="medium">
                         {column}
                       </TableCell>
-                    ));
+                    ))
                   } else if (props.pageName === 'Leaderboard') {
                     return (
                       GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (
@@ -93,7 +93,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                           {column}
                         </TableCell>
                       ))
-                    );
+                    )
                   } else {
                     return (
                       <TableContainer component={Paper}>
@@ -149,7 +149,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                           </TableBody>
                         </Table>
                       </TableContainer>
-                    );
+                    )
                   }
                 case GameInfoMap.Foosball:
                   if (props.pageName === 'Home') {
@@ -157,7 +157,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                       <TableCell key={column + '.s'} align="center">
                         {column}
                       </TableCell>
-                    ));
+                    ))
                   } else if (props.pageName === 'Leaderboard') {
                     return (
                       GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (
@@ -166,11 +166,11 @@ export default function Leaderboard(props: ILeaderboardProps) {
                       GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (
                         <TableCell align="center">{column}</TableCell>
                       ))
-                    );
+                    )
                   } else {
                     return GameInfoMap.Foosball.GameHistoryColumnNames?.map((column) => (
                       <TableCell align="center">{column}</TableCell>
-                    ));
+                    ))
                   }
                 case GameInfoMap.MarchMadness:
                   if (props.pageName === 'Home') {
@@ -178,7 +178,7 @@ export default function Leaderboard(props: ILeaderboardProps) {
                       <TableCell key={column + '.s'} align="center">
                         {column}
                       </TableCell>
-                    ));
+                    ))
                   } else if (props.pageName === 'Leaderboard') {
                     return (
                       GameInfoMap.MarchMadness.SoloLeaderboardColumnNames?.map((column) => (
@@ -187,11 +187,11 @@ export default function Leaderboard(props: ILeaderboardProps) {
                       GameInfoMap.MarchMadness.TeamLeaderboardColumnNames?.map((column) => (
                         <TableCell align="center">{column}</TableCell>
                       ))
-                    );
+                    )
                   } else {
                     return GameInfoMap.MarchMadness.GameHistoryColumnNames?.map((column) => (
                       <TableCell align="center">{column}</TableCell>
-                    ));
+                    ))
                   }
                 case GameInfoMap.FitnessChallenge:
                   if (props.pageName === 'Home') {
@@ -199,22 +199,22 @@ export default function Leaderboard(props: ILeaderboardProps) {
                       <TableCell key={column + '.s'} align="center">
                         {column}
                       </TableCell>
-                    ));
+                    ))
                   } else if (props.pageName === 'Leaderboard') {
                     return GameInfoMap.FitnessChallenge.LeaderboardColumnNames?.map((column) => (
                       <TableCell key={column + '.s'} align="center">
                         {column}
                       </TableCell>
-                    ));
+                    ))
                   } else {
                     return GameInfoMap.FitnessChallenge.GameHistoryColumnNames?.map((column) => (
                       <TableCell key={column + '.gh'} align="center">
                         {column}
                       </TableCell>
-                    ));
+                    ))
                   }
                 default:
-                  return <></>;
+                  return <></>
               }
             })()}
           </TableRow>
@@ -243,5 +243,5 @@ export default function Leaderboard(props: ILeaderboardProps) {
         </TableBody>
       </Table>
     </TableContainer>
-  );
+  )
 }

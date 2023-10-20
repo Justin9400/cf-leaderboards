@@ -1,5 +1,5 @@
-import React from 'react';
-import { styles } from './styles';
+import React from 'react'
+import { styles } from './styles'
 
 const JustinCard: React.FC = () => {
   return (
@@ -37,7 +37,7 @@ const JustinCard: React.FC = () => {
         </div>
       </body>
     </html>
-  );
-};
+  )
+}
 
-export default JustinCard;
+export default JustinCard

@@ -1,16 +1,16 @@
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { GameInfoMap } from '../../maps/GameInfoMap';
-import { Game } from '../../models/models';
+import * as React from 'react'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import Paper from '@mui/material/Paper'
+import { GameInfoMap } from '../../maps/GameInfoMap'
+import { Game } from '../../models/models'
 
 function createData(name: string, calories: string, fat: number, carbs: number, protein: number) {
-  return { name, calories, fat, carbs, protein };
+  return { name, calories, fat, carbs, protein }
 }
 
 const rows = [
@@ -19,11 +19,11 @@ const rows = [
   createData('3', 'BB', 16.0, 24, 600),
   createData('4', 'Morgan', 3.7, 67, 700),
   createData('5', 'Nick', 16.0, 49, 800)
-];
+]
 
 export type ILeaderboardProps = {
-  pageName: Game;
-};
+  pageName: Game
+}
 
 export default function Leaderboard(props: ILeaderboardProps) {
   return (
@@ -80,5 +80,5 @@ export default function Leaderboard(props: ILeaderboardProps) {
         </TableBody>
       </Table>
     </TableContainer>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import { Stack } from '@mui/system';
-import Leaderboard from '../../components/leaderboard/leaderboard';
-import { GameInfoMap } from '../../maps/GameInfoMap';
-import React from 'react';
-import { Paper } from '@mui/material';
+import { Stack } from '@mui/system'
+import Leaderboard from '../../components/leaderboard/leaderboard'
+import { GameInfoMap } from '../../maps/GameInfoMap'
+import React from 'react'
+import { Paper } from '@mui/material'
 
 function FitnessLeaderboard() {
   return (
@@ -12,7 +12,7 @@ function FitnessLeaderboard() {
         <Leaderboard game={GameInfoMap.FitnessChallenge} pageName="Leaderboard" />
       </Paper>
     </Stack>
-  );
+  )
 }
 
-export default FitnessLeaderboard;
+export default FitnessLeaderboard

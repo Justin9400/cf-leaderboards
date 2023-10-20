@@ -1,33 +1,33 @@
-import React, { useState } from 'react';
-import { Stack } from '@mui/system';
-import { Paper } from '@mui/material';
-import Leaderboard from '../../components/leaderboard/leaderboard';
-import { GameInfoMap } from '../../maps/GameInfoMap';
-import CustomToolbar from '../../components/toolbar/CustomToolbar';
-import Justin from '../../components/mtgcard/Justin';
-import Brandon from '../../components/mtgcard/Brandon';
-import jk from '../../img/mtgplayers/jk.png';
-import bc from '../../img/mtgplayers/bc.png';
+import React, { useState } from 'react'
+import { Stack } from '@mui/system'
+import { Paper } from '@mui/material'
+import Leaderboard from '../../components/leaderboard/leaderboard'
+import { GameInfoMap } from '../../maps/GameInfoMap'
+import CustomToolbar from '../../components/toolbar/CustomToolbar'
+import Justin from '../../components/mtgcard/Justin'
+import Brandon from '../../components/mtgcard/Brandon'
+import jk from '../../img/mtgplayers/jk.png'
+import bc from '../../img/mtgplayers/bc.png'
 
 function MTGGameHistory() {
-  const [isHoveredJustin, setIsHoveredJustin] = useState(false);
-  const [isHoveredBrandon, setIsHoveredBrandon] = useState(false);
+  const [isHoveredJustin, setIsHoveredJustin] = useState(false)
+  const [isHoveredBrandon, setIsHoveredBrandon] = useState(false)
 
   const handleMouseEnterJustin = () => {
-    setIsHoveredJustin(true);
-  };
+    setIsHoveredJustin(true)
+  }
 
   const handleMouseLeaveJustin = () => {
-    setIsHoveredJustin(false);
-  };
+    setIsHoveredJustin(false)
+  }
 
   const handleMouseEnterBrandon = () => {
-    setIsHoveredBrandon(true);
-  };
+    setIsHoveredBrandon(true)
+  }
 
   const handleMouseLeaveBrandon = () => {
-    setIsHoveredBrandon(false);
-  };
+    setIsHoveredBrandon(false)
+  }
 
   return (
     <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto' }}>
@@ -84,7 +84,7 @@ function MTGGameHistory() {
         <Leaderboard game={GameInfoMap.MagicTheGathering} pageName="History" />
       </Paper>
     </Stack>
-  );
+  )
 }
 
-export default MTGGameHistory;
+export default MTGGameHistory

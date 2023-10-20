@@ -1,5 +1,5 @@
-import React from 'react';
-import { styles } from './styles';
+import React from 'react'
+import { styles } from './styles'
 
 const BrandonCard: React.FC = () => {
   return (
@@ -37,7 +37,7 @@ const BrandonCard: React.FC = () => {
         </div>
       </body>
     </html>
-  );
-};
+  )
+}
 
-export default BrandonCard;
+export default BrandonCard

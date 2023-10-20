@@ -287,15 +287,15 @@ export const styles = {
     verticalAlign: 'bottom',
     fontFamily: 'Times New Roman, serif'
   }
-};
+}
 
 // Font face definitions
-const plantingFont = new FontFace('planting', 'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/Plantin.otf")');
+const plantingFont = new FontFace('planting', 'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/Plantin.otf")')
 const belerenFont = new FontFace(
   'beleren',
   'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/beleren-bold_P1.01.ttf")'
-);
+)
 
 // Load fonts
-plantingFont.load().then((loadedFont) => document.fonts.add(loadedFont));
-belerenFont.load().then((loadedFont) => document.fonts.add(loadedFont));
+plantingFont.load().then((loadedFont) => document.fonts.add(loadedFont))
+belerenFont.load().then((loadedFont) => document.fonts.add(loadedFont))

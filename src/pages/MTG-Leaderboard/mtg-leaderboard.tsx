@@ -1,7 +1,7 @@
-import { Stack } from '@mui/system';
-import Leaderboard from '../../components/leaderboard/leaderboard';
-import { GameInfoMap } from '../../maps/GameInfoMap';
-import { Paper } from '@mui/material';
+import { Stack } from '@mui/system'
+import Leaderboard from '../../components/leaderboard/leaderboard'
+import { GameInfoMap } from '../../maps/GameInfoMap'
+import { Paper } from '@mui/material'
 
 function MTGLeaderBoard() {
   return (
@@ -11,7 +11,7 @@ function MTGLeaderBoard() {
         <Leaderboard game={GameInfoMap.MagicTheGathering} pageName="Leaderboard" />
       </Paper>
     </Stack>
-  );
+  )
 }
 
-export default MTGLeaderBoard;
+export default MTGLeaderBoard

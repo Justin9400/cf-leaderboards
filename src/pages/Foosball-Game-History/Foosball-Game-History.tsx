@@ -1,8 +1,8 @@
-import { Stack } from '@mui/system';
-import Leaderboard from '../../components/leaderboard/leaderboard';
-import { GameInfoMap } from '../../maps/GameInfoMap';
-import React from 'react';
-import { Paper } from '@mui/material';
+import { Stack } from '@mui/system'
+import Leaderboard from '../../components/leaderboard/leaderboard'
+import { GameInfoMap } from '../../maps/GameInfoMap'
+import React from 'react'
+import { Paper } from '@mui/material'
 
 function FoosballLeaderBoard() {
   return (
@@ -18,7 +18,7 @@ function FoosballLeaderBoard() {
       </Stack>
       {/* <Leaderboard pageName={GameInfoMap.Foosball}/> */}
     </Stack>
-  );
+  )
 }
 
-export default FoosballLeaderBoard;
+export default FoosballLeaderBoard

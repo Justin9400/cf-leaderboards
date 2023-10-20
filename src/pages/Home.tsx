@@ -1,54 +1,54 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { Grid } from '@mui/material';
-import Leaderboard from '../components/leaderboard/leaderboard';
-import { GameInfoMap } from '../maps/GameInfoMap';
-import { supabase } from '../supabaseClient';
-import { useNavigate } from 'react-router-dom';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableRow from '@mui/material/TableRow';
-import goldMedal from '../img/medals/gold.svg';
-import silverMedal from '../img/medals/silver.svg';
-import bronzeMedal from '../img/medals/bronze.svg';
+import * as React from 'react'
+import Card from '@mui/material/Card'
+import CardActions from '@mui/material/CardActions'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import { Grid } from '@mui/material'
+import Leaderboard from '../components/leaderboard/leaderboard'
+import { GameInfoMap } from '../maps/GameInfoMap'
+import { supabase } from '../supabaseClient'
+import { useNavigate } from 'react-router-dom'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableRow from '@mui/material/TableRow'
+import goldMedal from '../img/medals/gold.svg'
+import silverMedal from '../img/medals/silver.svg'
+import bronzeMedal from '../img/medals/bronze.svg'
 
-import mtg from '../img/mtg.png';
-import fb from '../img/fb.png';
-import fit from '../img/fit.png';
-import corn from '../img/cornhole.png';
+import mtg from '../img/mtg.png'
+import fb from '../img/fb.png'
+import fit from '../img/fit.png'
+import corn from '../img/cornhole.png'
 
-const medalImages = [goldMedal, silverMedal, bronzeMedal];
+const medalImages = [goldMedal, silverMedal, bronzeMedal]
 
 const rows = [
   { rank: 1, name: 'Jordan Olachea', medal: 1 },
   { rank: 2, name: 'Bryan Berardi', medal: 2 },
   { rank: 3, name: 'Tres Langhorne', medal: 3 }
   // Add more rows as neededs
-];
+]
 const rowss = [
   { rank: 1, name: 'Chris Knoll', medal: 1 },
   { rank: 2, name: 'Mike Mercer', medal: 2 },
   { rank: 3, name: 'Dusty Brenning', medal: 3 }
   // Add more rows as neededs
-];
+]
 
-let { data: mtgGameHistory, error } = await supabase.from('mtgGameHistory').select('*');
+let { data: mtgGameHistory, error } = await supabase.from('mtgGameHistory').select('*')
 
-console.log(error ?? mtgGameHistory);
+console.log(error ?? mtgGameHistory)
 
 export default function Home() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const navigateToPage = (pagePath: string) => () => {
-    navigate(pagePath);
-  };
+    navigate(pagePath)
+  }
 
   return (
     <>
@@ -172,5 +172,5 @@ export default function Home() {
         </Grid>
       </Grid>
     </>
-  );
+  )
 }

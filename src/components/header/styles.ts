@@ -274,4 +274,4 @@ export const styles = {
     verticalAlign: 'bottom',
     fontFamily: 'Times New Roman, serif'
   }
-};
+}
