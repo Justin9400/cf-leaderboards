@@ -9,11 +9,11 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import brandon from '../../img/brandon.jpg'
+import brandon from '../../img/brandon.jpg';
 
 export type IAccountMenuProps = {
-  img: string
-}
+  img: string;
+};
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -57,7 +57,7 @@ export default function AccountMenu() {
               width: 32,
               height: 32,
               ml: -0.5,
-              mr: 1,
+              mr: 1
             },
             '&:before': {
               content: '""',
@@ -69,9 +69,9 @@ export default function AccountMenu() {
               height: 10,
               bgcolor: 'background.paper',
               transform: 'translateY(-50%) rotate(45deg)',
-              zIndex: 0,
-            },
-          },
+              zIndex: 0
+            }
+          }
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}

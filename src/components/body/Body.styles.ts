@@ -1,5 +1,5 @@
 export const bodyStyles = {
-    root: {
-        position: 'fixed'
-    }
-}
+  root: {
+    position: 'fixed'
+  }
+};

@@ -1,0 +1,16 @@
+{
+  "printWidth": 120,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "semi": true,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

@@ -26,7 +26,7 @@ export const styles = {
     top: '50%',
     transformOrigin: '50% 100%',
     transition: '0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%, -50%)'
   },
   cardgrid: {
     height: '100%',
@@ -54,8 +54,8 @@ export const styles = {
     gridRowEnd: 3,
     padding: '0px 1px 2px 8px',
     border: '#008000 2px solid',
-    borderWidth: '2px 0 2px 0', 
-    fontFamily: 'planting, beleren',
+    borderWidth: '2px 0 2px 0',
+    fontFamily: 'planting, beleren'
   },
   'title::before': {
     width: '7px',
@@ -72,7 +72,8 @@ export const styles = {
     borderWidth: '2px 0 2px 2px'
   },
   bgGreen: {
-    background: 'rgba(255,255,255,0.1) url("https://media-dominaria.cursecdn.com/attachments/88/812/635032494788529192.jpg")',
+    background:
+      'rgba(255,255,255,0.1) url("https://media-dominaria.cursecdn.com/attachments/88/812/635032494788529192.jpg")',
     backgroundBlendMode: 'lighten'
   },
   background: {
@@ -172,7 +173,7 @@ export const styles = {
     borderTopLeftRadius: '50%',
     border: '2px #008000 solid',
     borderWidth: '2px 0 2px 2px',
-    fontFamily: 'planting, beleren',
+    fontFamily: 'planting, beleren'
   },
   'cardtype::after': {
     width: '7px',
@@ -290,8 +291,11 @@ export const styles = {
 
 // Font face definitions
 const plantingFont = new FontFace('planting', 'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/Plantin.otf")');
-const belerenFont = new FontFace('beleren', 'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/beleren-bold_P1.01.ttf")');
+const belerenFont = new FontFace(
+  'beleren',
+  'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/beleren-bold_P1.01.ttf")'
+);
 
 // Load fonts
-plantingFont.load().then(loadedFont => document.fonts.add(loadedFont));
-belerenFont.load().then(loadedFont => document.fonts.add(loadedFont));
+plantingFont.load().then((loadedFont) => document.fonts.add(loadedFont));
+belerenFont.load().then((loadedFont) => document.fonts.add(loadedFont));

@@ -9,15 +9,7 @@ import Paper from '@mui/material/Paper';
 import { GameInfoMap } from '../../maps/GameInfoMap';
 import { Game } from '../../models/models';
 
-
-
-function createData(
-  name: string,
-  calories: string,
-  fat: number,
-  carbs: number,
-  protein: number,
-) {
+function createData(name: string, calories: string, fat: number, carbs: number, protein: number) {
   return { name, calories, fat, carbs, protein };
 }
 
@@ -26,12 +18,12 @@ const rows = [
   createData('2', 'JK', 9.0, 37, 500),
   createData('3', 'BB', 16.0, 24, 600),
   createData('4', 'Morgan', 3.7, 67, 700),
-  createData('5', 'Nick', 16.0, 49, 800),
+  createData('5', 'Nick', 16.0, 49, 800)
 ];
 
 export type ILeaderboardProps = {
-  pageName: Game
-}
+  pageName: Game;
+};
 
 export default function Leaderboard(props: ILeaderboardProps) {
   return (
@@ -39,22 +31,42 @@ export default function Leaderboard(props: ILeaderboardProps) {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            {props.pageName === GameInfoMap.MagicTheGathering
-              ? GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>))
-              : props.pageName === GameInfoMap.Foosball
-              ? GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>)) &&
-                GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (<TableCell key={column + ".teams"} align="center">{column}</TableCell>))
-              : props.pageName === GameInfoMap.FitnessChallenge
-              ? GameInfoMap.FitnessChallenge.GameHistoryColumnNames?.map((column) => (<TableCell key={column + ".solo"} align="center">{column}</TableCell>))
-              : <div key={""}>Default content</div>
-            }
+            {props.pageName === GameInfoMap.MagicTheGathering ? (
+              GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (
+                <TableCell key={column + '.solo'} align="center">
+                  {column}
+                </TableCell>
+              ))
+            ) : props.pageName === GameInfoMap.Foosball ? (
+              GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (
+                <TableCell key={column + '.solo'} align="center">
+                  {column}
+                </TableCell>
+              )) &&
+              GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (
+                <TableCell key={column + '.teams'} align="center">
+                  {column}
+                </TableCell>
+              ))
+            ) : props.pageName === GameInfoMap.FitnessChallenge ? (
+              GameInfoMap.FitnessChallenge.GameHistoryColumnNames?.map((column) => (
+                <TableCell key={column + '.solo'} align="center">
+                  {column}
+                </TableCell>
+              ))
+            ) : (
+              <div key={''}>Default content</div>
+            )}
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow
               key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 }, '&:first-child td, &:first-child th': { backgroundColor: '#cdf1cd', fontWeight:'600' } }}
+              sx={{
+                '&:last-child td, &:last-child th': { border: 0 },
+                '&:first-child td, &:first-child th': { backgroundColor: '#cdf1cd', fontWeight: '600' }
+              }}
             >
               {/* <TableCell component="th" scope="row">
                 {row.name}
@@ -70,4 +82,3 @@ export default function Leaderboard(props: ILeaderboardProps) {
     </TableContainer>
   );
 }
-

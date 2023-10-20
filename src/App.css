@@ -41,9 +41,9 @@
 
 @font-face {
   font-family: planting;
-  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/Plantin.otf");
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/Plantin.otf');
 }
 @font-face {
   font-family: beleren;
-  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/beleren-bold_P1.01.ttf");
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/beleren-bold_P1.01.ttf');
 }

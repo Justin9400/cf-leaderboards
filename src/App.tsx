@@ -13,27 +13,28 @@ import React from 'react';
 
 function App() {
   return (
-    <Stack sx={{
+    <Stack
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
 
-      display: 'flex',
-      flexDirection: 'column',
-      height: '100vh',
-
-      backgroundColor: '#f6f6f6'
-      }}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index element={<Home/>}/>
-          <Route path="mtg-leaderboard" element={<MTGLeaderboard/>}/>
-          <Route path="mtg-game-history" element={<MTGGameHistory/>}/>
-          <Route path="foosball-leaderboard" element={<FoosballLeaderboard/>}/>
-          <Route path="foosball-game-history" element={<FoosballGameHistory/>}/>
-          <Route path="fitness-leaderboard" element={<FitnessLeaderboard/>}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </Stack>
+        backgroundColor: '#f6f6f6'
+      }}
+    >
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="mtg-leaderboard" element={<MTGLeaderboard />} />
+            <Route path="mtg-game-history" element={<MTGGameHistory />} />
+            <Route path="foosball-leaderboard" element={<FoosballLeaderboard />} />
+            <Route path="foosball-game-history" element={<FoosballGameHistory />} />
+            <Route path="fitness-leaderboard" element={<FitnessLeaderboard />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Stack>
   );
 }
 
