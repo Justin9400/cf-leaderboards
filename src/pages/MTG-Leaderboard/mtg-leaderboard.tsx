@@ -17,4 +17,4 @@ function MTGLeaderBoard() {
     );
 }
 
-export default MTGLeaderBoard;
+export default MTGLeaderBoard

@@ -1,11 +1,11 @@
-import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
 
-import logo from "../../img/logo.svg";
-import { styles } from "./styles";
+import logo from '../../img/logo.svg'
+import { styles } from './styles'
 
-import AccountMenu from "../account-icon-menu/account-icon-menu";
-import React from "react";
+import AccountMenu from '../account-icon-menu/account-icon-menu'
+import React from 'react'
 
 function Header() {
   // const [showContent, setShowContent] = useState(false);
@@ -28,30 +28,30 @@ function Header() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none'
             }}
           >
-            <img src={logo} alt="" style={{ width: "30px", height: "50px" }} />
+            <img src={logo} alt="" style={{ width: '30px', height: '50px' }} />
             <Typography
               sx={{
                 ml: 2,
-                fontSize: "18px",
-                display: "flex",
-                alignItems: "center",
-                color: "black",
+                fontSize: '18px',
+                display: 'flex',
+                alignItems: 'center',
+                color: 'black'
               }}
             >
-              <span style={{ fontWeight: "bold" }}>CloudFit</span>
-              <span style={{ fontWeight: "lighter" }}>Leaderboards</span>
+              <span style={{ fontWeight: 'bold' }}>CloudFit</span>
+              <span style={{ fontWeight: 'lighter' }}>Leaderboards</span>
             </Typography>
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -70,17 +70,16 @@ function Header() {
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "none" },
+              display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none'
             }}
-          >
-          </Typography>
-          
+          ></Typography>
+
           {/* <Stack direction={'row'} spacing={5}  >
             {Object.values(GameInfoMap).map((page) => (
                           <SplitButton game={page} href={page.GameHistoryUrl!}/>
@@ -106,12 +105,12 @@ function Header() {
           </Box> */}
           <Box sx={{ marginLeft: 'auto' }}>
             <Tooltip title="Brandon Camerer">
-              <AccountMenu/>
+              <AccountMenu />
             </Tooltip>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
-  );
+  )
 }
-export default Header;
+export default Header

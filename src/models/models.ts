@@ -1,8 +1,9 @@
 export enum Games {
-    MagicTheGathering = 'MagicTheGathering',
-    Foosball = 'Foosball',
-    Cornhole = 'Cornhole',
-    FitnessChallenge = 'FitnessChallenge'
+  MagicTheGathering = 'MagicTheGathering',
+  Foosball = 'Foosball',
+  MarchMadness = 'MarchMadness',
+  FitnessChallenge = 'FitnessChallenge',
+  Cornhole = 'Cornhole'
 }
 
 export type Game = {
@@ -20,7 +21,7 @@ export type Game = {
 }
 
 export type GamesMap = {
-    [key in Games]: Game
+  [key in Games]: Game
 }
 
 export type ColumnData = {
