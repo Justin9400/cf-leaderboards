@@ -3,7 +3,7 @@ import { GameInfoMap } from "../../maps/GameInfoMap";
 import { supabase } from "../../supabaseClient";
 import GTable from "../../components/GTable/GTable";
 
-let { data: data, error } = await supabase
+let { data, error } = await supabase
   .from('vw_mtgleaderboard')
   .select('*');
   if (error) console.log("error", error);
