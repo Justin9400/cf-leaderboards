@@ -8,7 +8,7 @@ import Paper from '@mui/material/Paper';
 import { ColumnData } from '../../models/models';
 
 
-export type IGTableProps = {
+export type IDataTableProps = {
   columns: ColumnData[]
   data: any[] | null
 }
@@ -16,7 +16,7 @@ export type IGTableProps = {
 // Pass in the game, be sure to set the columns properly with {key: KEY, name: NAME} for each column
   // Columns keys are case sensitive
 // Pass in the game history as the result from Supabase
-export default function GTable(props: IGTableProps) {
+export default function DataTable(props: IDataTableProps) {
   if(!props.columns){
     return <></>;
   }

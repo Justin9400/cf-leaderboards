@@ -1,7 +1,7 @@
 import { Stack } from "@mui/system";
 import { GameInfoMap } from "../../maps/GameInfoMap";
 import { supabase } from "../../supabaseClient";
-import GTable from "../../components/GTable/GTable";
+import DataTable from "../../components/data-table/DataTable";
 
 let { data, error } = await supabase
   .from('vw_mtgleaderboard')
@@ -12,7 +12,7 @@ function MTGLeaderBoard() {
     return (
         <Stack sx={{display: 'flex', height: '100vh', margin: '0 auto'}}>
             <h1 style={{margin:'5% auto', fontFamily: 'Arial, Helvetica, sans-serif'}}>Magic The Gathering Leaderboard</h1>
-            <GTable columns={GameInfoMap.MagicTheGathering.LeaderboardColumns} data={data}/>
+            <DataTable columns={GameInfoMap.MagicTheGathering.LeaderboardColumns} data={data}/>
         </Stack>
     );
 }

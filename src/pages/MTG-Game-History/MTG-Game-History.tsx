@@ -2,7 +2,7 @@ import { Stack } from "@mui/system";
 import { GameInfoMap } from "../../maps/GameInfoMap";
 import { supabase } from "../../supabaseClient";
 import { IMtgGameHistory } from "../../models/models";
-import GTable from "../../components/GTable/GTable";
+import DataTable from "../../components/data-table/DataTable";
 import { useState } from "react";
 import Brandon from "../../components/mtgcard/Brandon";
 import Justin from "../../components/mtgcard/Justin";
@@ -90,7 +90,7 @@ function MTGGameHistory() {
   
         <CustomToolbar />
 
-        <GTable columns={GameInfoMap.MagicTheGathering.GameHistoryColumns} data={mtgGameHistory}/>
+        <DataTable columns={GameInfoMap.MagicTheGathering.GameHistoryColumns} data={mtgGameHistory}/>
     </Stack>
     );
 }
