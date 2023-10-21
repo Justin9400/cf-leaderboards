@@ -18,38 +18,38 @@ import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 
-const dataMap = {
-  Winner: '',
-  WDeckStrat: '',
-  WDeckColor: '',
-  Loser1: '',
-  L1DeckStrat: '',
-  L1DeckColor: '',
-  L2DeckStrat: '',
-  L2DeckColor: '',
-  L3DeckStrat: '',
-  L3DeckColor: '',
-  remainingLife: '',
-  length: '',
-  date: ''
-  // Add more keys as needed
-}
+// const dataMap = {
+//   Winner: '',
+//   WDeckStrat: '',
+//   WDeckColor: '',
+//   Loser1: '',
+//   L1DeckStrat: '',
+//   L1DeckColor: '',
+//   L2DeckStrat: '',
+//   L2DeckColor: '',
+//   L3DeckStrat: '',
+//   L3DeckColor: '',
+//   remainingLife: '',
+//   length: '',
+//   date: ''
+//   // Add more keys as needed
+// }
 
 export const CustomToolbar = () => {
   const [winner, setWinner] = React.useState('')
   const [wdeckstrat, setWDeckStrat] = React.useState('')
-  const [wdeckcolor, setWDeckColor] = React.useState('')
+  // const [wdeckcolor, setWDeckColor] = React.useState('')
   const [loser1, setLoser1] = React.useState('')
   const [l1deckstrat, setL1DeckStrat] = React.useState('')
-  const [l1deckcolor, setL1DeckColor] = React.useState('')
-  const [loser2, setLoser2] = React.useState('')
-  const [l2deckstrat, setL2DeckStrat] = React.useState('')
-  const [l2deckcolor, setL2DeckColor] = React.useState('')
-  const [loser3, setLoser3] = React.useState('')
-  const [l3deckstrat, setL3DeckStrat] = React.useState('')
-  const [l3deckcolor, setL3DeckColor] = React.useState('')
-  const [remaininglife, setRemainingLife] = React.useState('')
-  const [length, setLength] = React.useState('')
+  // const [l1deckcolor, setL1DeckColor] = React.useState('')
+  // const [loser2, setLoser2] = React.useState('')
+  // const [l2deckstrat, setL2DeckStrat] = React.useState('')
+  // const [l2deckcolor, setL2DeckColor] = React.useState('')
+  // const [loser3, setLoser3] = React.useState('')
+  // const [l3deckstrat, setL3DeckStrat] = React.useState('')
+  // const [l3deckcolor, setL3DeckColor] = React.useState('')
+  // const [remaininglife, setRemainingLife] = React.useState('')
+  // const [length, setLength] = React.useState('')
   const [date, setDate] = useState('')
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarMessage, setSnackbarMessage] = useState('')
