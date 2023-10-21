@@ -7,7 +7,6 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { Grid } from '@mui/material'
 import Leaderboard from '../components/leaderboard/leaderboard'
-import { GameInfoMap } from '../maps/GameInfoMap'
 import { supabase } from '../supabaseClient'
 import { useNavigate } from 'react-router-dom'
 import Table from '@mui/material/Table'
@@ -23,6 +22,7 @@ import mtg from '../img/mtg.png'
 import fb from '../img/fb.png'
 import fit from '../img/fit.png'
 import corn from '../img/cornhole.png'
+import { GameInfoMap } from '../maps/GameInfoMap'
 
 const medalImages = [goldMedal, silverMedal, bronzeMedal]
 
