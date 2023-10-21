@@ -77,20 +77,20 @@ export default function Leaderboard(props: ILeaderboardProps) {
                 case GameInfoMap.MagicTheGathering:
                   if (props.pageName === 'Home') {
                     return GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.slice(0, 3).map((column) => (
-                      <TableCell key={column + '.s'} align="center" size="medium">
-                        {column}
+                      <TableCell key={column.key + '.s'} align="center" size="medium">
+                        {column.name}
                       </TableCell>
                     ))
                   } else if (props.pageName === 'Leaderboard') {
                     return (
                       GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (
-                        <TableCell key={column + '.s'} align="center">
-                          {column}
+                        <TableCell key={column.key + '.s'} align="center">
+                          {column.name}
                         </TableCell>
                       )) &&
                       GameInfoMap.MagicTheGathering.SoloLeaderboardColumnNames?.map((column) => (
-                        <TableCell key={column + '.s'} align="center">
-                          {column}
+                        <TableCell key={column.key + '.s'} align="center">
+                          {column.name}
                         </TableCell>
                       ))
                     )
@@ -100,9 +100,9 @@ export default function Leaderboard(props: ILeaderboardProps) {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                           <TableHead>
                             <TableRow key={''}>
-                              {GameInfoMap.MagicTheGathering.GameHistoryColumnNames?.map((column) => (
-                                <TableCell align="left" key={column}>
-                                  {column}
+                              {GameInfoMap.MagicTheGathering.GameHistoryColumns?.map((column) => (
+                                <TableCell align="left" key={column.key}>
+                                  {column.name}
                                 </TableCell>
                               ))}
                             </TableRow>
@@ -155,61 +155,61 @@ export default function Leaderboard(props: ILeaderboardProps) {
                   if (props.pageName === 'Home') {
                     return GameInfoMap.Foosball.SoloLeaderboardColumnNames?.slice(0, 3).map((column) => (
                       <TableCell key={column + '.s'} align="center">
-                        {column}
+                        {column.name}
                       </TableCell>
                     ))
                   } else if (props.pageName === 'Leaderboard') {
                     return (
                       GameInfoMap.Foosball.SoloLeaderboardColumnNames?.map((column) => (
-                        <TableCell align="center">{column}</TableCell>
+                        <TableCell align="center">{column.name}</TableCell>
                       )) &&
                       GameInfoMap.Foosball.TeamLeaderboardColumnNames?.map((column) => (
-                        <TableCell align="center">{column}</TableCell>
+                        <TableCell align="center">{column.name}</TableCell>
                       ))
                     )
                   } else {
-                    return GameInfoMap.Foosball.GameHistoryColumnNames?.map((column) => (
-                      <TableCell align="center">{column}</TableCell>
+                    return GameInfoMap.Foosball.GameHistoryColumns?.map((column) => (
+                      <TableCell align="center">{column.name}</TableCell>
                     ))
                   }
                 case GameInfoMap.MarchMadness:
                   if (props.pageName === 'Home') {
                     return GameInfoMap.MarchMadness.SoloLeaderboardColumnNames?.slice(0, 3).map((column) => (
-                      <TableCell key={column + '.s'} align="center">
-                        {column}
+                      <TableCell key={column.key + '.s'} align="center">
+                        {column.name}
                       </TableCell>
                     ))
                   } else if (props.pageName === 'Leaderboard') {
                     return (
                       GameInfoMap.MarchMadness.SoloLeaderboardColumnNames?.map((column) => (
-                        <TableCell align="center">{column}</TableCell>
+                        <TableCell align="center">{column.name}</TableCell>
                       )) &&
                       GameInfoMap.MarchMadness.TeamLeaderboardColumnNames?.map((column) => (
-                        <TableCell align="center">{column}</TableCell>
+                        <TableCell align="center">{column.name}</TableCell>
                       ))
                     )
                   } else {
-                    return GameInfoMap.MarchMadness.GameHistoryColumnNames?.map((column) => (
-                      <TableCell align="center">{column}</TableCell>
+                    return GameInfoMap.MarchMadness.GameHistoryColumns?.map((column) => (
+                      <TableCell align="center">{column.name}</TableCell>
                     ))
                   }
                 case GameInfoMap.FitnessChallenge:
                   if (props.pageName === 'Home') {
                     return GameInfoMap.FitnessChallenge.SoloLeaderboardColumnNames?.map((column) => (
-                      <TableCell key={column + '.s'} align="center">
-                        {column}
+                      <TableCell key={column.key + '.s'} align="center">
+                        {column.name}
                       </TableCell>
                     ))
                   } else if (props.pageName === 'Leaderboard') {
-                    return GameInfoMap.FitnessChallenge.LeaderboardColumnNames?.map((column) => (
-                      <TableCell key={column + '.s'} align="center">
-                        {column}
+                    return GameInfoMap.FitnessChallenge.LeaderboardColumns?.map((column) => (
+                      <TableCell key={column.key + '.s'} align="center">
+                        {column.name}
                       </TableCell>
                     ))
                   } else {
-                    return GameInfoMap.FitnessChallenge.GameHistoryColumnNames?.map((column) => (
-                      <TableCell key={column + '.gh'} align="center">
-                        {column}
+                    return GameInfoMap.FitnessChallenge.GameHistoryColumns?.map((column) => (
+                      <TableCell key={column.key + '.gh'} align="center">
+                        {column.name}
                       </TableCell>
                     ))
                   }
