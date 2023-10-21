@@ -13,16 +13,7 @@ import corn from "../img/cornhole.png";
 
 import Leaderboard from "../components/leaderboard/leaderboard";
 import { GameInfoMap } from "../maps/GameInfoMap";
-import { supabase } from "../supabaseClient";
 import { useNavigate } from 'react-router-dom';
-
-
-
-let { data: mtgGameHistory, error } = await supabase
-  .from('mtgGameHistory')
-  .select('*');
-
-console.log(error ?? mtgGameHistory);
 
 export default function Home() {
   const navigate = useNavigate();
