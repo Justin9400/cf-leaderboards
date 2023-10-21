@@ -14,7 +14,7 @@ import bc from '../../img/mtgplayers/bc.png'
 let mtgGameHistory: IMtgGameHistory[] = [];
 
 let { data: mtgGameHistoryDB, error } = await supabase
-  .from('mtgGameHistory')
+  .from('vw_currentmtggames')
   .select('*');
   if (error) console.log("error", error);
   else mtgGameHistory = mtgGameHistoryDB as IMtgGameHistory[];
