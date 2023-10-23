@@ -10,6 +10,7 @@ import { Stack } from '@mui/material'
 import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-History'
 import MTGGameHistory from './pages/MTG-Game-History/MTG-Game-History'
 import React from 'react'
+import Login from './pages/Login/Login'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
             <Route path="mtg-leaderboard" element={<MTGLeaderboard />} />
             <Route path="mtg-game-history" element={<MTGGameHistory />} />
             <Route path="foosball-leaderboard" element={<FoosballLeaderboard />} />
