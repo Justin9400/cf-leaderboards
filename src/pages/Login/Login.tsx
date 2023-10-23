@@ -1,7 +1,4 @@
 import { Stack } from '@mui/system'
-import Leaderboard from '../../components/leaderboard/leaderboard'
-import { GameInfoMap } from '../../maps/GameInfoMap'
-import React from 'react'
 import { Button, Paper, TextField } from '@mui/material'
 
 function Login() {
