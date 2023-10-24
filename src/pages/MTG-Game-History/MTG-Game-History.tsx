@@ -327,7 +327,7 @@ function MTGGameHistory() {
 
       <CustomToolbar />
 
-      <DataTable columns={GameInfoMap.MagicTheGathering.GameHistoryColumns} data={mtgGameHistory} />
+      <DataTable greenColumns={[1, 2, 3]} redColumns={[4, 5, 6]} columns={GameInfoMap.MagicTheGathering.GameHistoryColumns} data={mtgGameHistory} />
     </Stack>
   )
 }
