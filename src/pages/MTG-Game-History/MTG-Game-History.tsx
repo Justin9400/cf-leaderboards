@@ -6,9 +6,11 @@ import DataTable from '../../components/data-table/DataTable'
 import { useState } from 'react'
 import Brandon from '../../components/mtgcard/Brandon'
 import Justin from '../../components/mtgcard/Justin'
+import Bryan from '../../components/mtgcard/Bryan'
 import CustomToolbar from '../../components/toolbar/CustomToolbar'
 import jk from '../../img/mtgplayers/jk.png'
 import bc from '../../img/mtgplayers/bc.png'
+import br from '../../img/mtgplayers/br.png'
 import BryanCard from '../../components/mtgcard/Bryan'
 import JeffCard from '../../components/mtgcard/Jeff'
 import JeremyCard from '../../components/mtgcard/Jeremy'
@@ -161,7 +163,7 @@ function MTGGameHistory() {
           onMouseLeave={handleMouseLeaveBryan}
           style={{ width: '100px', position: 'relative' }}
         >
-          <img src={jk} alt="" style={{ margin: '0 auto', width: '100px' }} />
+          <img src={br} alt="" style={{ margin: '0 auto', width: '100px' }} />
           {isHoveredBryan && (
             <div
               style={{
@@ -324,7 +326,6 @@ function MTGGameHistory() {
           )}
         </div>
       </Stack>
-
       <CustomToolbar />
 
       <DataTable greenColumns={[1, 2, 3]} redColumns={[4, 5, 6]} columns={GameInfoMap.MagicTheGathering.GameHistoryColumns} data={mtgGameHistory} />
