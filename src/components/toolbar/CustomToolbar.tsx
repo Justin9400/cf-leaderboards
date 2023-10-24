@@ -15,6 +15,7 @@ import {
 } from '@mui/material'
 import React, { useState } from 'react'
 import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown'
+import { supabase } from '../../supabaseClient'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 
@@ -36,28 +37,25 @@ type Anchor = 'top' | 'left' | 'bottom' | 'right'
 // }
 
 export const CustomToolbar = () => {
+  const currentDate = new Date()
+
   const [winner, setWinner] = React.useState('')
   const [wdeckstrat, setWDeckStrat] = React.useState('')
-  // const [wdeckcolor, setWDeckColor] = React.useState('')
+  const [wdeckcolor, setWDeckColor] = React.useState([])
   const [loser1, setLoser1] = React.useState('')
   const [l1deckstrat, setL1DeckStrat] = React.useState('')
-  // const [l1deckcolor, setL1DeckColor] = React.useState('')
-  // const [loser2, setLoser2] = React.useState('')
-  // const [l2deckstrat, setL2DeckStrat] = React.useState('')
-  // const [l2deckcolor, setL2DeckColor] = React.useState('')
-  // const [loser3, setLoser3] = React.useState('')
-  // const [l3deckstrat, setL3DeckStrat] = React.useState('')
-  // const [l3deckcolor, setL3DeckColor] = React.useState('')
-  // const [remaininglife, setRemainingLife] = React.useState('')
-  // const [length, setLength] = React.useState('')
+  const [l1deckcolor, setL1DeckColor] = React.useState([])
+  const [loser2, setLoser2] = React.useState('')
+  const [l2deckstrat, setL2DeckStrat] = React.useState('')
+  const [l2deckcolor, setL2DeckColor] = React.useState([])
+  const [loser3, setLoser3] = React.useState('')
+  const [l3deckstrat, setL3DeckStrat] = React.useState('')
+  const [l3deckcolor, setL3DeckColor] = React.useState([])
+  const [remaininglife, setRemainingLife] = React.useState('')
+  const [length, setLength] = React.useState('')
   const [date, setDate] = useState('')
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarMessage, setSnackbarMessage] = useState('')
-  const currentDate = new Date()
-
-  function handleChange(event: any) {
-    setDate(event.target.value)
-  }
 
   const [state, setState] = useState({
     right: false
@@ -79,14 +77,76 @@ export const CustomToolbar = () => {
   }
 
   const handleAddButtonClick = (anchor: Anchor) => {
-    // Close the drawer
-    setState({ ...state, [anchor]: false })
-
-    // Set the success message for the Snackbar
-    setSnackbarMessage('Game added successfully')
-
-    // Open the Snackbar
-    setSnackbarOpen(true)
+    if (
+      winner.trim() === '' ||
+      wdeckstrat.trim() === '' ||
+      wdeckcolor.length === 0 ||
+      loser1.trim() === '' ||
+      l1deckstrat.trim() === '' ||
+      l1deckcolor.length === 0 ||
+      !date
+    ) {
+      setSnackbarMessage('Please fill in all required fields')
+      setSnackbarOpen(true)
+    } else {
+      console.log(
+        winner,
+        wdeckstrat,
+        wdeckcolor,
+        loser1,
+        l1deckstrat,
+        l1deckcolor,
+        loser2,
+        l2deckstrat,
+        l2deckcolor,
+        loser3,
+        l3deckstrat,
+        l3deckcolor,
+        remaininglife,
+        length,
+        date
+      )
+      // try {
+      //   supabase
+      //     .from('mtgGameHistory')
+      //     .upsert([
+      // winner,
+      // wdeckstrat,
+      // wdeckcolor,
+      // loser1,
+      // l1deckstrat,
+      // l1deckcolor,
+      // loser2,
+      // l2deckstrat,
+      // l2deckcolor,
+      // loser3,
+      // l3deckstrat,
+      // l3deckcolor,
+      // remaininglife,
+      // length,
+      // date
+      //     ])
+      //     .then((response) => {
+      //       if (response.error) {
+      //         console.error('Error inserting data:', response.error)
+      //       } else {
+      //         console.log('Data inserted successfully:', response.data)
+      //       }
+      //     })
+      // } catch (error) {
+      //   console.error('Error:', error)
+      // }
+      setState({ ...state, [anchor]: false })
+      setWinner('')
+      setWDeckStrat('')
+      setWDeckColor([])
+      setLoser1('')
+      setL1DeckStrat('')
+      setL1DeckColor([])
+      setDate('')
+      setSnackbarMessage('Game added successfully')
+      setSnackbarOpen(true)
+    }
   }
 
   const handleCloseSnackbar = () => {
@@ -115,7 +175,12 @@ export const CustomToolbar = () => {
             onChange={handleOnChange(setWDeckStrat)}
             required
           />
-          <MultiSelectDropDown label="Mana" value={[]} />
+          <MultiSelectDropDown
+            label="Mana"
+            value={wdeckcolor}
+            onChange={handleOnChange(setWDeckColor)}
+            required={true}
+          />
         </Stack>
         <Stack sx={{ pl: 3, pr: 3 }}>
           <TextField
@@ -135,14 +200,19 @@ export const CustomToolbar = () => {
             onChange={handleOnChange(setL1DeckStrat)}
             required
           />
-          <MultiSelectDropDown label="Mana" value={[]} />
+          <MultiSelectDropDown
+            label="Mana"
+            value={l1deckcolor}
+            onChange={handleOnChange(setL1DeckColor)}
+            required={true}
+          />
           <TextField
             sx={{ mt: 3 }}
             id="date-textfield"
             type="date"
-            defaultValue={currentDate}
+            // defaultValue={currentDate}
             value={date}
-            onChange={handleChange}
+            onChange={handleOnChange(setDate)}
             required
           />
           <Button sx={{ mt: 3 }} variant="contained" onClick={() => handleAddButtonClick(anchor)}>

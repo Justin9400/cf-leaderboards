@@ -117,14 +117,14 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                   {game.WDeckStrat}
                                 </TableCell>
                                 <TableCell sx={{ backgroundColor: '#f0fff0' }} align="left">
-                                  {game.WDeckColor.map((mana: string, index: string) => (
+                                  {/* {game.WDeckColor.map((mana: string, index: string) => (
                                     <img
                                       key={index}
                                       src={mapManaToImage(mana)}
                                       alt={mana}
                                       style={{ marginLeft: 5, width: '25px' }}
                                     />
-                                  ))}
+                                  ))} */}
                                 </TableCell>
                                 <TableCell sx={{ backgroundColor: '#fff2f2' }} align="left">
                                   {game.Loser1}
@@ -133,14 +133,14 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                   {game.L1DeckStrat}
                                 </TableCell>
                                 <TableCell sx={{ backgroundColor: '#fff2f2' }} align="left">
-                                  {game.L1DeckColor.map((mana: string, index: string) => (
+                                  {/* {game.L1DeckColor.map((mana: string, index: string) => (
                                     <img
                                       key={index}
                                       src={mapManaToImage(mana)}
                                       alt={mana}
                                       style={{ marginLeft: 5, width: '25px' }}
                                     />
-                                  ))}
+                                  ))} */}
                                 </TableCell>
                                 <TableCell align="center">{game.remainingLife}</TableCell>
                                 <TableCell align="center">{game.length}</TableCell>
