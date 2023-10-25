@@ -10,6 +10,7 @@ import CustomToolbar from '../../components/toolbar/CustomToolbar'
 import jk from '../../img/mtgplayers/jk.png'
 import bc from '../../img/mtgplayers/bc.png'
 import br from '../../img/mtgplayers/br.png'
+import ty from '../../img/mtgplayers/ty.png'
 import BryanCard from '../../components/mtgcard/Bryan'
 import JeffCard from '../../components/mtgcard/Jeff'
 import JeremyCard from '../../components/mtgcard/Jeremy'
@@ -183,7 +184,7 @@ function MTGGameHistory() {
           onMouseLeave={handleMouseLeaveJeff}
           style={{ width: '100px', position: 'relative' }}
         >
-          <img src={jk} alt="" style={{ margin: '0 auto', width: '100px' }} />
+          <img src={ty} alt="" style={{ margin: '0 auto', width: '100px' }} />
           {isHoveredJeff && (
             <div
               style={{
@@ -194,7 +195,7 @@ function MTGGameHistory() {
               }}
             >
               {/* Your component to display on hover */}
-              <JeffCard />
+              <TyeCard />
             </div>
           )}
         </div>
