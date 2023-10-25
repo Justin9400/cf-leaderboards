@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import 'firebase/auth'
 import 'firebase/firestore'
 import firebase from 'firebase/compat/app'
@@ -14,7 +14,7 @@ export default function Signup() {
       .createUserWithEmailAndPassword(email, password)
       .then((userCredential: any) => {
         // User signed up successfully
-        const user = userCredential.user
+        // const user = userCredential.user
       })
       .catch((error: any) => {
         // Handle signup errors

@@ -2,8 +2,8 @@ import * as React from 'react'
 import { Theme, useTheme } from '@mui/material/styles'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
-import Select, { SelectChangeEvent } from '@mui/material/Select'
+// import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
 import RedManaImage from '../../img/mana/red.svg'
 import BlackManaImage from '../../img/mana/black.svg'
 import WhiteManaImage from '../../img/mana/white.svg'
@@ -40,12 +40,12 @@ export default function MultiSelectDropDown(props: MenuProps) {
     setValue(props.value)
   }, [props.value])
 
-  const handleChange = (event: SelectChangeEvent<typeof value>) => {
-    const {
-      target: { value }
-    } = event
-    setValue(typeof value === 'string' ? value.split(',') : value)
-  }
+  // const handleChange = (event: SelectChangeEvent<typeof value>) => {
+  //   const {
+  //     target: { value }
+  //   } = event
+  //   setValue(typeof value === 'string' ? value.split(',') : value)
+  // }
 
   return (
     <div>

@@ -1,7 +1,7 @@
 import { Stack } from '@mui/system'
 import { Button, Paper, TextField } from '@mui/material'
 // import { auth } from '../../config/firebase'
-import { createUserWithEmailAndPassword, signOut, getAuth } from 'firebase/auth'
+// import { createUserWithEmailAndPassword, signOut, getAuth } from 'firebase/auth'
 import React from 'react'
 
 function Login() {

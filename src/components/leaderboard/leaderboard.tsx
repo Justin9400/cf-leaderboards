@@ -24,23 +24,23 @@ function createData(name: string, calories: string, fat: number, carbs: number, 
   return { name, calories, fat, carbs, protein }
 }
 
-function mapManaToImage(mana: string) {
-  switch (mana) {
-    case 'Red':
-      return RedManaImage
-    case 'Black':
-      return BlackManaImage
-    case 'White':
-      return WhiteManaImage
-    case 'Blue':
-      return BlueManaImage
-    case 'Green':
-      return GreenManaImage
-    // Add more cases for other mana symbols
-    default:
-      return DefaultManaImage // Provide a default image if the mana symbol is not recognized
-  }
-}
+// function mapManaToImage(mana: string) {
+//   switch (mana) {
+//     case 'Red':
+//       return RedManaImage
+//     case 'Black':
+//       return BlackManaImage
+//     case 'White':
+//       return WhiteManaImage
+//     case 'Blue':
+//       return BlueManaImage
+//     case 'Green':
+//       return GreenManaImage
+//     // Add more cases for other mana symbols
+//     default:
+//       return DefaultManaImage // Provide a default image if the mana symbol is not recognized
+//   }
+// }
 
 const rows = [
   createData('1', 'Brandon Camerer', 6.0, 985, 0),

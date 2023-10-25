@@ -15,7 +15,7 @@ import {
 } from '@mui/material'
 import React, { useState } from 'react'
 import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown'
-import { supabase } from '../../supabaseClient'
+// import { supabase } from '../../supabaseClient'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 
@@ -37,7 +37,7 @@ type Anchor = 'top' | 'left' | 'bottom' | 'right'
 // }
 
 export const CustomToolbar = () => {
-  const currentDate = new Date()
+  // const currentDate = new Date()
 
   const [winner, setWinner] = React.useState('')
   const [wdeckstrat, setWDeckStrat] = React.useState('')
@@ -51,8 +51,8 @@ export const CustomToolbar = () => {
   // const [loser3, setLoser3] = React.useState('')
   // const [l3deckstrat, setL3DeckStrat] = React.useState('')
   // const [l3deckcolor, setL3DeckColor] = React.useState([])
-  const [remaininglife, setRemainingLife] = React.useState('')
-  const [length, setLength] = React.useState('')
+  // const [remaininglife, setRemainingLife] = React.useState('')
+  // const [length, setLength] = React.useState('')
   const [date, setDate] = useState('')
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarMessage, setSnackbarMessage] = useState('')
@@ -102,7 +102,7 @@ export const CustomToolbar = () => {
         // loser3,
         // l3deckstrat,
         // l3deckcolor,
-        remaininglife,
+        // remaininglife,
         length,
         date
       )
