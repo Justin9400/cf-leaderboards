@@ -30,7 +30,7 @@ export const GameInfoMap: GamesMap = {
         LeaderBoardUrl: 'foosball-leaderboard',
         GameHistoryUrl: 'foosball-game-history',
         DropDownOptions: ['Leaderboard', 'Game History'],
-        GameHistoryColumns: [{ key: 'Winner', name: 'Winner' }, { key: "Loser", name: "Loser" }],
+        GameHistoryColumns: [{key: 'Date', name: 'Date'}, { key: 'Winner', name: 'Winner(s)' }, { key: "Loser", name: "Loser(s)" }],
         LeaderboardColumns: [{ key: 'Rank', name: 'Rank' }, { key: 'Name', name: 'Name' }, { key: 'Ratio', name: 'W/L Ratio' }, { key: 'Wins', name: 'Wins' }, { key: 'Losses', name: 'Losses' }],
         //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
         //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],

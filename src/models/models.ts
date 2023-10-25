@@ -47,3 +47,10 @@ export interface IMtgGameHistory {
     length?: number,
     Date: Date
 }
+
+export interface IFoosballGameHistory{
+  id: number,
+  Winner: string[],
+  Loser: string[],
+  Date: Date
+}

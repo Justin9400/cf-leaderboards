@@ -18,8 +18,6 @@ import DefaultManaImage from '../../img/mana/blue.svg'
 
 let { data: mtgGameHistory, error } = await supabase.from('mtgGameHistory').select('*')
 
-console.log(mtgGameHistory ?? error)
-
 function createData(name: string, calories: string, fat: number, carbs: number, protein: number) {
   return { name, calories, fat, carbs, protein }
 }

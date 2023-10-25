@@ -7,7 +7,6 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { Grid } from '@mui/material'
 import Leaderboard from '../components/leaderboard/leaderboard'
-import { supabase } from '../supabaseClient'
 import { useNavigate } from 'react-router-dom'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -38,10 +37,6 @@ const rowss = [
   { rank: 3, name: 'Dusty Brenning', medal: 3 }
   // Add more rows as neededs
 ]
-
-let { data: mtgGameHistory, error } = await supabase.from('mtgGameHistory').select('*')
-
-console.log(error ?? mtgGameHistory)
 
 export default function Home() {
   const navigate = useNavigate()
