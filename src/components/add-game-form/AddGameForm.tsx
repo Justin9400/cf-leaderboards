@@ -105,7 +105,7 @@ export default function TemporaryDrawer() {
             onChange={() => console.log('2')}
             required
           />
-          <MultiSelectDropDown label="Mana" value={wdeck.Mana} />
+          {/* <MultiSelectDropDown label="Mana" value={wdeck.Mana} /> */}
         </Stack>
 
         <Stack>
@@ -125,7 +125,7 @@ export default function TemporaryDrawer() {
             onChange={() => console.log('4')}
             required
           />
-          <MultiSelectDropDown label="Mana" value={l1deck.Mana} />
+          {/* <MultiSelectDropDown label="Mana" value={l1deck.Mana} /> */}
 
           <TextField
             id="date-textfield"

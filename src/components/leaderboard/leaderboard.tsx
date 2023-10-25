@@ -1,4 +1,4 @@
-import * as React from 'react'
+// import * as React from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
@@ -9,12 +9,12 @@ import { GameInfoMap } from '../../maps/GameInfoMap'
 import { Game } from '../../models/models'
 import { supabase } from '../../supabaseClient'
 import Paper from '@mui/material/Paper'
-import RedManaImage from '../../img/mana/red.svg'
-import BlackManaImage from '../../img/mana/black.svg'
-import WhiteManaImage from '../../img/mana/white.svg'
-import GreenManaImage from '../../img/mana/green.svg'
-import BlueManaImage from '../../img/mana/blue.svg'
-import DefaultManaImage from '../../img/mana/blue.svg'
+// import RedManaImage from '../../img/mana/red.svg'
+// import BlackManaImage from '../../img/mana/black.svg'
+// import WhiteManaImage from '../../img/mana/white.svg'
+// import GreenManaImage from '../../img/mana/green.svg'
+// import BlueManaImage from '../../img/mana/blue.svg'
+// import DefaultManaImage from '../../img/mana/blue.svg'
 
 let { data: mtgGameHistory, error } = await supabase.from('mtgGameHistory').select('*')
 
@@ -22,23 +22,23 @@ function createData(name: string, calories: string, fat: number, carbs: number, 
   return { name, calories, fat, carbs, protein }
 }
 
-function mapManaToImage(mana: string) {
-  switch (mana) {
-    case 'Red':
-      return RedManaImage
-    case 'Black':
-      return BlackManaImage
-    case 'White':
-      return WhiteManaImage
-    case 'Blue':
-      return BlueManaImage
-    case 'Green':
-      return GreenManaImage
-    // Add more cases for other mana symbols
-    default:
-      return DefaultManaImage // Provide a default image if the mana symbol is not recognized
-  }
-}
+// function mapManaToImage(mana: string) {
+//   switch (mana) {
+//     case 'Red':
+//       return RedManaImage
+//     case 'Black':
+//       return BlackManaImage
+//     case 'White':
+//       return WhiteManaImage
+//     case 'Blue':
+//       return BlueManaImage
+//     case 'Green':
+//       return GreenManaImage
+//     // Add more cases for other mana symbols
+//     default:
+//       return DefaultManaImage // Provide a default image if the mana symbol is not recognized
+//   }
+// }
 
 const rows = [
   createData('1', 'Brandon Camerer', 6.0, 985, 0),
@@ -115,14 +115,14 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                   {game.WDeckStrat}
                                 </TableCell>
                                 <TableCell sx={{ backgroundColor: '#f0fff0' }} align="left">
-                                  {game.WDeckColor.map((mana: string, index: string) => (
+                                  {/* {game.WDeckColor.map((mana: string, index: string) => (
                                     <img
                                       key={index}
                                       src={mapManaToImage(mana)}
                                       alt={mana}
                                       style={{ marginLeft: 5, width: '25px' }}
                                     />
-                                  ))}
+                                  ))} */}
                                 </TableCell>
                                 <TableCell sx={{ backgroundColor: '#fff2f2' }} align="left">
                                   {game.Loser1}
@@ -131,14 +131,14 @@ export default function Leaderboard(props: ILeaderboardProps) {
                                   {game.L1DeckStrat}
                                 </TableCell>
                                 <TableCell sx={{ backgroundColor: '#fff2f2' }} align="left">
-                                  {game.L1DeckColor.map((mana: string, index: string) => (
+                                  {/* {game.L1DeckColor.map((mana: string, index: string) => (
                                     <img
                                       key={index}
                                       src={mapManaToImage(mana)}
                                       alt={mana}
                                       style={{ marginLeft: 5, width: '25px' }}
                                     />
-                                  ))}
+                                  ))} */}
                                 </TableCell>
                                 <TableCell align="center">{game.remainingLife}</TableCell>
                                 <TableCell align="center">{game.length}</TableCell>

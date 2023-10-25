@@ -148,6 +148,23 @@ export const styles = {
     WebkitAnimation: 'cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite',
     animation: 'cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite'
   },
+  imagebr: {
+    gridColumnStart: 3,
+    gridColumnEnd: 7,
+    gridRowStart: 4,
+    gridRowEnd: 5,
+    position: 'absolute',
+    left: '-20%',
+    top: '-5%',
+    width: '144%',
+    height: '170%',
+    background: '#f5fffa url("https://i.imgur.com/mzox5vu.png")',
+    backgroundPosition: 'bottom',
+    backgroundSize: 'cover',
+    transformOrigin: 'bottom 60%',
+    WebkitAnimation: 'cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite',
+    animation: 'cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite'
+  },
   cardtype: {
     gridColumnStart: 3,
     gridColumnEnd: 7,
@@ -219,6 +236,16 @@ export const styles = {
     background: '#d3e4da',
     border: '#008000 2px solid',
     padding: '7px 27px 9px 24px',
+    fontFamily: 'planting, serif'
+  },
+  descbr: {
+    gridColumnStart: 3,
+    gridColumnEnd: 7,
+    gridRowStart: 6,
+    gridRowEnd: 9,
+    background: '#d3e4da',
+    border: '#008000 2px solid',
+    padding: '18px 27px 9px 24px',
     fontFamily: 'planting, serif'
   },
   sticker: {
