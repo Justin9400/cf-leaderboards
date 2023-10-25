@@ -165,6 +165,23 @@ export const styles = {
     WebkitAnimation: 'cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite',
     animation: 'cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite'
   },
+  imagety: {
+    gridColumnStart: 3,
+    gridColumnEnd: 7,
+    gridRowStart: 4,
+    gridRowEnd: 5,
+    position: 'absolute',
+    left: '-20%',
+    top: '-5%',
+    width: '137%',
+    height: '177%',
+    background: '#f5fffa url("https://i.imgur.com/EcENWLI.png")',
+    backgroundPosition: 'bottom',
+    backgroundSize: 'cover',
+    transformOrigin: 'bottom 60%',
+    WebkitAnimation: 'cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite',
+    animation: 'cardwobble2 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite'
+  },
   cardtype: {
     gridColumnStart: 3,
     gridColumnEnd: 7,
