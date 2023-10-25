@@ -11,6 +11,7 @@ import jk from '../../img/mtgplayers/jk.png'
 import bc from '../../img/mtgplayers/bc.png'
 import br from '../../img/mtgplayers/br.png'
 import ty from '../../img/mtgplayers/ty.png'
+import mo from '../../img/mtgplayers/mo.png'
 import BryanCard from '../../components/mtgcard/Bryan'
 import JeffCard from '../../components/mtgcard/Jeff'
 import JeremyCard from '../../components/mtgcard/Jeremy'
@@ -205,7 +206,7 @@ function MTGGameHistory() {
           onMouseLeave={handleMouseLeaveJeremy}
           style={{ width: '100px', position: 'relative' }}
         >
-          <img src={jk} alt="" style={{ margin: '0 auto', width: '100px' }} />
+          <img src={mo} alt="" style={{ margin: '0 auto', width: '100px' }} />
           {isHoveredJeremy && (
             <div
               style={{
@@ -216,7 +217,7 @@ function MTGGameHistory() {
               }}
             >
               {/* Your component to display on hover */}
-              <JeremyCard />
+              <MorganCard />
             </div>
           )}
         </div>
