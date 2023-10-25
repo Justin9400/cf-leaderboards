@@ -18,6 +18,8 @@ import Paper from '@mui/material/Paper'
 
 let { data: mtgGameHistory, error } = await supabase.from('mtgGameHistory').select('*')
 
+if(error) console.log(error);
+
 function createData(name: string, calories: string, fat: number, carbs: number, protein: number) {
   return { name, calories, fat, carbs, protein }
 }
