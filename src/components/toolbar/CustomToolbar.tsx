@@ -45,12 +45,12 @@ export const CustomToolbar = () => {
   const [loser1, setLoser1] = React.useState('')
   const [l1deckstrat, setL1DeckStrat] = React.useState('')
   const [l1deckcolor, setL1DeckColor] = React.useState([])
-  const [loser2, setLoser2] = React.useState('')
-  const [l2deckstrat, setL2DeckStrat] = React.useState('')
-  const [l2deckcolor, setL2DeckColor] = React.useState([])
-  const [loser3, setLoser3] = React.useState('')
-  const [l3deckstrat, setL3DeckStrat] = React.useState('')
-  const [l3deckcolor, setL3DeckColor] = React.useState([])
+  // const [loser2, setLoser2] = React.useState('')
+  // const [l2deckstrat, setL2DeckStrat] = React.useState('')
+  // const [l2deckcolor, setL2DeckColor] = React.useState([])
+  // const [loser3, setLoser3] = React.useState('')
+  // const [l3deckstrat, setL3DeckStrat] = React.useState('')
+  // const [l3deckcolor, setL3DeckColor] = React.useState([])
   const [remaininglife, setRemainingLife] = React.useState('')
   const [length, setLength] = React.useState('')
   const [date, setDate] = useState('')
@@ -96,12 +96,12 @@ export const CustomToolbar = () => {
         loser1,
         l1deckstrat,
         l1deckcolor,
-        loser2,
-        l2deckstrat,
-        l2deckcolor,
-        loser3,
-        l3deckstrat,
-        l3deckcolor,
+        // loser2,
+        // l2deckstrat,
+        // l2deckcolor,
+        // loser3,
+        // l3deckstrat,
+        // l3deckcolor,
         remaininglife,
         length,
         date

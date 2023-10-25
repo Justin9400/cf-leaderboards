@@ -11,6 +11,7 @@ import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-His
 import MTGGameHistory from './pages/MTG-Game-History/MTG-Game-History'
 import React from 'react'
 import Login from './pages/Login/Login'
+import Signup from './pages/Create-Account/CreateAccount'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="register" element={<Signup />} />
             <Route path="login" element={<Login />} />
             <Route path="mtg-leaderboard" element={<MTGLeaderboard />} />
             <Route path="mtg-game-history" element={<MTGGameHistory />} />
