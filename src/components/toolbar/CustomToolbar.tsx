@@ -80,7 +80,7 @@ export const CustomToolbar = () => {
     if (
       winner.trim() === '' ||
       wdeckstrat.trim() === '' ||
-      wdeckcolor.length === 0 ||
+      // wdeckcolor.length === 0 ||
       loser1.trim() === '' ||
       l1deckstrat.trim() === '' ||
       l1deckcolor.length === 0 ||
@@ -103,7 +103,7 @@ export const CustomToolbar = () => {
         // l3deckstrat,
         // l3deckcolor,
         // remaininglife,
-        length,
+        // length,
         date
       )
       // try {
