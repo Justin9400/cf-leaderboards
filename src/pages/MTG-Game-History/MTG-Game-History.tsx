@@ -21,6 +21,9 @@ import NickCard from '../../components/mtgcard/Nick'
 import TaylorCard from '../../components/mtgcard/Taylor'
 import TyeCard from '../../components/mtgcard/Tye'
 import JustinCard from '../../components/mtgcard/Justin'
+import Justinmini from '../../components/mtgcard/Justinmini'
+import Bryanmini from '../../components/mtgcard/Bryanmini'
+import Brandonmini from '../../components/mtgcard/Brandonmini'
 
 let mtgGameHistory: IMtgGameHistory[] = []
 
@@ -117,18 +120,18 @@ function MTGGameHistory() {
       <h1 style={{ margin: '5% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>
         Magic The Gathering Game History
       </h1>
-      <Stack direction="row">
+      <Stack sx={{ height: '21%' }} direction="row">
         <div
           onMouseEnter={handleMouseEnterJustin}
           onMouseLeave={handleMouseLeaveJustin}
-          style={{ width: '100px', position: 'relative' }}
+          style={{ marginTop: '-130px', width: '100px', position: 'relative' }}
         >
-          <img src={jk} alt="" style={{ margin: '0 auto', width: '100px' }} />
+          <Justinmini />
           {isHoveredJustin && (
             <div
               style={{
                 position: 'absolute',
-                top: '40px', // Adjust the position as needed
+                top: '200px', // Adjust the position as needed
                 left: '0',
                 zIndex: 1
               }}
@@ -140,43 +143,43 @@ function MTGGameHistory() {
         </div>
 
         <div
-          onMouseEnter={handleMouseEnterBrandon}
-          onMouseLeave={handleMouseLeaveBrandon}
-          style={{ width: '100px', position: 'relative' }}
-        >
-          <img src={bc} alt="" style={{ margin: '0 auto', width: '100px' }} />
-          {isHoveredBrandon && (
-            <div
-              style={{
-                position: 'absolute',
-                top: '40px', // Adjust the position as needed
-                left: '0',
-                zIndex: 1
-              }}
-            >
-              {/* Your component to display on hover */}
-              <Brandon />
-            </div>
-          )}
-        </div>
-
-        <div
           onMouseEnter={handleMouseEnterBryan}
           onMouseLeave={handleMouseLeaveBryan}
-          style={{ width: '100px', position: 'relative' }}
+          style={{ marginTop: '-130px', width: '100px', position: 'relative' }}
         >
-          <img src={br} alt="" style={{ margin: '0 auto', width: '100px' }} />
+          <Bryanmini />
           {isHoveredBryan && (
             <div
               style={{
                 position: 'absolute',
-                top: '40px', // Adjust the position as needed
+                top: '200px', // Adjust the position as needed
                 left: '0',
                 zIndex: 1
               }}
             >
               {/* Your component to display on hover */}
               <BryanCard />
+            </div>
+          )}
+        </div>
+
+        <div
+          onMouseEnter={handleMouseEnterBrandon}
+          onMouseLeave={handleMouseLeaveBrandon}
+          style={{ marginTop: '-130px', width: '100px', position: 'relative' }}
+        >
+          <Brandonmini />
+          {isHoveredBrandon && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '200px', // Adjust the position as needed
+                left: '0',
+                zIndex: 1
+              }}
+            >
+              {/* Your component to display on hover */}
+              <Brandon />
             </div>
           )}
         </div>
