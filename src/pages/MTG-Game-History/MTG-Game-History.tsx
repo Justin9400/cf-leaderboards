@@ -328,7 +328,6 @@ function MTGGameHistory() {
           )}
         </div>
       </Stack>
-      <JustinCard />
       <CustomToolbar />
 
       <DataTable
