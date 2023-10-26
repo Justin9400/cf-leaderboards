@@ -20,6 +20,7 @@ import MorganCard from '../../components/mtgcard/Morgan'
 import NickCard from '../../components/mtgcard/Nick'
 import TaylorCard from '../../components/mtgcard/Taylor'
 import TyeCard from '../../components/mtgcard/Tye'
+import JustinCard from '../../components/mtgcard/Justin'
 
 let mtgGameHistory: IMtgGameHistory[] = []
 
@@ -327,6 +328,7 @@ function MTGGameHistory() {
           )}
         </div>
       </Stack>
+      <JustinCard />
       <CustomToolbar />
 
       <DataTable
