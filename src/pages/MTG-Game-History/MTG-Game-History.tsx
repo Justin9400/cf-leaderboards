@@ -120,7 +120,7 @@ function MTGGameHistory() {
       <h1 style={{ margin: '5% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>
         Magic The Gathering Game History
       </h1>
-      <Stack sx={{ height: '21%' }} direction="row">
+      <Stack sx={{ height: '140px' }} direction="row">
         <div
           onMouseEnter={handleMouseEnterJustin}
           onMouseLeave={handleMouseLeaveJustin}
