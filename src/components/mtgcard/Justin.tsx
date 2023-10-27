@@ -10,7 +10,7 @@ const JustinCard: React.FC = () => {
         <title>Document</title>
         <link rel="stylesheet" href="styles.css" />
       </head>
-      <body>
+      <body style={{ position: 'fixed', zIndex: 9999 }}>
         <div style={styles.card as React.CSSProperties}>
           <div style={styles.cardgrid as React.CSSProperties}>
             <div style={styles.bgGreen as React.CSSProperties}></div>

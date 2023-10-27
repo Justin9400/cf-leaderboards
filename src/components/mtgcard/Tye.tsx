@@ -10,7 +10,7 @@ const TyeCard: React.FC = () => {
         <title>Document</title>
         <link rel="stylesheet" href="styles.css" />
       </head>
-      <body>
+      <body style={{ position: 'fixed', zIndex: 9999 }}>
         <div style={styles.card as React.CSSProperties}>
           <div style={styles.cardgrid as React.CSSProperties}>
             <div style={styles.bgGreen as React.CSSProperties}></div>
@@ -25,7 +25,9 @@ const TyeCard: React.FC = () => {
             <div style={styles.series as React.CSSProperties}> </div>
             <div style={styles.desc as React.CSSProperties}>
               <p>
-              <i>Tee Time Insight:</i> Once per round, you may analyze a golf swing or course layout. If you do, improve the golfing experience, and your scorecard gains a +2 handicap rating.</p>
+                <i>Saturday Work Capability:</i> Once a week, you can engage in work on Saturdays. If you choose to do
+                so, enhance your work experience, and your productivity decreases by -2.
+              </p>
             </div>
             <div style={styles.str as React.CSSProperties}>5/5</div>
 
