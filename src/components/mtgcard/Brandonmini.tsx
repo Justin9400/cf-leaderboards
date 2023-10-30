@@ -1,7 +1,7 @@
 import React from 'react'
 import { styles } from './redstyles'
 
-const JustinCard: React.FC = () => {
+const BrandonCard: React.FC = () => {
   return (
     <html>
       <head>
@@ -10,26 +10,26 @@ const JustinCard: React.FC = () => {
         <title>Document</title>
         <link rel="stylesheet" href="styles.css" />
       </head>
-      <body style={{ position: 'fixed', zIndex: 9999 }}>
+      <body>
         <div style={styles.card as React.CSSProperties}>
           <div style={styles.cardgrid as React.CSSProperties}>
             <div style={styles.bgGreen as React.CSSProperties}></div>
-            <div style={styles.title as React.CSSProperties}>Justin Kachornvanich</div>
+            <div style={styles.title as React.CSSProperties}>Brandon Camerer</div>
             <div style={styles.mana as React.CSSProperties}> </div>
             <div style={styles.imageHolder as React.CSSProperties}>
-              <div style={styles.imagej as React.CSSProperties}></div>
+              <div style={styles.imageb as React.CSSProperties}></div>
             </div>
             <div style={styles.cardtype as React.CSSProperties}>
-              <b>Creature - Software Engineer</b>
+              <b>Creature - Senior UX Engineer</b>
             </div>
             <div style={styles.series as React.CSSProperties}> </div>
             <div style={styles.desc as React.CSSProperties}>
               <p>
-                <i>CSS Mastery:</i> Once per turn, you may exile a nonland card from your hand. If you do, create a 1/1
-                Setup Guide creature token with lifelink. If the exiled card is an artifact, Setup Guide gets +2/+2.
+                <i>UX Revelation:</i> Once per user interaction, you may analyze a user flow or interface element. If
+                you do, enhance the user experience, and your product gains a +2 user satisfaction rating.
               </p>
             </div>
-            <div style={styles.str as React.CSSProperties}>8/8</div>
+            <div style={styles.str as React.CSSProperties}>5/5</div>
 
             <div style={styles.sticker as React.CSSProperties}></div>
             <div style={styles.sticker2 as React.CSSProperties}></div>
@@ -40,4 +40,4 @@ const JustinCard: React.FC = () => {
   )
 }
 
-export default JustinCard
+export default BrandonCard

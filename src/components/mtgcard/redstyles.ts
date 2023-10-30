@@ -43,7 +43,7 @@ export const styles = {
     animation: 'cardwobble 2s cubic-bezier(0.635, 0.05, 0.38, 0.92) 1s infinite'
   },
   title: {
-    background: '#bdd2c9',
+    background: '#f1c0a2',
     position: 'relative',
     width: 'auto',
     verticalAlign: 'center',
@@ -53,7 +53,7 @@ export const styles = {
     gridRowStart: 3,
     gridRowEnd: 3,
     padding: '0px 1px 2px 8px',
-    border: '#008000 2px solid',
+    border: '#e8403d 2px solid',
     borderWidth: '2px 0 2px 0',
     fontFamily: 'planting, beleren'
   },
@@ -68,7 +68,7 @@ export const styles = {
     content: "''",
     borderBottomLeftRadius: '50%',
     borderTopLeftRadius: '50%',
-    border: '2px #008000 solid',
+    border: '2px #e8403d solid',
     borderWidth: '2px 0 2px 2px'
   },
   bgGreen: {
@@ -92,7 +92,7 @@ export const styles = {
     gridRowStart: 4,
     gridRowEnd: 5,
     position: 'relative',
-    border: '#008000 2px solid',
+    border: '#e8403d 2px solid',
     backgroundSize: 'cover',
     overflow: 'hidden',
     boxShadow: '0px 0px 10px 5px inset rgba(0,0,0,0.8)'
@@ -205,8 +205,8 @@ export const styles = {
     gridRowStart: 5,
     gridRowEnd: 6,
     position: 'relative',
-    background: '#bdd2c9',
-    border: '#008000 2px solid',
+    background: '#f1c0a2',
+    border: '#e8403d 2px solid',
     padding: '1px 1px 1px 6px',
     fontFamily: 'planting, beleren',
     fontWeight: '600'
@@ -245,11 +245,12 @@ export const styles = {
     gridColumnEnd: 7,
     gridRowStart: 3,
     gridRowEnd: 3,
-    backgroundImage: 'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/522641/mana.png")',
+    backgroundImage: 'url("https://i.imgur.com/l3nzumY.png")',
     zIndex: 2,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
-    backgroundPosition: 'center right'
+    backgroundPosition: 'center right',
+    marginRight: '3px'
   },
   series: {
     gridColumnStart: 6,
@@ -267,8 +268,8 @@ export const styles = {
     gridColumnEnd: 7,
     gridRowStart: 6,
     gridRowEnd: 9,
-    background: '#d3e4da',
-    border: '#008000 2px solid',
+    background: '#fae3db',
+    border: '#e8403d 2px solid',
     padding: '7px 27px 9px 24px',
     fontFamily: 'planting, serif'
   },
@@ -293,7 +294,7 @@ export const styles = {
     width: '100%',
     height: '120%',
     borderRadius: '50%',
-    border: '#008000 2px solid'
+    border: '#e8403d 2px solid'
   },
   sticker2: {
     gridColumnStart: 4,
@@ -315,13 +316,13 @@ export const styles = {
     gridColumnEnd: 7,
     gridRowStart: 8,
     gridRowEnd: 9,
-    background: '#b7ccc3',
+    background: '#f1c0a2',
     position: 'absolute',
     top: '50%',
     width: '90%',
     height: '65%',
     borderRadius: '30%',
-    border: '#618978 2px solid',
+    border: '#e8403d 2px solid',
     textAlign: 'center',
     padding: '2pt',
     boxShadow: 'inset -1px 2px 3px 0px #4d5450',
