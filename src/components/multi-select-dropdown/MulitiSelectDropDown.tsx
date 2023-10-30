@@ -10,7 +10,7 @@ import WhiteManaImage from '../../img/mana/white.svg'
 import GreenManaImage from '../../img/mana/green.svg'
 import BlueManaImage from '../../img/mana/blue.svg'
 
-export type MenuProps = {
+export type IMenuProps = {
   label: string
   value: any[]
   onChange: (event: any) => void
@@ -31,7 +31,7 @@ function getStyles(name: string, personName: readonly string[], theme: Theme) {
   }
 }
 
-export default function MultiSelectDropDown(props: MenuProps) {
+export default function MultiSelectDropDown(props: IMenuProps) {
   const theme = useTheme()
   const [value, setValue] = React.useState<string[]>(props.value)
 

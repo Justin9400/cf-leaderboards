@@ -1,0 +1,17 @@
+change mtg player cards to be more editable 
+    all of them are just green 
+
+Add mana colors to mtg game history
+
+add mtg game history data to db
+
+Create accounts?
+
+add new mtg game
+
+url redirects in routing
+
+move all in-line styles to a style sheet if need be
+
+make auth work in prod without pushing auth keys
+

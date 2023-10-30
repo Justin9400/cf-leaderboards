@@ -1,103 +1,68 @@
-import * as React from 'react'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
 import { Grid } from '@mui/material'
-import Leaderboard from '../components/leaderboard/leaderboard'
-import { useNavigate } from 'react-router-dom'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableRow from '@mui/material/TableRow'
-import goldMedal from '../img/medals/gold.svg'
-import silverMedal from '../img/medals/silver.svg'
-import bronzeMedal from '../img/medals/bronze.svg'
+// import goldMedal from '../img/medals/gold.svg'
+// import silverMedal from '../img/medals/silver.svg'
+// import bronzeMedal from '../img/medals/bronze.svg'
 
-import mtg from '../img/mtg.png'
-import fb from '../img/fb.png'
-import fit from '../img/fit.png'
-import corn from '../img/cornhole.png'
 import { GameInfoMap } from '../maps/GameInfoMap'
+import GameCard from '../components/game-card/GameCard'
 
-const medalImages = [goldMedal, silverMedal, bronzeMedal]
+// const medalImages = [goldMedal, silverMedal, bronzeMedal]
 
-const rows = [
-  { rank: 1, name: 'Jordan Olachea', medal: 1 },
-  { rank: 2, name: 'Bryan Berardi', medal: 2 },
-  { rank: 3, name: 'Tres Langhorne', medal: 3 }
-  // Add more rows as neededs
-]
-const rowss = [
-  { rank: 1, name: 'Chris Knoll', medal: 1 },
-  { rank: 2, name: 'Mike Mercer', medal: 2 },
-  { rank: 3, name: 'Dusty Brenning', medal: 3 }
-  // Add more rows as neededs
-]
+// const rows = [
+//   { rank: 1, name: 'Jordan Olachea', medal: 1 },
+//   { rank: 2, name: 'Bryan Berardi', medal: 2 },
+//   { rank: 3, name: 'Tres Langhorne', medal: 3 }
+//   // Add more rows as neededs
+// ]
+// const rowss = [
+//   { rank: 1, name: 'Chris Knoll', medal: 1 },
+//   { rank: 2, name: 'Mike Mercer', medal: 2 },
+//   { rank: 3, name: 'Dusty Brenning', medal: 3 }
+//   // Add more rows as neededs
+// ]
 
 export default function Home() {
-  const navigate = useNavigate()
-
-  const navigateToPage = (pagePath: string) => () => {
-    navigate(pagePath)
-  }
+  const gameMap = Object.values(GameInfoMap)
 
   return (
     <>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Card sx={{ minHeight: '400px', mt: 3 }}>
-            <CardMedia sx={{ height: 140 }} image={mtg} title="Magic the Gathering" />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Magic the Gathering
-              </Typography>
-              <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
-                Magic the Gathering Leaderboards, where legends are forged and destinies are sealed with every card
-                drawn.
-              </Typography>
-              <Leaderboard game={GameInfoMap.MagicTheGathering} pageName="Home" />
-            </CardContent>
-            <CardActions>
-              <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.LeaderBoardUrl)}>
-                More Details
-              </Button>
-              <Button size="small" onClick={navigateToPage(GameInfoMap.MagicTheGathering.GameHistoryUrl!)}>
-                Game History
-              </Button>
-            </CardActions>
-          </Card>
+        {gameMap.map((game) => (
+          <Grid key={game.key} item xs={12} sm={6} md={4} lg={3}>
+            <GameCard
+              game={game}
+              leaderboardURL={game.LeaderBoardUrl}
+              gameHistoryURL={game.GameHistoryUrl!}
+              banner={game.gameBanner}
+            />
+          </Grid>
+        ))}
+        {/* <Grid item xs={12} sm={6} md={4} lg={3}>
+          <GameCard
+            game={GameInfoMap.MagicTheGathering}
+            leaderboardURL={GameInfoMap.MagicTheGathering.LeaderBoardUrl}
+            gameHistoryURL={GameInfoMap.MagicTheGathering.GameHistoryUrl!}
+            banner={mtg}
+          />
         </Grid>
 
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Card sx={{ minHeight: '400px', mt: 3 }}>
-            <CardMedia sx={{ height: 140 }} image={fb} title="Foosball" />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Foosball
-              </Typography>
-              <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
-                Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various
-                corners of the company.
-              </Typography>
-              <Leaderboard game={GameInfoMap.Foosball} pageName="Home" />
-            </CardContent>
-            <CardActions>
-              <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.LeaderBoardUrl)}>
-                Leaderboards
-              </Button>
-              <Button size="small" onClick={navigateToPage(GameInfoMap.Foosball.GameHistoryUrl!)}>
-                Game History
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
+          <GameCard
+            game={GameInfoMap.Foosball}
+            leaderboardURL={GameInfoMap.Foosball.LeaderBoardUrl}
+            gameHistoryURL={GameInfoMap.Foosball.GameHistoryUrl!}
+            banner={mtg}
+          />
+        </Grid> */}
 
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Card sx={{ minHeight: '400px', mt: 3 }}>
+        {/* <Grid item xs={12} sm={6} md={4} lg={3}>
+          <GameCard
+            game={GameInfoMap.MarchMadness}
+            leaderboardURL={GameInfoMap.MarchMadness.LeaderBoardUrl}
+            gameHistoryURL={GameInfoMap.MarchMadness.GameHistoryUrl!}
+            banner={mtg}
+          /> */}
+        {/* <Card sx={{ minHeight: '400px', mt: 3 }}>
             <CardMedia sx={{ height: 140 }} image={corn} title="Cornhole" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -124,15 +89,17 @@ export default function Home() {
                 </Table>
               </TableContainer>
             </CardContent>
-            {/* <CardActions> */}
-            {/* <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.LeaderBoardUrl)}>Full Leaderboard</Button> */}
-            {/* <Button size="small" onClick={navigateToPage(GameInfoMap.Cornhole.GameHistoryUrl!)}>Game History</Button> */}
-            {/* </CardActions> */}
-          </Card>
-        </Grid>
+          </Card> */}
+        {/* </Grid> */}
 
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Card sx={{ minHeight: '400px', mt: 3 }}>
+        {/* <Grid item xs={12} sm={6} md={4} lg={3}>
+          <GameCard
+            game={GameInfoMap.MagicTheGathering}
+            leaderboardURL={GameInfoMap.MagicTheGathering.LeaderBoardUrl}
+            gameHistoryURL={GameInfoMap.MagicTheGathering.GameHistoryUrl!}
+            banner={mtg}
+          /> */}
+        {/* <Card sx={{ minHeight: '400px', mt: 3 }}>
             <CardMedia sx={{ height: 140 }} image={fit} title="Fitness Challenge" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -159,12 +126,8 @@ export default function Home() {
                 </Table>
               </TableContainer>
             </CardContent>
-            {/* <CardActions >
-            <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.LeaderBoardUrl)}>Leaderboards</Button>
-            <Button size="small" onClick={navigateToPage(GameInfoMap.FitnessChallenge.GameHistoryUrl!)}>Badges</Button>
-          </CardActions> */}
-          </Card>
-        </Grid>
+          </Card> */}
+        {/* </Grid> */}
       </Grid>
     </>
   )
