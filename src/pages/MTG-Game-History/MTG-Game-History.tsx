@@ -14,7 +14,7 @@ else mtgGameHistory = mtgGameHistoryDB as IMtgGameHistory[]
 function MTGGameHistory() {
   return (
     <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto' }}>
-      <h1 style={{ margin: '5% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>
+      <h1 style={{ margin: '2% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>
         Magic The Gathering Game History
       </h1>
 
