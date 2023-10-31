@@ -68,7 +68,7 @@ function Login() {
       }}
     >
       <Stack spacing={3}>
-        <h1 style={{ fontSize: '2em' }}>Welcome Back</h1> {/* Improved heading style */}
+        <h1 style={{ margin: '0 auto', fontSize: '2em' }}>Welcome</h1> {/* Improved heading style */}
         <TextField
           id="outlined-basic"
           label="Email"
