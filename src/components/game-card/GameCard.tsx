@@ -21,7 +21,7 @@ export type IGameCardProps = {
 }
 
 let tableData: any[]
-let { data: leaderboard, error } = await supabase.from('vw_mtgleaderboard').select('*')
+let { data: leaderboard, error } = await supabase.from('vw_mtgleaderboard').select().limit(3)
 if (error) console.log('error', error)
 else tableData = leaderboard as any[]
 
