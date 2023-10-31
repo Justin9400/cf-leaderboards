@@ -58,14 +58,17 @@ function Login() {
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: '50vh',
-        width: '20%',
+        width: '30%', // Adjusted width for a more balanced look
         margin: '0 auto',
         padding: '20px',
-        marginTop: '10vh'
+        marginTop: '10vh',
+        borderRadius: '10px', // Added a subtle border radius
+        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)', // Added a soft shadow
+        backgroundColor: '#fff' // White background color
       }}
     >
       <Stack spacing={3}>
-        <h1>Login</h1>
+        <h1 style={{ fontSize: '2em' }}>Welcome Back</h1> {/* Improved heading style */}
         <TextField
           id="outlined-basic"
           label="Email"
@@ -95,11 +98,31 @@ function Login() {
             label="Password"
           />
         </FormControl>
-        {successfulLogin === false && <p style={{ color: 'red' }}>Incorrect username or password</p>}
-        <Button variant="contained" onClick={signInWithEmail}>
-          Login
+        {successfulLogin === false && <p style={{ color: 'red', fontSize: '0.9em' }}>Incorrect username or password</p>}
+        <Button
+          variant="contained"
+          onClick={signInWithEmail}
+          sx={{
+            backgroundColor: '#1976D2', // Custom button color
+            color: 'white', // Custom text color
+            '&:hover': {
+              backgroundColor: '#1565C0' // Custom hover color
+            }
+          }}
+        >
+          Sign In
         </Button>
-        <Button variant="contained" onClick={() => navigateToPage('register')}>
+        <Button
+          variant="contained"
+          onClick={() => navigateToPage('register')}
+          sx={{
+            backgroundColor: '#4CAF50', // Custom button color
+            color: 'white', // Custom text color
+            '&:hover': {
+              backgroundColor: '#388E3C' // Custom hover color
+            }
+          }}
+        >
           Create Account
         </Button>
       </Stack>
