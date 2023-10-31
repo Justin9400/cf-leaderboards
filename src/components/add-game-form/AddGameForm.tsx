@@ -1,8 +1,8 @@
 import * as React from 'react'
 import AddIcon from '@mui/icons-material/Add'
+import { supabase } from '../../supabaseClient'
 import { List, Box, TextField, Drawer, Button, Stack } from '@mui/material'
 import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown'
-import { supabase } from '../../supabaseClient'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 

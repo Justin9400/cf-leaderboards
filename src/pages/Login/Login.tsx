@@ -1,4 +1,8 @@
+import React from 'react'
 import { Stack } from '@mui/system'
+import { useNavigate } from 'react-router-dom'
+import { supabase } from '../../supabaseClient'
+import { Visibility, VisibilityOff } from '@mui/icons-material'
 import {
   Button,
   FormControl,
@@ -9,10 +13,6 @@ import {
   Paper,
   TextField
 } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import React from 'react'
-import { supabase } from '../../supabaseClient'
-import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 function Login() {
   const navigate = useNavigate()

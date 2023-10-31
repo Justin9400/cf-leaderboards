@@ -1,6 +1,8 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
-import DataTable from '../data-table/DataTable'
+import { Game } from '../../models/models'
 import { useNavigate } from 'react-router-dom'
+import { supabase } from '../../supabaseClient'
+import DataTable from '../data-table/DataTable'
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
 // import Table from '@mui/material/Table'
 // import TableBody from '@mui/material/TableBody'
 // import TableCell from '@mui/material/TableCell'
@@ -10,8 +12,6 @@ import { useNavigate } from 'react-router-dom'
 // import silverMedal from '../img/medals/silver.svg'
 // import bronzeMedal from '../img/medals/bronze.svg'
 // import fb from '../img/fb.png'
-import { Game } from '../../models/models'
-import { supabase } from '../../supabaseClient'
 
 export type IGameCardProps = {
   game: Game

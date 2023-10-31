@@ -1,11 +1,8 @@
-import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
-
-import logo from '../../img/logo.svg'
 import { styles } from './styles'
-
+import logo from '../../img/logo.svg'
+import MenuIcon from '@mui/icons-material/Menu'
 import AccountMenu from '../account-icon-menu/account-icon-menu'
-import React from 'react'
+import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container } from '@mui/material'
 
 function Header() {
   // const [showContent, setShowContent] = useState(false);

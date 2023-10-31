@@ -1,9 +1,9 @@
 import { GamesMap } from '../models/models'
 import mtgBanner from '../img/mtg.png'
 import fbBanner from '../img/fb.png'
-import fitBanner from '../img/fit.png'
-import marchMadnessBanner from '../img/march-madness.png'
-import cornHoleBanner from '../img/cornhole.png'
+// import fitBanner from '../img/fit.png'
+// import marchMadnessBanner from '../img/march-madness.png'
+// import cornHoleBanner from '../img/cornhole.png'
 
 export const GameInfoMap: GamesMap = {
   MagicTheGathering: {
@@ -62,63 +62,63 @@ export const GameInfoMap: GamesMap = {
     //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
     //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
     PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred']
-  },
-  MarchMadness: {
-    key: 'MarchMadness',
-    PageName: 'March Madness',
-    gameCardDescription:
-      'March Madness, where basketball dreams take center stage, and champions rise through the ranks with unrivaled passion and strategy.',
-    gameBanner: marchMadnessBanner,
-    Pages: [],
-    LeaderBoardUrl: '',
-    GameHistoryUrl: '',
-    DropDownOptions: [],
-    GameHistoryColumns: [],
-    LeaderboardColumns: [],
-    SoloLeaderboardColumnNames: [],
-    TeamLeaderboardColumnNames: [],
-    PlayersList: []
-  },
-  Cornhole: {
-    key: 'Cornhole',
-    PageName: 'Cornhole',
-    gameCardDescription:
-      'Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.',
-    gameBanner: cornHoleBanner,
-    Pages: ['Leaderboard', 'History'],
-    LeaderBoardUrl: 'cornhole-leaderboard',
-    GameHistoryUrl: 'cornhole-game-history',
-    DropDownOptions: ['Leaderboard', 'Game History'],
-    GameHistoryColumns: [
-      { key: 'Winner', name: 'Winner' },
-      { key: 'Loser', name: 'Loser' }
-    ],
-    LeaderboardColumns: [
-      { key: 'Rank', name: 'Rank' },
-      { key: 'Name', name: 'Name' },
-      { key: 'Ratio', name: 'W/L Ratio' },
-      { key: 'Wins', name: 'Wins' },
-      { key: 'Losses', name: 'Losses' }
-    ],
-    //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
-    //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
-    PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred']
-  },
-  FitnessChallenge: {
-    key: 'FitnessChallenge',
-    PageName: 'Fitness Challenge',
-    gameCardDescription:
-      'This diverse mix of enthusiasts converges on a virtual platform where they unite in their shared pursuit of health and well-being.',
-    gameBanner: fitBanner,
-    Pages: ['Leaderboard'],
-    LeaderBoardUrl: 'fitness-leaderboard',
-    DropDownOptions: ['Leaderboard'],
-    LeaderboardColumns: [
-      { key: 'Rank', name: 'Rank' },
-      { key: 'Name', name: 'Name' },
-      { key: 'Points', name: 'Points' }
-    ],
-    PlayersList: ['Brandon', 'Justin'],
-    GameHistoryColumns: []
   }
+  // MarchMadness: {
+  //   key: 'MarchMadness',
+  //   PageName: 'March Madness',
+  //   gameCardDescription:
+  //     'March Madness, where basketball dreams take center stage, and champions rise through the ranks with unrivaled passion and strategy.',
+  //   gameBanner: marchMadnessBanner,
+  //   Pages: [],
+  //   LeaderBoardUrl: '',
+  //   GameHistoryUrl: '',
+  //   DropDownOptions: [],
+  //   GameHistoryColumns: [],
+  //   LeaderboardColumns: [],
+  //   SoloLeaderboardColumnNames: [],
+  //   TeamLeaderboardColumnNames: [],
+  //   PlayersList: []
+  // },
+  // Cornhole: {
+  //   key: 'Cornhole',
+  //   PageName: 'Cornhole',
+  //   gameCardDescription:
+  //     'Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.',
+  //   gameBanner: cornHoleBanner,
+  //   Pages: ['Leaderboard', 'History'],
+  //   LeaderBoardUrl: 'cornhole-leaderboard',
+  //   GameHistoryUrl: 'cornhole-game-history',
+  //   DropDownOptions: ['Leaderboard', 'Game History'],
+  //   GameHistoryColumns: [
+  //     { key: 'Winner', name: 'Winner' },
+  //     { key: 'Loser', name: 'Loser' }
+  //   ],
+  //   LeaderboardColumns: [
+  //     { key: 'Rank', name: 'Rank' },
+  //     { key: 'Name', name: 'Name' },
+  //     { key: 'Ratio', name: 'W/L Ratio' },
+  //     { key: 'Wins', name: 'Wins' },
+  //     { key: 'Losses', name: 'Losses' }
+  //   ],
+  //   //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
+  //   //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
+  //   PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred']
+  // },
+  // FitnessChallenge: {
+  //   key: 'FitnessChallenge',
+  //   PageName: 'Fitness Challenge',
+  //   gameCardDescription:
+  //     'This diverse mix of enthusiasts converges on a virtual platform where they unite in their shared pursuit of health and well-being.',
+  //   gameBanner: fitBanner,
+  //   Pages: ['Leaderboard'],
+  //   LeaderBoardUrl: 'fitness-leaderboard',
+  //   DropDownOptions: ['Leaderboard'],
+  //   LeaderboardColumns: [
+  //     { key: 'Rank', name: 'Rank' },
+  //     { key: 'Name', name: 'Name' },
+  //     { key: 'Points', name: 'Points' }
+  //   ],
+  //   PlayersList: ['Brandon', 'Justin'],
+  //   GameHistoryColumns: []
+  // }
 }

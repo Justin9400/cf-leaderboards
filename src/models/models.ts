@@ -1,9 +1,9 @@
 export enum Games {
   MagicTheGathering = 'MagicTheGathering',
-  Foosball = 'Foosball',
-  MarchMadness = 'MarchMadness',
-  FitnessChallenge = 'FitnessChallenge',
-  Cornhole = 'Cornhole'
+  Foosball = 'Foosball'
+  // MarchMadness = 'MarchMadness',
+  // FitnessChallenge = 'FitnessChallenge',
+  // Cornhole = 'Cornhole'
 }
 
 export type Game = {

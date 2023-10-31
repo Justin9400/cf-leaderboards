@@ -1,7 +1,7 @@
 import { Stack } from '@mui/system'
-import { GameInfoMap } from '../../maps/GameInfoMap'
 import { Paper } from '@mui/material'
 import { supabase } from '../../supabaseClient'
+import { GameInfoMap } from '../../maps/GameInfoMap'
 import { IFoosballGameHistory } from '../../models/models'
 import DataTable from '../../components/data-table/DataTable'
 

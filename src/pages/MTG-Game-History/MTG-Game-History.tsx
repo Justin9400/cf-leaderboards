@@ -1,9 +1,8 @@
 import { Stack } from '@mui/system'
-import { GameInfoMap } from '../../maps/GameInfoMap'
 import { supabase } from '../../supabaseClient'
+import { GameInfoMap } from '../../maps/GameInfoMap'
 import { IMtgGameHistory } from '../../models/models'
 import DataTable from '../../components/data-table/DataTable'
-
 import CustomToolbar from '../../components/toolbar/CustomToolbar'
 
 let mtgGameHistory: IMtgGameHistory[] = []
