@@ -13,7 +13,7 @@ import { ProtectedRoute } from './components/protected-route/ProtectedRoute'
 // import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-History'
 
 function App() {
-  const auth = false
+  const auth = true
   return (
     <Stack
       sx={{
