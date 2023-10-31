@@ -53,9 +53,18 @@ function Login() {
   return (
     <Paper
       elevation={3}
-      sx={{ display: 'flex', height: '50vh', width: '15%', margin: '0 auto', justifyContent: 'center' }}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '50vh',
+        width: '20%',
+        margin: '0 auto',
+        padding: '20px',
+        marginTop: '10vh'
+      }}
     >
-      <Stack spacing={5} sx={{ display: 'flex', height: '50vh', margin: '0 auto', justifyContent: 'center' }}>
+      <Stack spacing={3}>
         <h1>Login</h1>
         <TextField
           id="outlined-basic"
@@ -64,8 +73,7 @@ function Login() {
           value={email}
           onChange={handleOnChange(setEmail)}
         />
-
-        <FormControl sx={{ m: 1, width: '30ch' }} variant="outlined">
+        <FormControl sx={{ width: '100%' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
@@ -87,7 +95,7 @@ function Login() {
             label="Password"
           />
         </FormControl>
-        {successfulLogin === true || successfulLogin === null ? null : <p>Incorrect uername or password</p>}
+        {successfulLogin === false && <p style={{ color: 'red' }}>Incorrect username or password</p>}
         <Button variant="contained" onClick={signInWithEmail}>
           Login
         </Button>
