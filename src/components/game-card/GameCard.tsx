@@ -40,7 +40,7 @@ export default function GameCard(props: IGameCardProps) {
     navigate(url + pagePath)
   }
 
-  const columns = props.game.LeaderboardColumns.slice(0, 3)
+  const columns = props.game.LeaderboardColumns.slice(0, 5)
 
   return (
     <Card sx={{ minHeight: '400px', mt: 3 }}>
