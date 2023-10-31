@@ -58,14 +58,17 @@ function Signup() {
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: '50vh',
-        width: '20%',
+        width: '30%', // Adjusted width for a more balanced look
         margin: '0 auto',
         padding: '20px',
-        marginTop: '10vh'
+        marginTop: '10vh',
+        borderRadius: '10px', // Added a subtle border radius
+        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)', // Added a soft shadow
+        backgroundColor: '#fff' // White background color
       }}
     >
       <Stack spacing={3}>
-        <h1>Create Account</h1>
+        <h1 style={{ fontSize: '2em' }}>Join Us</h1> {/* Improved heading style */}
         <TextField
           id="outlined-basic"
           label="Email"
@@ -96,10 +99,20 @@ function Signup() {
           />
         </FormControl>
         {successfulAccountCreation ? (
-          <p style={{ color: 'green' }}>Confirmation email sent. Check your inbox.</p>
+          <p style={{ color: 'green', fontSize: '0.9em' }}>Confirmation email sent. Check your inbox.</p>
         ) : null}
-        <Button variant="contained" onClick={createAccount}>
-          Create Account
+        <Button
+          variant="contained"
+          onClick={createAccount}
+          sx={{
+            backgroundColor: '#4CAF50', // Custom button color
+            color: 'white', // Custom text color
+            '&:hover': {
+              backgroundColor: '#388E3C' // Custom hover color
+            }
+          }}
+        >
+          Get Started
         </Button>
       </Stack>
     </Paper>
