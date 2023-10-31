@@ -27,9 +27,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="register" element={<Signup />} />
+            <Route path="home" index element={<Home />} />
             <Route path="login" element={<Login />} />
+            <Route path="register" element={<Signup />} />
             <Route path="mtg-leaderboard" element={<MTGLeaderboard />} />
             <Route path="mtg-game-history" element={<MTGGameHistory />} />
             <Route path="foosball-leaderboard" element={<FoosballLeaderboard />} />
