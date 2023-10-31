@@ -1,45 +1,54 @@
 import { Stack } from '@mui/system'
-import { Button, Paper, TextField } from '@mui/material'
-// import { auth } from '../../config/firebase'
-// import { createUserWithEmailAndPassword, signOut, getAuth } from 'firebase/auth'
+import {
+  Button,
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+  Paper,
+  TextField
+} from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 import React from 'react'
+import { supabase } from '../../supabaseClient'
+import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 function Login() {
+  const navigate = useNavigate()
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
-  // const auth = getAuth()
-  // createUserWithEmailAndPassword(auth, email, password)
-  //   .then((userCredential) => {
-  //     // Signed up
-  //     const user = userCredential.user
-  //     // ...
-  //   })
-  //   .catch((error) => {
-  //     const errorCode = error.code
-  //     const errorMessage = error.message
-  //     // ..
-  //   })
-  // console.log('Current user:', auth.currentUser?.email)
+  const [successfulLogin, setSuccessfulLogin] = React.useState<boolean | null>(null)
+  const [showPassword, setShowPassword] = React.useState(false)
 
-  // const signIn = async () => {
-  //   try {
-  //     await createUserWithEmailAndPassword(auth, email, password)
-  //   } catch (error) {
-  //     console.log('Error:', error)
-  //   }
-  // }
+  const navigateToPage = (pagePath: string) => {
+    const url = window.location.replace(pagePath)
+    navigate(url + pagePath)
+  }
+
+  async function signInWithEmail() {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password
+    })
+    if (data.user !== null && data.session !== null) {
+      setSuccessfulLogin(true)
+      navigateToPage('home')
+    } else {
+      setSuccessfulLogin(false)
+    }
+  }
 
   const handleOnChange = (stateUpdater: any) => (event: any) => {
     stateUpdater(event.target.value)
   }
 
-  // const logout = async () => {
-  //   try {
-  //     await signOut(auth)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+  const handleClickShowPassword = () => setShowPassword((show) => !show)
+
+  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+  }
+
   return (
     <Paper
       elevation={3}
@@ -55,16 +64,35 @@ function Login() {
           onChange={handleOnChange(setEmail)}
         />
 
-        <TextField
-          id="outlined-basic"
-          label="Password"
-          variant="outlined"
-          value={password}
-          onChange={handleOnChange(setPassword)}
-        />
-
-        <Button variant="contained">Login</Button>
-        <Button variant="contained">Create Account</Button>
+        <FormControl sx={{ m: 1, width: '30ch' }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-password"
+            type={showPassword ? 'text' : 'password'}
+            value={password}
+            onChange={handleOnChange(setPassword)}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+        </FormControl>
+        {successfulLogin === true || successfulLogin === null ? null : <p>Incorrect uername or password</p>}
+        <Button variant="contained" onClick={signInWithEmail}>
+          Login
+        </Button>
+        <Button variant="contained" onClick={() => navigateToPage('register')}>
+          Create Account
+        </Button>
       </Stack>
     </Paper>
   )

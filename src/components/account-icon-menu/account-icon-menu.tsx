@@ -10,6 +10,8 @@ import Tooltip from '@mui/material/Tooltip'
 import Settings from '@mui/icons-material/Settings'
 import Logout from '@mui/icons-material/Logout'
 import brandon from '../../img/brandon.jpg'
+import { supabase } from '../../supabaseClient'
+import { useNavigate } from 'react-router-dom'
 
 export type IAccountMenuProps = {
   img: string
@@ -17,12 +19,25 @@ export type IAccountMenuProps = {
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const navigate = useNavigate()
   const open = Boolean(anchorEl)
+
+  const navigateToPage = (pagePath: string) => {
+    const url = window.location.replace(pagePath)
+    navigate(url + pagePath)
+  }
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }
   const handleClose = () => {
     setAnchorEl(null)
+  }
+
+  async function logOut() {
+    const { error } = await supabase.auth.signOut()
+    setAnchorEl(null)
+    navigateToPage('login')
   }
   return (
     <React.Fragment>
@@ -86,7 +101,7 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={logOut}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
