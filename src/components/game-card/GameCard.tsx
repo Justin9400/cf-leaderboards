@@ -2,28 +2,35 @@ import { Game } from '../../models/models'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../supabaseClient'
 import DataTable from '../data-table/DataTable'
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
-// import Table from '@mui/material/Table'
-// import TableBody from '@mui/material/TableBody'
-// import TableCell from '@mui/material/TableCell'
-// import TableContainer from '@mui/material/TableContainer'
-// import TableRow from '@mui/material/TableRow'
-// import goldMedal from '../img/medals/gold.svg'
-// import silverMedal from '../img/medals/silver.svg'
-// import bronzeMedal from '../img/medals/bronze.svg'
-// import fb from '../img/fb.png'
+import { Alert, Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
 
 export type IGameCardProps = {
   game: Game
   leaderboardURL: string
   gameHistoryURL: string
   banner: string
+  loc: number
 }
 
-let tableData: any[]
-let { data: leaderboard, error } = await supabase.from('vw_mtgleaderboard').select('*')
-if (error) console.log('error', error)
-else tableData = leaderboard as any[]
+// If you want to change data for leaderboard homepage, add it to the appropriate index of tableData
+// Where the index for each game is found in GameInfoMap under the loc property
+// e.g. MTG has loc 0 so the leaderboard data for it goes into tableData[0]
+
+let tableData: any[] = []
+
+let { data: mtg, error: e1 } = await supabase.from('vw_mtgleaderboard').select().limit(3)
+if (e1) console.log('error', e1)
+else tableData[0] = mtg
+
+// NO VIEWS FOR THESE YET
+
+// let { data: foosball, error: e2 } = await supabase.from('vw_mtgleaderboard').select().limit(3)
+// if (e2) console.log('error', e2)
+// else tableData[0] = foosball
+
+// let { data: leaderboard, error: e3 } = await supabase.from('vw_mtgleaderboard').select().limit(3)
+// if (e3) console.log('error', e3)
+// else tableData[0] = leaderboard
 
 export default function GameCard(props: IGameCardProps) {
   const navigate = useNavigate()
@@ -42,10 +49,25 @@ export default function GameCard(props: IGameCardProps) {
         <Typography gutterBottom variant="h5" component="div">
           {props.game.PageName}
         </Typography>
-        <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
+        {/* <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
           {props.game.gameCardDescription}
-        </Typography>
-        <DataTable columns={columns} data={tableData!} />
+        </Typography> */}
+        {tableData[props.loc] ? (
+          <DataTable
+            columns={columns}
+            tableContainerSX={{
+              // Optional SX styles for TableContainer
+              border: '1px #bfbfbf solid',
+              mt: '20px'
+              // Add more styles as needed
+            }}
+            data={tableData[props.loc]}
+          />
+        ) : (
+          <>
+            <Alert severity="warning">No Leader Boards Submitted Yet</Alert>
+          </>
+        )}
       </CardContent>
       <CardActions>
         <Button size="small" onClick={navigateToPage(props.leaderboardURL)}>

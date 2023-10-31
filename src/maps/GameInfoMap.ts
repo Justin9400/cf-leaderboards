@@ -35,7 +35,8 @@ export const GameInfoMap: GamesMap = {
       { key: 'losses', name: 'Losses' }
     ],
     //SoloLeaderboardColumnNames: [],
-    PlayersList: ['Bryan', 'Morgan', 'Justin', 'Nick', 'Jeff', 'Lucas', 'Tye']
+    PlayersList: ['Bryan', 'Morgan', 'Justin', 'Nick', 'Jeff', 'Lucas', 'Tye'],
+    loc: 0
   },
   Foosball: {
     key: 'Foosball',
@@ -61,7 +62,8 @@ export const GameInfoMap: GamesMap = {
     ],
     //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
     //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
-    PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred']
+    PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred'],
+    loc: 1
   }
   // MarchMadness: {
   //   key: 'MarchMadness',
@@ -77,7 +79,8 @@ export const GameInfoMap: GamesMap = {
   //   LeaderboardColumns: [],
   //   SoloLeaderboardColumnNames: [],
   //   TeamLeaderboardColumnNames: [],
-  //   PlayersList: []
+  //   PlayersList: [],
+    loc: 3
   // },
   // Cornhole: {
   //   key: 'Cornhole',
@@ -102,7 +105,8 @@ export const GameInfoMap: GamesMap = {
   //   ],
   //   //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
   //   //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
-  //   PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred']
+  //   PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred'],
+    loc: 2
   // },
   // FitnessChallenge: {
   //   key: 'FitnessChallenge',
@@ -119,6 +123,7 @@ export const GameInfoMap: GamesMap = {
   //     { key: 'Points', name: 'Points' }
   //   ],
   //   PlayersList: ['Brandon', 'Justin'],
-  //   GameHistoryColumns: []
+  //   GameHistoryColumns: [],
+    loc: 4
   // }
 }

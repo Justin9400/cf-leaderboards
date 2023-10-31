@@ -18,6 +18,8 @@ export type IDataTableProps = {
   data: any[] | null
   greenColumns?: number[]
   redColumns?: number[]
+  showPaper?: boolean
+  tableContainerSX?: any
 }
 
 export default function DataTable(props: IDataTableProps) {
@@ -41,7 +43,11 @@ export default function DataTable(props: IDataTableProps) {
   }
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer
+      sx={{
+        ...props.tableContainerSX // Apply optional styles
+      }}
+    >
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>

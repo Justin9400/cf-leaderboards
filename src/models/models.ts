@@ -20,6 +20,7 @@ export type Game = {
   SoloLeaderboardColumnNames?: ColumnData[]
   TeamLeaderboardColumnNames?: ColumnData[]
   PlayersList: string[]
+  loc: number
 }
 
 export type GamesMap = {
