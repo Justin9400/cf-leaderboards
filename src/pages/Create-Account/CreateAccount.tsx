@@ -14,15 +14,14 @@ import {
   TextField
 } from '@mui/material'
 
-function Login() {
+function Signup() {
+  const navigate = useNavigate()
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [successfulAccountCreation, setSuccessfulAccountCreation] = React.useState<boolean | null>(null)
   const [showPassword, setShowPassword] = React.useState(false)
 
-  const navigate = useNavigate()
-
-  const navigateToPage = (pagePath: string) => () => {
+  const navigateToPage = (pagePath: string) => {
     const url = window.location.replace(pagePath)
     navigate(url + pagePath)
   }
@@ -40,7 +39,6 @@ function Login() {
     })
     if (data) {
       setSuccessfulAccountCreation(true)
-      console.log(data)
       navigateToPage('home')
     } else {
       setSuccessfulAccountCreation(false)
@@ -55,9 +53,18 @@ function Login() {
   return (
     <Paper
       elevation={3}
-      sx={{ display: 'flex', height: '50vh', width: '15%', margin: '0 auto', justifyContent: 'center' }}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '50vh',
+        width: '20%',
+        margin: '0 auto',
+        padding: '20px',
+        marginTop: '10vh'
+      }}
     >
-      <Stack spacing={5} sx={{ display: 'flex', height: '50vh', margin: '0 auto', justifyContent: 'center' }}>
+      <Stack spacing={3}>
         <h1>Create Account</h1>
         <TextField
           id="outlined-basic"
@@ -66,8 +73,7 @@ function Login() {
           value={email}
           onChange={handleOnChange(setEmail)}
         />
-
-        <FormControl sx={{ m: 1, width: '30ch' }} variant="outlined">
+        <FormControl sx={{ width: '100%' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
@@ -89,8 +95,9 @@ function Login() {
             label="Password"
           />
         </FormControl>
-
-        {successfulAccountCreation ? <p>Confirmation email sent</p> : null}
+        {successfulAccountCreation ? (
+          <p style={{ color: 'green' }}>Confirmation email sent. Check your inbox.</p>
+        ) : null}
         <Button variant="contained" onClick={createAccount}>
           Create Account
         </Button>
@@ -99,4 +106,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Signup
