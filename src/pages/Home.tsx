@@ -34,6 +34,7 @@ export default function Home() {
               leaderboardURL={game.LeaderBoardUrl}
               gameHistoryURL={game.GameHistoryUrl!}
               banner={game.gameBanner}
+              loc={game.loc}
             />
           </Grid>
         ))}
