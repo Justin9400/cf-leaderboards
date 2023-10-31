@@ -38,6 +38,7 @@ export default function AccountMenu() {
     const { error } = await supabase.auth.signOut()
     setAnchorEl(null)
     navigateToPage('login')
+    console.log(error)
   }
   return (
     <React.Fragment>

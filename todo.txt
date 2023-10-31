@@ -5,7 +5,11 @@ Add mana colors to mtg game history
 
 add mtg game history data to db
 
-authentication
+authentication - jk
 
-add new mtg game
+protected routes - jk
+
+add new mtg game - jk
+
+
 

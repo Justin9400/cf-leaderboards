@@ -35,6 +35,7 @@ function Login() {
       setSuccessfulLogin(true)
       navigateToPage('home')
     } else {
+      console.log(error)
       setSuccessfulLogin(false)
     }
   }
