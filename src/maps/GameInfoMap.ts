@@ -80,7 +80,7 @@ export const GameInfoMap: GamesMap = {
   //   SoloLeaderboardColumnNames: [],
   //   TeamLeaderboardColumnNames: [],
   //   PlayersList: [],
-    loc: 3
+  // loc: 3
   // },
   // Cornhole: {
   //   key: 'Cornhole',
@@ -106,7 +106,7 @@ export const GameInfoMap: GamesMap = {
   //   //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
   //   //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
   //   PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred'],
-    loc: 2
+  // loc: 2
   // },
   // FitnessChallenge: {
   //   key: 'FitnessChallenge',
@@ -124,6 +124,6 @@ export const GameInfoMap: GamesMap = {
   //   ],
   //   PlayersList: ['Brandon', 'Justin'],
   //   GameHistoryColumns: [],
-    loc: 4
+  // loc: 4
   // }
 }
