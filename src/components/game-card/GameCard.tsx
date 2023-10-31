@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
+import { Alert, Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
 import DataTable from '../data-table/DataTable'
 import { useNavigate } from 'react-router-dom'
 import { Game } from '../../models/models'
@@ -14,9 +14,9 @@ export type IGameCardProps = {
 
 // If you want to change data for leaderboard homepage, add it to the appropriate index of tableData
 // Where the index for each game is found in GameInfoMap under the loc property
-// e.g. MTG has loc 0 so the leaderboard data for it goes into tableData[0] 
+// e.g. MTG has loc 0 so the leaderboard data for it goes into tableData[0]
 
-let tableData :any[] = []
+let tableData: any[] = []
 
 let { data: mtg, error: e1 } = await supabase.from('vw_mtgleaderboard').select().limit(3)
 if (e1) console.log('error', e1)
@@ -49,10 +49,25 @@ export default function GameCard(props: IGameCardProps) {
         <Typography gutterBottom variant="h5" component="div">
           {props.game.PageName}
         </Typography>
-        <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
+        {/* <Typography variant="body2" color="text.secondary" style={{ paddingBottom: '20px' }}>
           {props.game.gameCardDescription}
-        </Typography>
-        {tableData[props.loc] ? <DataTable columns={columns} data={tableData[props.loc]} /> : <>No Data</>}
+        </Typography> */}
+        {tableData[props.loc] ? (
+          <DataTable
+            columns={columns}
+            tableContainerSX={{
+              // Optional SX styles for TableContainer
+              border: '1px #bfbfbf solid',
+              mt: '20px'
+              // Add more styles as needed
+            }}
+            data={tableData[props.loc]}
+          />
+        ) : (
+          <>
+            <Alert severity="warning">No Leader Boards Submitted Yet</Alert>
+          </>
+        )}
       </CardContent>
       <CardActions>
         <Button size="small" onClick={navigateToPage(props.leaderboardURL)}>
