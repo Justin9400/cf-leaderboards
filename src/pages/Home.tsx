@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid sx={{ pr: 3, pl: 3, maxWidth: '1600px', margin: '0 auto' }} container spacing={2}>
         {gameMap.map((game) => (
           <Grid key={game.key} item xs={12} sm={6} md={4} lg={3}>
             <GameCard
