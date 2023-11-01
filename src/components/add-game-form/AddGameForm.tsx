@@ -1,81 +1,64 @@
-import * as React from 'react'
 import AddIcon from '@mui/icons-material/Add'
-import { supabase } from '../../supabaseClient'
-import { List, Box, TextField, Drawer, Button, Stack } from '@mui/material'
+import {
+  Button,
+  Divider,
+  Grid,
+  Paper,
+  Stack,
+  Toolbar,
+  Typography,
+  Snackbar,
+  List,
+  Box,
+  TextField,
+  Drawer
+} from '@mui/material'
+import React, { useState } from 'react'
 import MultiSelectDropDown from '../multi-select-dropdown/MultiSelectDropDown'
+import { supabase } from '../../supabaseClient'
+// import { supabase } from '../../supabaseClient'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 
-const dataMap = {
-  Winner: undefined,
-  WDeck: undefined,
-  Loser1: undefined,
-  L1Deck: undefined,
-  Loser2: undefined,
-  L2Deck: undefined,
-  Loser3: undefined,
-  L3Deck: undefined,
-  remainingLife: undefined,
-  length: undefined,
-  date: undefined
-  // Add more keys as needed
-}
+// const dataMap = {
+//   Winner: '',
+//   WDeckStrat: '',
+//   WDeckColor: '',
+//   Loser1: '',
+//   L1DeckStrat: '',
+//   L1DeckColor: '',
+//   L2DeckStrat: '',
+//   L2DeckColor: '',
+//   L3DeckStrat: '',
+//   L3DeckColor: '',
+//   remainingLife: '',
+//   length: '',
+//   date: ''
+//   // Add more keys as needed
+// }
 
-async function addGame(table: string, data: [{}]) {
-  const { error } = await supabase.from(table).insert(data)
-}
+export const CustomToolbar = () => {
+  // const currentDate = new Date()
 
-export default function TemporaryDrawer() {
   const [winner, setWinner] = React.useState('')
-  const [wdeck, setWDeck] = React.useState({ Mana: [], strat: null })
+  const [wdeckstrat, setWDeckStrat] = React.useState('')
+  const [wdeckcolor, setWDeckColor] = React.useState([])
   const [loser1, setLoser1] = React.useState('')
-  const [l1deck, setL1Deck] = React.useState({ Mana: [], strat: null })
-  const [loser2, setLoser2] = React.useState('')
-  const [l2deck, setL2Deck] = React.useState({ Mana: [], strat: null })
-  const [loser3, setLoser3] = React.useState('')
-  const [l3deck, setL3Deck] = React.useState({ Mana: [], strat: null })
+  const [l1deckstrat, setL1DeckStrat] = React.useState('')
+  const [l1deckcolor, setL1DeckColor] = React.useState([])
+  // const [loser2, setLoser2] = React.useState('')
+  // const [l2deckstrat, setL2DeckStrat] = React.useState('')
+  // const [l2deckcolor, setL2DeckColor] = React.useState([])
+  // const [loser3, setLoser3] = React.useState('')
+  // const [l3deckstrat, setL3DeckStrat] = React.useState('')
+  // const [l3deckcolor, setL3DeckColor] = React.useState([])
   const [remaininglife, setRemainingLife] = React.useState('')
-  const [date, setDate] = React.useState('')
-  const currentDate = new Date().toISOString().split('T')[0]
+  const [length, setLength] = React.useState('')
+  const [date, setDate] = useState('')
+  const [snackbarOpen, setSnackbarOpen] = useState(false)
+  const [snackbarMessage, setSnackbarMessage] = useState('')
 
-  // function handleChange(event: any) {
-  //   setDate(event.target.value);
-  // }
-
-  const handleOnChange = (stateUpdater: any) => (event: any) => {
-    stateUpdater(event.target.value)
-  }
-
-  const handleWinnerChange = (e: any) => {
-    setWinner(e.target.value)
-    dataMap.Winner = e
-    console.log(dataMap.Winner)
-  }
-
-  const handleLoser1Change = (e: any) => {
-    setLoser1(e.target.value)
-    dataMap.Loser1 = e
-    console.log(dataMap.Loser1)
-  }
-
-  const handleDateChange = (e: any) => {
-    setDate(e.target.value)
-    dataMap.date = e
-    console.log(dataMap.date)
-  }
-
-  React.useEffect(() => {
-    // Get the current date in the format YYYY-MM-DD
-    const currentDate = new Date().toISOString().split('T')[0]
-
-    // Set the default value to the current date
-    setDate(currentDate)
-  }, [])
-
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
+  const [state, setState] = useState({
     right: false
   })
 
@@ -90,133 +73,187 @@ export default function TemporaryDrawer() {
     setState({ ...state, [anchor]: open })
   }
 
+  const handleOnChange = (stateUpdater: any) => (event: any) => {
+    stateUpdater(event.target.value)
+  }
+
+  const handleAddButtonClick = (anchor: Anchor) => {
+    if (
+      winner.trim() === '' ||
+      wdeckstrat.trim() === '' ||
+      wdeckcolor.length === 0 ||
+      loser1.trim() === '' ||
+      l1deckstrat.trim() === '' ||
+      l1deckcolor.length === 0 ||
+      !date
+    ) {
+      setSnackbarMessage('Please fill in all required fields')
+      setSnackbarOpen(true)
+    } else {
+      try {
+        supabase
+          .from('mtgGameHistory')
+          .insert({
+            Winner: winner,
+            Loser1: loser1,
+            Loser2: null,
+            Loser3: null,
+            remainingLife: remaininglife,
+            length: length,
+            Date: date,
+            WDeckStrat: wdeckstrat,
+            L1DeckStrat: l1deckstrat,
+            L2DeckStrat: null,
+            L3DeckStrat: null,
+            WDeckColor: wdeckcolor,
+            L1DeckColor: l1deckcolor,
+            L2DeckColor: null,
+            L3DeckColor: null
+          })
+          .then((response) => {
+            if (response.error) {
+              console.error('Error inserting data:', response.error)
+            } else {
+              console.log('Data inserted successfully:', response.data)
+            }
+          })
+      } catch (error) {
+        console.error('Error:', error)
+      }
+      setState({ ...state, [anchor]: false })
+      setWinner('')
+      setWDeckStrat('')
+      setWDeckColor([])
+      setLoser1('')
+      setL1DeckStrat('')
+      setL1DeckColor([])
+      setDate('')
+      setSnackbarMessage('Game added successfully')
+      setSnackbarOpen(true)
+    }
+  }
+
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false)
+  }
+
   const list = (anchor: Anchor) => (
     <Box sx={{ width: 500 }} role="permanent">
       <List>
-        <Stack>
+        <Typography sx={{ pl: 3, pt: 3, fontSize: '18px', fontWeight: '500' }}>Add a MTG game</Typography>
+        <Stack sx={{ p: 3 }}>
           <TextField
             id="outlined-basic"
             label="Winner"
             variant="outlined"
             value={winner}
-            onChange={handleWinnerChange}
+            onChange={handleOnChange(setWinner)}
             required
           />
           <TextField
+            sx={{ mt: 3 }}
             id="outlined-basic"
             label="Deck Strategy"
             variant="outlined"
-            value={wdeck.strat}
-            onChange={() => console.log('2')}
+            value={wdeckstrat}
+            onChange={handleOnChange(setWDeckStrat)}
             required
           />
-          {/* <MultiSelectDropDown label="Mana" value={wdeck.Mana} /> */}
+          <MultiSelectDropDown
+            label="Mana"
+            value={wdeckcolor}
+            onChange={handleOnChange(setWDeckColor)}
+            required={true}
+          />
         </Stack>
-
-        <Stack>
+        <Stack sx={{ pl: 3, pr: 3 }}>
           <TextField
             id="outlined-basic"
             label="Loser"
             variant="outlined"
             value={loser1}
-            onChange={() => console.log('3')}
+            onChange={handleOnChange(setLoser1)}
             required
           />
           <TextField
+            sx={{ mt: 3 }}
             id="outlined-basic"
             label="Deck Strategy"
             variant="outlined"
-            value={l1deck.strat}
-            onChange={() => console.log('4')}
+            value={l1deckstrat}
+            onChange={handleOnChange(setL1DeckStrat)}
             required
           />
-          {/* <MultiSelectDropDown label="Mana" value={l1deck.Mana} /> */}
-
+          <MultiSelectDropDown
+            label="Mana"
+            value={l1deckcolor}
+            onChange={handleOnChange(setL1DeckColor)}
+            required={true}
+          />
           <TextField
+            sx={{ mt: 3 }}
+            id="outlined-basic"
+            label="remaining life"
+            variant="outlined"
+            value={remaininglife}
+            onChange={handleOnChange(setRemainingLife)}
+            required
+          />
+          <TextField
+            sx={{ mt: 3 }}
+            id="outlined-basic"
+            label="length"
+            variant="outlined"
+            value={length}
+            onChange={handleOnChange(setLength)}
+            required
+          />
+          <TextField
+            sx={{ mt: 3 }}
             id="date-textfield"
             type="date"
-            sx={{ margin: '0 auto' }}
-            defaultValue={currentDate}
+            // defaultValue={currentDate}
             value={date}
-            onChange={() => console.log('5')}
+            onChange={handleOnChange(setDate)}
             required
           />
+          <Button sx={{ mt: 3 }} variant="contained" onClick={() => handleAddButtonClick(anchor)}>
+            Add
+          </Button>
         </Stack>
-        <Button variant="contained" onClick={() => addGame('mtgGameHistory', [{}])}>
-          Add
-        </Button>
       </List>
     </Box>
   )
 
   return (
-    <div>
-      {(['right'] as const).map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>
-            {'Add Game'}
-            <AddIcon />
-          </Button>
-          <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-            {list(anchor)}
-          </Drawer>
-        </React.Fragment>
-      ))}
-    </div>
+    <Paper>
+      <Stack>
+        <Toolbar>
+          <Grid container>
+            <Grid item xs={9}>
+              <Stack direction="row" spacing={1.5}>
+                <div>
+                  {(['right'] as const).map((anchor) => (
+                    <React.Fragment key={anchor}>
+                      <Button startIcon={<AddIcon />} onClick={toggleDrawer(anchor, true)}>
+                        {'Add Game'}
+                      </Button>
+                      <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                        {list(anchor)}
+                      </Drawer>
+                    </React.Fragment>
+                  ))}
+                </div>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Toolbar>
+        <Divider />
+      </Stack>
+      {/* Snackbar for success message */}
+      <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={handleCloseSnackbar} message={snackbarMessage} />
+    </Paper>
   )
 }
 
-// import React, { useState } from 'react';
-// import { Button, Drawer, TextField, List, Box, Stack } from '@mui/material';
-
-// type Anchor = 'top' | 'left' | 'bottom' | 'right';
-
-// const TemporaryDrawer: React.FC = () => {
-//   const [value, setValue] = useState('');
-//   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-//   const openDrawer = () => {
-//     setIsDrawerOpen(true);
-//   };
-
-//   const closeDrawer = () => {
-//     setIsDrawerOpen(false);
-//   };
-
-//   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-//     setValue(event.target.value);
-//   };
-
-//   const logStoredValue = () => {
-//     console.log('Stored Value:', value);
-//   };
-
-//   const drawerContent = (
-//     <Box sx={{ width: 250 }} role="presentation">
-//       <List>
-//         <Stack spacing={2} sx={{ p: 2 }}>
-//           <TextField
-//             label="Input Value"
-//             variant="outlined"
-//             value={value}
-//             onChange={handleInputChange}
-//           />
-//           <Button variant="contained" onClick={logStoredValue}>
-//             Log Stored Value
-//           </Button>
-//         </Stack>
-//       </List>
-//     </Box>
-//   );
-
-//   return (
-//     <div>
-//       <Button onClick={openDrawer}>Open Drawer</Button>
-//       <Drawer anchor="right" open={isDrawerOpen} onClose={closeDrawer}>
-//         {drawerContent}
-//       </Drawer>
-//     </div>
-//   );
-// };
-
-// export default TemporaryDrawer;
+export default CustomToolbar
