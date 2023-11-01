@@ -14,7 +14,9 @@ import {
   TextField
 } from '@mui/material'
 import { authenticate } from '../../redux/authSlice'
-import { useAppDispatch } from '../../redux/hooks'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { setUserEmail } from '../../redux/profileSlice'
+import { RootState } from '../../redux/store'
 
 export type ILoginProps = {
   // setAuth?: React.Dispatch<React.SetStateAction<boolean | null>>
@@ -22,7 +24,6 @@ export type ILoginProps = {
 
 function Login(props: ILoginProps) {
   const navigate = useNavigate()
-  // const auth = useAppSelector((state: RootState) => state.authentication)
   const dispatch = useAppDispatch()
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
@@ -38,9 +39,13 @@ function Login(props: ILoginProps) {
       email: email,
       password: password
     })
+    const {
+      data: { user }
+    } = await supabase.auth.getUser()
     if (data.user !== null && data.session !== null) {
       setSuccessfulLogin(true)
       dispatch(authenticate())
+      dispatch(setUserEmail(user?.email))
       navigateToPage('home')
     } else {
       console.log(error)

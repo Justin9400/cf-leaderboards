@@ -11,6 +11,7 @@ import { ProtectedRoute } from './components/protected-route/ProtectedRoute'
 import { useSelector } from 'react-redux'
 import { RootState } from './redux/store'
 import React from 'react'
+import Profile from './pages/profile/Profile'
 // import FitnessLeaderboard from './pages/Fitness-Leaderboard/fitness-leaderboard'
 // import FoosballLeaderboard from './pages/Foosball-Leaderboard/foosball-leaderboard'
 // import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-History'
@@ -54,6 +55,15 @@ function App() {
               element={
                 <ProtectedRoute user={authen}>
                   <MTGGameHistory />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="profile"
+              element={
+                <ProtectedRoute user={authen}>
+                  <Profile />
                 </ProtectedRoute>
               }
             />
