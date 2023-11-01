@@ -14,7 +14,8 @@ import {
   Drawer
 } from '@mui/material'
 import React, { useState } from 'react'
-import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown'
+import MultiSelectDropDown from '../multi-select-dropdown/MultiSelectDropDown'
+import { supabase } from '../../supabaseClient'
 // import { supabase } from '../../supabaseClient'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
@@ -51,8 +52,8 @@ export const CustomToolbar = () => {
   // const [loser3, setLoser3] = React.useState('')
   // const [l3deckstrat, setL3DeckStrat] = React.useState('')
   // const [l3deckcolor, setL3DeckColor] = React.useState([])
-  // const [remaininglife, setRemainingLife] = React.useState('')
-  // const [length, setLength] = React.useState('')
+  const [remaininglife, setRemainingLife] = React.useState('')
+  const [length, setLength] = React.useState('')
   const [date, setDate] = useState('')
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarMessage, setSnackbarMessage] = useState('')
@@ -80,7 +81,7 @@ export const CustomToolbar = () => {
     if (
       winner.trim() === '' ||
       wdeckstrat.trim() === '' ||
-      // wdeckcolor.length === 0 ||
+      wdeckcolor.length === 0 ||
       loser1.trim() === '' ||
       l1deckstrat.trim() === '' ||
       l1deckcolor.length === 0 ||
@@ -89,53 +90,37 @@ export const CustomToolbar = () => {
       setSnackbarMessage('Please fill in all required fields')
       setSnackbarOpen(true)
     } else {
-      console.log(
-        winner,
-        wdeckstrat,
-        wdeckcolor,
-        loser1,
-        l1deckstrat,
-        l1deckcolor,
-        // loser2,
-        // l2deckstrat,
-        // l2deckcolor,
-        // loser3,
-        // l3deckstrat,
-        // l3deckcolor,
-        // remaininglife,
-        // length,
-        date
-      )
-      // try {
-      //   supabase
-      //     .from('mtgGameHistory')
-      //     .upsert([
-      // winner,
-      // wdeckstrat,
-      // wdeckcolor,
-      // loser1,
-      // l1deckstrat,
-      // l1deckcolor,
-      // loser2,
-      // l2deckstrat,
-      // l2deckcolor,
-      // loser3,
-      // l3deckstrat,
-      // l3deckcolor,
-      // remaininglife,
-      // length,
-      // date
-      //     ])
-      //     .then((response) => {
-      //       if (response.error) {
-      //         console.error('Error inserting data:', response.error)
-      //       } else {
-      //         console.log('Data inserted successfully:', response.data)
-      //       }
-      //     })
-      // } catch (error) {
-      //   console.error('Error:', error)
-      // }
+      try {
+        supabase
+          .from('mtgGameHistory')
+          .insert({
+            id: 37,
+            Winner: winner,
+            Loser1: loser1,
+            Loser2: null,
+            Loser3: null,
+            remainingLife: remaininglife,
+            length: length,
+            Date: date,
+            WDeckStrat: wdeckstrat,
+            L1DeckStrat: l1deckstrat,
+            L2DeckStrat: null,
+            L3DeckStrat: null,
+            WDeckColor: wdeckcolor,
+            L1DeckColor: l1deckcolor,
+            L2DeckColor: null,
+            L3DeckColor: null
+          })
+          .then((response) => {
+            if (response.error) {
+              console.error('Error inserting data:', response.error)
+            } else {
+              console.log('Data inserted successfully:', response.data)
+            }
+          })
+      } catch (error) {
+        console.error('Error:', error)
+      }
       setState({ ...state, [anchor]: false })
       setWinner('')
       setWDeckStrat('')
@@ -205,6 +190,24 @@ export const CustomToolbar = () => {
             value={l1deckcolor}
             onChange={handleOnChange(setL1DeckColor)}
             required={true}
+          />
+          <TextField
+            sx={{ mt: 3 }}
+            id="outlined-basic"
+            label="remaining life"
+            variant="outlined"
+            value={remaininglife}
+            onChange={handleOnChange(setRemainingLife)}
+            required
+          />
+          <TextField
+            sx={{ mt: 3 }}
+            id="outlined-basic"
+            label="length"
+            variant="outlined"
+            value={length}
+            onChange={handleOnChange(setLength)}
+            required
           />
           <TextField
             sx={{ mt: 3 }}

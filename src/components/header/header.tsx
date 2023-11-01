@@ -3,8 +3,11 @@ import logo from '../../img/logo.svg'
 import MenuIcon from '@mui/icons-material/Menu'
 import AccountMenu from '../account-icon-menu/account-icon-menu'
 import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container } from '@mui/material'
+import { useAppSelector } from '../../redux/hooks'
+import { RootState } from '../../redux/store'
 
 function Header() {
+  const auth = useAppSelector((state: RootState) => state.authentication)
   // const [showContent, setShowContent] = useState(false);
 
   // const handleHover = () => {
@@ -101,9 +104,7 @@ function Header() {
             ))}
           </Box> */}
           <Box sx={{ marginLeft: 'auto' }}>
-            <Tooltip title="Brandon Camerer">
-              <AccountMenu />
-            </Tooltip>
+            <Tooltip title="Brandon Camerer">{auth ? <AccountMenu /> : <></>}</Tooltip>
           </Box>
         </Toolbar>
       </Container>

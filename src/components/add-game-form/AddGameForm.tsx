@@ -2,7 +2,7 @@ import * as React from 'react'
 import AddIcon from '@mui/icons-material/Add'
 import { supabase } from '../../supabaseClient'
 import { List, Box, TextField, Drawer, Button, Stack } from '@mui/material'
-import MultiSelectDropDown from '../multi-select-dropdown/MulitiSelectDropDown'
+import MultiSelectDropDown from '../multi-select-dropdown/MultiSelectDropDown'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 
@@ -21,9 +21,10 @@ const dataMap = {
   // Add more keys as needed
 }
 
-async function insert(data: []) {
-  let { data: game, error } = await supabase.from('mtgGameHistory').insert([data])
+async function addGame(table: string, data: [{}]) {
+  const { error } = await supabase.from(table).insert(data)
 }
+
 export default function TemporaryDrawer() {
   const [winner, setWinner] = React.useState('')
   const [wdeck, setWDeck] = React.useState({ Mana: [], strat: null })
@@ -40,6 +41,10 @@ export default function TemporaryDrawer() {
   // function handleChange(event: any) {
   //   setDate(event.target.value);
   // }
+
+  const handleOnChange = (stateUpdater: any) => (event: any) => {
+    stateUpdater(event.target.value)
+  }
 
   const handleWinnerChange = (e: any) => {
     setWinner(e.target.value)
@@ -137,7 +142,7 @@ export default function TemporaryDrawer() {
             required
           />
         </Stack>
-        <Button variant="contained" onClick={() => console.log('HERE')}>
+        <Button variant="contained" onClick={() => addGame('mtgGameHistory', [{}])}>
           Add
         </Button>
       </List>
