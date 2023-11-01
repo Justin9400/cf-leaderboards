@@ -1,6 +1,5 @@
 import React from 'react'
 import { Stack } from '@mui/system'
-import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../supabaseClient'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import {
@@ -15,15 +14,10 @@ import {
 } from '@mui/material'
 
 function Signup() {
-  const navigate = useNavigate()
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [successfulAccountCreation, setSuccessfulAccountCreation] = React.useState<boolean | null>(null)
   const [showPassword, setShowPassword] = React.useState(false)
-
-  const navigateToPage = (pagePath: string) => () => {
-    navigate('/' + pagePath, { replace: true })
-  }
 
   const handleClickShowPassword = () => setShowPassword((show) => !show)
 
@@ -36,12 +30,12 @@ function Signup() {
       email: email,
       password: password
     })
-    if (data) {
+    if (data.user !== null) {
       setSuccessfulAccountCreation(true)
-      navigateToPage('home')
+      console.log('DATA:', data)
     } else {
       setSuccessfulAccountCreation(false)
-      console.log(error)
+      console.log('ERROR:', error)
     }
   }
 
@@ -99,7 +93,9 @@ function Signup() {
         </FormControl>
         {successfulAccountCreation ? (
           <p style={{ color: 'green', fontSize: '0.9em' }}>Confirmation email sent. Check your inbox.</p>
-        ) : null}
+        ) : !successfulAccountCreation ? null : (
+          <p style={{ color: 'red', fontSize: '0.9em' }}>Invalid email</p>
+        )}
         <Button
           variant="contained"
           onClick={createAccount}

@@ -30,8 +30,6 @@ function Login(props: ILoginProps) {
   const [showPassword, setShowPassword] = React.useState(false)
 
   const navigateToPage = (pagePath: string) => {
-    // const url = window.location.replace(pathname)
-    // console.log(url)
     navigate('/' + pagePath, { replace: true })
   }
 
@@ -42,15 +40,8 @@ function Login(props: ILoginProps) {
     })
     if (data.user !== null && data.session !== null) {
       setSuccessfulLogin(true)
-      // console.log(auth)
-
       dispatch(authenticate())
-      // if (props.setAuth) {
-      //   props.setAuth(false)
-      // }
-      // console.log(auth)
       navigateToPage('home')
-      // console.log(auth)
     } else {
       console.log(error)
       setSuccessfulLogin(false)
