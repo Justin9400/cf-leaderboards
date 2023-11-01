@@ -32,15 +32,14 @@ export default function DataTable(props: IDataTableProps) {
   const isGreenColumn = (columnIndex: number) => (props.greenColumns || []).includes(columnIndex)
   const isRedColumn = (columnIndex: number) => (props.redColumns || []).includes(columnIndex)
 
-  // Define an array of images corresponding to winners
-  const winnerImages: { [key: string]: JSX.Element } = {
-    Morgan: <Morgan />,
-    Bryan: <Bryan />,
-    Tye: <Tye />,
-    Justin: <Justin />,
-    Brandon: <Brandon />
-    // Add more mappings as needed
-  }
+  // const winnerImages: { [key: string]: JSX.Element } = {
+  //   Morgan: <Morgan />,
+  //   Bryan: <Bryan />,
+  //   Tye: <Tye />,
+  //   Justin: <Justin />,
+  //   Brandon: <Brandon />
+
+  // }
 
   return (
     <TableContainer
@@ -81,10 +80,8 @@ export default function DataTable(props: IDataTableProps) {
                       onMouseLeave={() => setHoveredCell({ rowIndex: -1, columnIndex: -1 })}
                     >
                       {hoveredCell.rowIndex === rowIndex && hoveredCell.columnIndex === columnIndex
-                        ? // Display the custom component when hovered
-                          winnerImages[value] || value
-                        : // Display the text as usual
-                          value}
+                        ? [value] || value
+                        : value}
                     </TableCell>
                   )
                 })}
