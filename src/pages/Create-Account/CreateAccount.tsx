@@ -21,8 +21,6 @@ function Signup() {
   const [successfulAccountCreation, setSuccessfulAccountCreation] = React.useState<boolean | null>(null)
   const [showPassword, setShowPassword] = React.useState(false)
 
-  const navigate = useNavigate()
-
   const navigateToPage = (pagePath: string) => () => {
     navigate('/' + pagePath, { replace: true })
   }
