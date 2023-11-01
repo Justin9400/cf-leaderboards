@@ -1,5 +1,4 @@
-Brandon's  Bugs
--- Clicking Logo Takes to blank page
+Brandon's Bugs
 -- Adding a game requires refresh to see
 -- Refresh logs you out over and over
 -- if players aren't ranked the home page card just feels weird
