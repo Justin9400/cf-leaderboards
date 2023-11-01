@@ -128,7 +128,7 @@ export const CustomToolbar = () => {
       setL1DeckStrat('')
       setL1DeckColor([])
       setDate('')
-      setSnackbarMessage('Game added successfully')
+      setSnackbarMessage('Game added successfully, refresh page to view')
       setSnackbarOpen(true)
     }
   }
