@@ -1,3 +1,8 @@
+Brandon's Bugs
+-- Adding a game requires refresh to see
+-- Refresh logs you out over and over
+-- if players aren't ranked the home page card just feels weird
+
 change mtg player cards to be more editable 
     all of them are just green 
 
