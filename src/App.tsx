@@ -23,7 +23,7 @@ function App() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
+
         backgroundColor: '#f6f6f6'
       }}
     >

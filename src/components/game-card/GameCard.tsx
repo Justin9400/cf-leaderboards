@@ -39,10 +39,10 @@ export default function GameCard(props: IGameCardProps) {
     navigate('/' + pagePath, { replace: true })
   }
 
-  const columns = props.game.LeaderboardColumns.slice(0, 3)
+  const columns = props.game.LeaderboardColumns.slice(0, 5)
 
   return (
-    <Card sx={{ minHeight: '400px', mt: 3 }}>
+    <Card sx={{ minHeight: '400px', mt: 2 }}>
       <CardMedia sx={{ height: 140 }} image={props.banner} title="Foosball" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

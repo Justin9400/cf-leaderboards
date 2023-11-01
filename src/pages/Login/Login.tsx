@@ -70,10 +70,22 @@ function Login(props: ILoginProps) {
   return (
     <Paper
       elevation={3}
-      sx={{ display: 'flex', height: '50vh', width: '15%', margin: '0 auto', justifyContent: 'center' }}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '50vh',
+        width: '30%', // Adjusted width for a more balanced look
+        margin: '0 auto',
+        padding: '20px',
+        marginTop: '10vh',
+        borderRadius: '10px', // Added a subtle border radius
+        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)', // Added a soft shadow
+        backgroundColor: '#fff' // White background color
+      }}
     >
-      <Stack spacing={5} sx={{ display: 'flex', height: '50vh', margin: '0 auto', justifyContent: 'center' }}>
-        <h1>Login</h1>
+      <Stack spacing={3}>
+        <h1 style={{ margin: '0 auto', fontSize: '2em' }}>Welcome</h1> {/* Improved heading style */}
         <TextField
           id="outlined-basic"
           label="Email"
@@ -81,8 +93,7 @@ function Login(props: ILoginProps) {
           value={email}
           onChange={handleOnChange(setEmail)}
         />
-
-        <FormControl sx={{ m: 1, width: '30ch' }} variant="outlined">
+        <FormControl sx={{ width: '100%' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
@@ -104,11 +115,31 @@ function Login(props: ILoginProps) {
             label="Password"
           />
         </FormControl>
-        {successfulLogin === true || successfulLogin === null ? null : <p>Incorrect uername or password</p>}
-        <Button variant="contained" onClick={signInWithEmail}>
-          Login
+        {successfulLogin === false && <p style={{ color: 'red', fontSize: '0.9em' }}>Incorrect username or password</p>}
+        <Button
+          variant="contained"
+          onClick={signInWithEmail}
+          sx={{
+            backgroundColor: '#1976D2', // Custom button color
+            color: 'white', // Custom text color
+            '&:hover': {
+              backgroundColor: '#1565C0' // Custom hover color
+            }
+          }}
+        >
+          Sign In
         </Button>
-        <Button variant="contained" onClick={() => navigateToPage('register')}>
+        <Button
+          variant="contained"
+          onClick={() => navigateToPage('register')}
+          sx={{
+            backgroundColor: '#4CAF50', // Custom button color
+            color: 'white', // Custom text color
+            '&:hover': {
+              backgroundColor: '#388E3C' // Custom hover color
+            }
+          }}
+        >
           Create Account
         </Button>
       </Stack>

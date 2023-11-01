@@ -14,7 +14,8 @@ import {
   TextField
 } from '@mui/material'
 
-function Login() {
+function Signup() {
+  const navigate = useNavigate()
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [successfulAccountCreation, setSuccessfulAccountCreation] = React.useState<boolean | null>(null)
@@ -39,7 +40,6 @@ function Login() {
     })
     if (data) {
       setSuccessfulAccountCreation(true)
-      console.log(data)
       navigateToPage('home')
     } else {
       setSuccessfulAccountCreation(false)
@@ -54,10 +54,22 @@ function Login() {
   return (
     <Paper
       elevation={3}
-      sx={{ display: 'flex', height: '50vh', width: '15%', margin: '0 auto', justifyContent: 'center' }}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '50vh',
+        width: '30%', // Adjusted width for a more balanced look
+        margin: '0 auto',
+        padding: '20px',
+        marginTop: '10vh',
+        borderRadius: '10px', // Added a subtle border radius
+        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)', // Added a soft shadow
+        backgroundColor: '#fff' // White background color
+      }}
     >
-      <Stack spacing={5} sx={{ display: 'flex', height: '50vh', margin: '0 auto', justifyContent: 'center' }}>
-        <h1>Create Account</h1>
+      <Stack spacing={3}>
+        <h1 style={{ margin: '0 auto', fontSize: '2em' }}>Join Us</h1> {/* Improved heading style */}
         <TextField
           id="outlined-basic"
           label="Email"
@@ -65,8 +77,7 @@ function Login() {
           value={email}
           onChange={handleOnChange(setEmail)}
         />
-
-        <FormControl sx={{ m: 1, width: '30ch' }} variant="outlined">
+        <FormControl sx={{ width: '100%' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
@@ -88,14 +99,25 @@ function Login() {
             label="Password"
           />
         </FormControl>
-
-        {successfulAccountCreation ? <p>Confirmation email sent</p> : null}
-        <Button variant="contained" onClick={createAccount}>
-          Create Account
+        {successfulAccountCreation ? (
+          <p style={{ color: 'green', fontSize: '0.9em' }}>Confirmation email sent. Check your inbox.</p>
+        ) : null}
+        <Button
+          variant="contained"
+          onClick={createAccount}
+          sx={{
+            backgroundColor: '#4CAF50', // Custom button color
+            color: 'white', // Custom text color
+            '&:hover': {
+              backgroundColor: '#388E3C' // Custom hover color
+            }
+          }}
+        >
+          Get Started
         </Button>
       </Stack>
     </Paper>
   )
 }
 
-export default Login
+export default Signup
