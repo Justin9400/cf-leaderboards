@@ -36,8 +36,7 @@ export default function GameCard(props: IGameCardProps) {
   const navigate = useNavigate()
 
   const navigateToPage = (pagePath: string) => () => {
-    const url = window.location.replace(pagePath)
-    navigate(url + pagePath)
+    navigate('/' + pagePath, { replace: true })
   }
 
   const columns = props.game.LeaderboardColumns.slice(0, 3)

@@ -13,17 +13,26 @@ import {
   Paper,
   TextField
 } from '@mui/material'
+import { authenticate } from '../../redux/authSlice'
+import { useAppDispatch } from '../../redux/hooks'
 
-function Login() {
+export type ILoginProps = {
+  // setAuth?: React.Dispatch<React.SetStateAction<boolean | null>>
+}
+
+function Login(props: ILoginProps) {
   const navigate = useNavigate()
+  // const auth = useAppSelector((state: RootState) => state.authentication)
+  const dispatch = useAppDispatch()
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [successfulLogin, setSuccessfulLogin] = React.useState<boolean | null>(null)
   const [showPassword, setShowPassword] = React.useState(false)
 
   const navigateToPage = (pagePath: string) => {
-    const url = window.location.replace(pagePath)
-    navigate(url + pagePath)
+    // const url = window.location.replace(pathname)
+    // console.log(url)
+    navigate('/' + pagePath, { replace: true })
   }
 
   async function signInWithEmail() {
@@ -33,7 +42,15 @@ function Login() {
     })
     if (data.user !== null && data.session !== null) {
       setSuccessfulLogin(true)
+      // console.log(auth)
+
+      dispatch(authenticate())
+      // if (props.setAuth) {
+      //   props.setAuth(false)
+      // }
+      // console.log(auth)
       navigateToPage('home')
+      // console.log(auth)
     } else {
       console.log(error)
       setSuccessfulLogin(false)

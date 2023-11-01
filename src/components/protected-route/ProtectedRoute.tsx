@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom'
 interface Props {
   user: any
   children: React.ReactNode
+  // path: string
 }
 
 export const ProtectedRoute = ({ user, children }: Props) => {

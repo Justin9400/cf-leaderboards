@@ -23,8 +23,7 @@ function Login() {
   const navigate = useNavigate()
 
   const navigateToPage = (pagePath: string) => () => {
-    const url = window.location.replace(pagePath)
-    navigate(url + pagePath)
+    navigate('/' + pagePath, { replace: true })
   }
 
   const handleClickShowPassword = () => setShowPassword((show) => !show)

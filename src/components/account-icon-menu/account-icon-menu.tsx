@@ -12,19 +12,22 @@ import Logout from '@mui/icons-material/Logout'
 import IconButton from '@mui/material/IconButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import Settings from '@mui/icons-material/Settings'
+import { useAppDispatch } from '../../redux/hooks'
+import { deAuthenticate } from '../../redux/authSlice'
 
 export type IAccountMenuProps = {
   img: string
 }
 
 export default function AccountMenu() {
+  // const auth = useAppSelector((state: RootState) => state.authentication)
+  const dispatch = useAppDispatch()
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const navigate = useNavigate()
   const open = Boolean(anchorEl)
 
   const navigateToPage = (pagePath: string) => {
-    const url = window.location.replace(pagePath)
-    navigate(url + pagePath)
+    navigate('/' + pagePath, { replace: true })
   }
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -38,6 +41,7 @@ export default function AccountMenu() {
     const { error } = await supabase.auth.signOut()
     setAnchorEl(null)
     navigateToPage('login')
+    dispatch(deAuthenticate())
     console.log(error)
   }
   return (
