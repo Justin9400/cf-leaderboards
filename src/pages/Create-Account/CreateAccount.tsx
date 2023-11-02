@@ -3,6 +3,7 @@ import { Stack } from '@mui/system'
 import { supabase } from '../../supabaseClient'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import {
+  Alert,
   Button,
   FormControl,
   IconButton,
@@ -90,6 +91,9 @@ function Signup() {
             }
             label="Password"
           />
+          <Alert severity="error" sx={{ mt: 2 }}>
+            Do not use your CloudFit Password
+          </Alert>
         </FormControl>
         {successfulAccountCreation ? (
           <p style={{ color: 'green', fontSize: '0.9em' }}>Confirmation email sent. Check your inbox.</p>
