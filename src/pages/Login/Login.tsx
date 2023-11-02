@@ -13,10 +13,8 @@ import {
   Paper,
   TextField
 } from '@mui/material'
-import { authenticate } from '../../redux/authSlice'
-import { useAppDispatch, useAppSelector } from '../../redux/hooks'
-import { setUserEmail } from '../../redux/profileSlice'
-import { RootState } from '../../redux/store'
+import { authenticate, setAuthToken } from '../../redux/authSlice' // Import your Redux actions
+import { useAppDispatch } from '../../redux/hooks'
 
 export type ILoginProps = {
   // setAuth?: React.Dispatch<React.SetStateAction<boolean | null>>
@@ -43,9 +41,11 @@ function Login(props: ILoginProps) {
       data: { user }
     } = await supabase.auth.getUser()
     if (data.user !== null && data.session !== null) {
-      setSuccessfulLogin(true)
-      dispatch(authenticate())
-      dispatch(setUserEmail(user?.email))
+      const authToken = data.session.access_token
+
+      // Dispatch actions to set the authentication status and auth token in the Redux store
+      dispatch(authenticate()) // Set authentication status to true
+      dispatch(setAuthToken(authToken)) // Set the auth token in the Redux store
       navigateToPage('home')
     } else {
       console.log(error)
@@ -71,17 +71,17 @@ function Login(props: ILoginProps) {
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: '50vh',
-        width: '30%', // Adjusted width for a more balanced look
+        width: '30%',
         margin: '0 auto',
         padding: '20px',
         marginTop: '10vh',
-        borderRadius: '10px', // Added a subtle border radius
-        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)', // Added a soft shadow
-        backgroundColor: '#fff' // White background color
+        borderRadius: '10px',
+        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)',
+        backgroundColor: '#fff'
       }}
     >
       <Stack spacing={3}>
-        <h1 style={{ margin: '0 auto', fontSize: '2em' }}>Welcome</h1> {/* Improved heading style */}
+        <h1 style={{ margin: '0 auto', fontSize: '2em' }}>Welcome</h1>
         <TextField
           id="outlined-basic"
           label="Email"
@@ -116,10 +116,10 @@ function Login(props: ILoginProps) {
           variant="contained"
           onClick={signInWithEmail}
           sx={{
-            backgroundColor: '#1976D2', // Custom button color
-            color: 'white', // Custom text color
+            backgroundColor: '#1976D2',
+            color: 'white',
             '&:hover': {
-              backgroundColor: '#1565C0' // Custom hover color
+              backgroundColor: '#1565C0'
             }
           }}
         >
@@ -129,10 +129,10 @@ function Login(props: ILoginProps) {
           variant="contained"
           onClick={() => navigateToPage('register')}
           sx={{
-            backgroundColor: '#4CAF50', // Custom button color
-            color: 'white', // Custom text color
+            backgroundColor: '#4CAF50',
+            color: 'white',
             '&:hover': {
-              backgroundColor: '#388E3C' // Custom hover color
+              backgroundColor: '#388E3C'
             }
           }}
         >
