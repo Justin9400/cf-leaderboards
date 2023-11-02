@@ -15,6 +15,7 @@ import {
 } from '@mui/material'
 import { authenticate, setAuthToken } from '../../redux/authSlice' // Import your Redux actions
 import { useAppDispatch } from '../../redux/hooks'
+import { setUserEmail } from '../../redux/profileSlice'
 
 export type ILoginProps = {
   // setAuth?: React.Dispatch<React.SetStateAction<boolean | null>>
@@ -45,6 +46,7 @@ function Login(props: ILoginProps) {
 
       // Dispatch actions to set the authentication status and auth token in the Redux store
       dispatch(authenticate()) // Set authentication status to true
+      dispatch(setUserEmail(user?.email))
       dispatch(setAuthToken(authToken)) // Set the auth token in the Redux store
       navigateToPage('home')
     } else {
