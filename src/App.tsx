@@ -7,14 +7,27 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MTGLeaderboard from './pages/MTG-Leaderboard/mtg-leaderboard'
 import MTGGameHistory from './pages/MTG-Game-History/MTG-Game-History'
 import { ProtectedRoute } from './components/protected-route/ProtectedRoute'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux' // Import useDispatch
 import { RootState } from './redux/store'
-import React from 'react'
+import React, { useEffect } from 'react' // Import useEffect
 import Profile from './pages/profile/Profile'
+import { checkTokenExpiration } from './redux/authSlice' // Import the checkTokenExpiration action
 
 function App() {
   const isAuthenticated = useSelector((state: RootState) => state.authentication.isAuthenticated)
   const authToken = useSelector((state: RootState) => state.authentication.authToken)
+  const dispatch = useDispatch() // Initialize the dispatch function
+
+  // Add an effect to check token expiration
+  useEffect(() => {
+    // Check token expiration periodically (e.g., every minute)
+    const tokenCheckInterval = setInterval(() => {
+      dispatch(checkTokenExpiration())
+    }, 60 * 1000)
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(tokenCheckInterval)
+  }, [dispatch])
 
   return (
     <BrowserRouter>
