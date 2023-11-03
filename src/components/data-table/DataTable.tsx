@@ -20,7 +20,7 @@ export type IDataTableProps = {
   redColumns?: number[]
   showPaper?: boolean
   tableContainerSX?: any
-  images?: any[]
+  images?: { [key: string]: JSX.Element }
   winnerLoserHighlight: boolean
 }
 
@@ -33,7 +33,6 @@ export default function DataTable(props: IDataTableProps) {
 
   const isGreenColumn = (columnIndex: number) => (props.greenColumns || []).includes(columnIndex)
   const isRedColumn = (columnIndex: number) => (props.redColumns || []).includes(columnIndex)
-
   // const winnerImages: { [key: string]: JSX.Element } = {
   //   Morgan: <Morgan />,
   //   Bryan: <Bryan />,
@@ -83,8 +82,10 @@ export default function DataTable(props: IDataTableProps) {
                       onMouseEnter={() => setHoveredCell({ rowIndex, columnIndex: columnIndex })}
                       onMouseLeave={() => setHoveredCell({ rowIndex: -1, columnIndex: -1 })}
                     >
-                      {hoveredCell.rowIndex === rowIndex && hoveredCell.columnIndex === columnIndex
-                        ? [value] || value
+                      {Array.isArray(value) && value.every((item) => typeof item === 'string') && props.images
+                        ? value.map((e) => {
+                            return props.images![e]
+                          })
                         : value}
                     </TableCell>
                   )

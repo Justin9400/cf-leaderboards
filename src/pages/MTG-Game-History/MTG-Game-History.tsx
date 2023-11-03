@@ -4,6 +4,11 @@ import { GameInfoMap } from '../../maps/GameInfoMap'
 import { IMtgGameHistory } from '../../models/models'
 import DataTable from '../../components/data-table/DataTable'
 import CustomToolbar from '../../components/add-game-form/AddGameForm'
+import RedManaImage from '../../img/mana/red.svg'
+import BlackManaImage from '../../img/mana/black.svg'
+import WhiteManaImage from '../../img/mana/white.svg'
+import GreenManaImage from '../../img/mana/green.svg'
+import BlueManaImage from '../../img/mana/blue.svg'
 
 let mtgGameHistory: IMtgGameHistory[] = []
 
@@ -12,6 +17,13 @@ if (error) console.log('error', error)
 else mtgGameHistory = mtgGameHistoryDB as IMtgGameHistory[]
 
 function MTGGameHistory() {
+  const images = {
+    Red: <img key={'redMana'} alt={'red'} src={RedManaImage} style={{ marginLeft: 5, width: '25px' }} />,
+    Blue: <img key={'blueMana'} alt={'blue'} src={BlueManaImage} style={{ marginLeft: 5, width: '25px' }} />,
+    Green: <img key={'greenMana'} alt={'green'} src={GreenManaImage} style={{ marginLeft: 5, width: '25px' }} />,
+    White: <img key={'whiteMana'} alt={'white'} src={WhiteManaImage} style={{ marginLeft: 5, width: '25px' }} />,
+    Black: <img key={'blackMana'} alt={'black'} src={BlackManaImage} style={{ marginLeft: 5, width: '25px' }} />
+  }
   return (
     <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto' }}>
       <h1 style={{ margin: '2% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>
@@ -39,6 +51,7 @@ function MTGGameHistory() {
           // Add more styles as needed
         }}
         winnerLoserHighlight={true}
+        images={images}
       />
     </Stack>
   )
