@@ -94,15 +94,15 @@ export const CustomToolbar = () => {
         supabase
           .from('mtgGameHistory')
           .insert({
-            Winner: winner,
-            Loser1: loser1,
+            Winner: winner.trim(),
+            Loser1: loser1.trim(),
             Loser2: null,
             Loser3: null,
-            remainingLife: remaininglife,
-            length: length,
+            remainingLife: remaininglife.trim(),
+            length: length.trim(),
             Date: date,
-            WDeckStrat: wdeckstrat,
-            L1DeckStrat: l1deckstrat,
+            WDeckStrat: wdeckstrat.trim(),
+            L1DeckStrat: l1deckstrat.trim(),
             L2DeckStrat: null,
             L3DeckStrat: null,
             WDeckColor: wdeckcolor,
