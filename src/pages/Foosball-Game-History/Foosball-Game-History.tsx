@@ -22,10 +22,18 @@ function FoosballGameHistory() {
       <h1 style={{ margin: '5% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>Foosball Game History</h1>
       <Stack direction="row" spacing={10}>
         <Paper>
-          <DataTable columns={GameInfoMap.Foosball.GameHistoryColumns} data={soloFoosballGameHistory} />
+          <DataTable
+            columns={GameInfoMap.Foosball.GameHistoryColumns}
+            data={soloFoosballGameHistory}
+            winnerLoserHighlight={false}
+          />
         </Paper>
         <Paper>
-          <DataTable columns={GameInfoMap.Foosball.GameHistoryColumns} data={foosballGameHistory} />
+          <DataTable
+            columns={GameInfoMap.Foosball.GameHistoryColumns}
+            data={foosballGameHistory}
+            winnerLoserHighlight={false}
+          />
         </Paper>
       </Stack>
     </Stack>

@@ -38,6 +38,7 @@ function MTGGameHistory() {
 
           // Add more styles as needed
         }}
+        winnerLoserHighlight={true}
       />
     </Stack>
   )

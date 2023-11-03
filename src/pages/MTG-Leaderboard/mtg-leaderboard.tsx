@@ -10,7 +10,7 @@ function MTGLeaderBoard() {
   return (
     <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto' }}>
       <h1 style={{ margin: '5% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>Magic The Gathering Leaderboard</h1>
-      <DataTable columns={GameInfoMap.MagicTheGathering.LeaderboardColumns} data={data} />
+      <DataTable columns={GameInfoMap.MagicTheGathering.LeaderboardColumns} data={data} winnerLoserHighlight={false} />
     </Stack>
   )
 }

@@ -60,6 +60,7 @@ export default function GameCard(props: IGameCardProps) {
               mt: '20px'
               // Add more styles as needed
             }}
+            winnerLoserHighlight={false}
             data={tableData[props.loc]}
           />
         ) : (

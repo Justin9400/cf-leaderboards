@@ -20,6 +20,8 @@ export type IDataTableProps = {
   redColumns?: number[]
   showPaper?: boolean
   tableContainerSX?: any
+  images?: any[]
+  winnerLoserHighlight: boolean
 }
 
 export default function DataTable(props: IDataTableProps) {
@@ -69,10 +71,12 @@ export default function DataTable(props: IDataTableProps) {
                       key={column.key + '.s'}
                       align={'left'}
                       sx={{
-                        backgroundColor: isGreenColumn(columnIndex)
-                          ? '#e7ffe7'
-                          : isRedColumn(columnIndex)
-                          ? '#ffebeb'
+                        backgroundColor: props.winnerLoserHighlight
+                          ? isGreenColumn(columnIndex)
+                            ? '#e7ffe7'
+                            : isRedColumn(columnIndex)
+                            ? '#ffebeb'
+                            : 'background.paper'
                           : 'background.paper'
                       }}
                       style={{ position: 'relative' }}
