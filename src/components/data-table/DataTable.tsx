@@ -26,7 +26,7 @@ export type IDataTableProps = {
 
 export default function DataTable(props: IDataTableProps) {
   const [hoveredCell, setHoveredCell] = useState({ rowIndex: -1, columnIndex: -1 })
-
+  console.log(hoveredCell)
   if (!props.columns) {
     return <></>
   }
