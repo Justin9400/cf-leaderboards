@@ -1,23 +1,27 @@
-Brandon's Bugs
--- Adding a game requires refresh to see
--- Refresh logs you out over and over
--- if players aren't ranked the home page card just feels weird
+unassigned bugs:
 
-change mtg player cards to be more editable 
-    all of them are just green 
 
-Add mana colors to mtg game history
+## P0
 
-authentication - jk
 
-protected routes - jk
+## P1
+- Access tokens moved to refresh tokens
+- MTG pretty up gamehistory and leaderboard pages
+- Add mana colors to mtg game history
+- refresh data when updated (on add)
+- fix UX for unranked players on homepage leaderboard
 
-add new mtg game - jk
+## P2
+- pretty up the unlogged homescreen or move /login to /
+- add foosball tournament functionality
+- pretty up the DataTable component
 
-add foosball tournament functionality
+## P3
+- change mtg player cards to be more editable 
+    - all of them are just green 
 
-pretty up the DataTable component
+## P4
+- beat morgan
 
-pretty up the unlogged homescreen
-
-pretty up gamehistory and leaderboard pages (MTG priority)
+## P5
+- edit games
