@@ -1,11 +1,4 @@
-// import Tye from '../mtgcard/Tye'
-// import Bryan from '../mtgcard/Bryan'
-// import Morgan from '../mtgcard/Morgan'
-// import Justin from '../mtgcard/Justin'
-// import Paper from '@mui/material/Paper'
-import React, { useState } from 'react'
 import Table from '@mui/material/Table'
-// import Brandon from '../mtgcard/Brandon'
 import TableRow from '@mui/material/TableRow'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
@@ -25,22 +18,12 @@ export type IDataTableProps = {
 }
 
 export default function DataTable(props: IDataTableProps) {
-  const [hoveredCell, setHoveredCell] = useState({ rowIndex: -1, columnIndex: -1 })
-  console.log(hoveredCell)
   if (!props.columns) {
     return <></>
   }
 
   const isGreenColumn = (columnIndex: number) => (props.greenColumns || []).includes(columnIndex)
   const isRedColumn = (columnIndex: number) => (props.redColumns || []).includes(columnIndex)
-  // const winnerImages: { [key: string]: JSX.Element } = {
-  //   Morgan: <Morgan />,
-  //   Bryan: <Bryan />,
-  //   Tye: <Tye />,
-  //   Justin: <Justin />,
-  //   Brandon: <Brandon />
-
-  // }
 
   return (
     <TableContainer
@@ -79,8 +62,6 @@ export default function DataTable(props: IDataTableProps) {
                           : 'background.paper'
                       }}
                       style={{ position: 'relative' }}
-                      onMouseEnter={() => setHoveredCell({ rowIndex, columnIndex: columnIndex })}
-                      onMouseLeave={() => setHoveredCell({ rowIndex: -1, columnIndex: -1 })}
                     >
                       {Array.isArray(value) && value.every((item) => typeof item === 'string') && props.images
                         ? value.map((e) => {

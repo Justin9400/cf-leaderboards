@@ -25,7 +25,7 @@ function MTGGameHistory() {
     Black: <img key={'blackMana'} alt={'black'} src={BlackManaImage} style={{ marginLeft: 5, width: '25px' }} />
   }
   return (
-    <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto' }}>
+    <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto', width: '80%' }}>
       <h1 style={{ margin: '2% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>
         Magic The Gathering Game History
       </h1>
