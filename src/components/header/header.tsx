@@ -7,7 +7,7 @@ import { useAppSelector } from '../../redux/hooks'
 import { RootState } from '../../redux/store'
 
 function Header() {
-  const auth = useAppSelector((state: RootState) => state.authentication)
+  const auth = useAppSelector((state: RootState) => state.authentication.isAuthenticated)
   // const [showContent, setShowContent] = useState(false);
 
   // const handleHover = () => {
