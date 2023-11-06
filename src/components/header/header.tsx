@@ -20,7 +20,7 @@ function Header() {
   //   setShowContent(false);
   // };
   return (
-    <AppBar sx={styles.appBar} position="static">
+    <AppBar sx={{ background: '#465FE2' }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
