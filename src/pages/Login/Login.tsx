@@ -44,7 +44,7 @@ function Login() {
       dispatch(authenticate()) // Set authentication status to true
       dispatch(setUserEmail(user?.email))
       dispatch(setAuthToken(authToken)) // Set the auth token in the Redux store
-      navigateToPage('home')
+      navigateToPage('')
     } else {
       console.log(error)
       setSuccessfulLogin(false)
