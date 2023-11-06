@@ -3,9 +3,6 @@ import { useAppSelector } from '../../redux/hooks'
 import { RootState } from '../../redux/store'
 import DataTable from '../../components/data-table/DataTable'
 import { supabase } from '../../supabaseClient'
-import { IMtgGameHistory } from '../../models/models'
-
-let stats: any[] | null
 
 // let { data: numberOfGames, error } = await supabase.from('mtgGameHistory').select('count(*)').eq('Loser1', 'Justin')
 let { data: numberOfGames, error } = await supabase.from('vw_justin').select('*')
@@ -13,6 +10,8 @@ if (error) console.log('error', error)
 else {
   console.log(numberOfGames)
 }
+
+const temp = [{ mtgtotalgames: 18, mtgtotalwins: 1, mtgtotallosses: 17 }]
 // else mtgGameHistory = mtgGameHistoryDB as IMtgGameHistory[]
 
 function Profile() {
@@ -27,7 +26,13 @@ function Profile() {
           { key: 'MTG Losses', name: 'MTG Losses' },
           { key: 'MTG Games Played', name: 'MTG Games Played' }
         ]}
-        data={[{ 'MTG Wins': numberOfGames![0].mtg_game_count }]}
+        data={[
+          {
+            'MTG Wins': numberOfGames![0].mtgtotalwins,
+            'MTG Losses': numberOfGames![0].mtgtotallosses,
+            'MTG Games Played': numberOfGames![0].mtgtotalgames
+          }
+        ]}
         tableContainerSX={{
           backgroundColor: '#fff',
           color: 'rgba(0, 0, 0, 0.87)',
