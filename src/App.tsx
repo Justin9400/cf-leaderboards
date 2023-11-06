@@ -38,7 +38,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Signup />} />
           <Route
-            path="home"
+            path="/"
             element={
               <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
                 <Home />
