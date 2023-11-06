@@ -13,13 +13,16 @@ import {
   List,
   Box,
   TextField,
-  Drawer
+  Drawer,
+  Dialog,
+  DialogTitle
 } from '@mui/material'
+import GavelIcon from '@mui/icons-material/Gavel'
 import AddIcon from '@mui/icons-material/Add'
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right'
+type Anchor = 'right' | 'left'
 
-export const CustomToolbar = () => {
+export const AddGameForm = () => {
   const [winner, setWinner] = useState('')
   const [wdeckstrat, setWDeckStrat] = useState('')
   const [wdeckcolor, setWDeckColor] = useState([])
@@ -31,16 +34,27 @@ export const CustomToolbar = () => {
   const [date, setDate] = useState('')
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarMessage, setSnackbarMessage] = useState('')
-  const [state, setState] = useState({ right: false })
+  const [toggleDrawerState, setToggleNewGameFormState] = useState({ right: false })
+  const [toggleRulesPopup, setToggleRulesPopup] = useState({ right: false })
 
-  const toggleDrawer = (anchor: Anchor, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+  const toggleNewGameForm = (anchor: Anchor, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
       (event.type === 'keydown' && (event as React.KeyboardEvent).key === 'Tab') ||
       (event as React.KeyboardEvent).key === 'Shift'
     ) {
       return
     }
-    setState({ ...state, [anchor]: open })
+    setToggleNewGameFormState({ ...toggleDrawerState, [anchor]: open })
+  }
+
+  const toggleRulesPopupMenu = (anchor: Anchor, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (
+      (event.type === 'keydown' && (event as React.KeyboardEvent).key === 'Tab') ||
+      (event as React.KeyboardEvent).key === 'Shift'
+    ) {
+      return
+    }
+    setToggleRulesPopup({ ...toggleRulesPopup, [anchor]: open })
   }
 
   const handleOnChange = (stateUpdater: any) => (event: any) => {
@@ -90,7 +104,7 @@ export const CustomToolbar = () => {
       } catch (error) {
         console.error('Error:', error)
       }
-      setState({ ...state, [anchor]: false })
+      setToggleNewGameFormState({ ...toggleDrawerState, [anchor]: false })
       setWinner('')
       setWDeckStrat('')
       setWDeckColor([])
@@ -104,14 +118,14 @@ export const CustomToolbar = () => {
   }
 
   const handleCancelClick = (anchor: Anchor) => {
-    setState({ ...state, [anchor]: false })
+    setToggleNewGameFormState({ ...toggleDrawerState, [anchor]: false })
   }
 
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false)
   }
 
-  const list = (anchor: Anchor) => (
+  const newGameForm = (anchor: Anchor) => (
     <Box sx={{ width: 800 }} role="permanent">
       <Typography sx={{ pl: 3, pt: 3, fontSize: '18px', fontWeight: '500' }}>Add a MTG game</Typography>
       <Grid container spacing={2}>
@@ -221,12 +235,45 @@ export const CustomToolbar = () => {
                 <div>
                   {(['right'] as const).map((anchor) => (
                     <React.Fragment key={anchor}>
-                      <Button startIcon={<AddIcon />} onClick={toggleDrawer(anchor, true)}>
+                      <Button startIcon={<AddIcon />} onClick={toggleNewGameForm(anchor, true)}>
                         {'Add Game'}
                       </Button>
-                      <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-                        {list(anchor)}
+                      <Button startIcon={<GavelIcon />} onClick={toggleRulesPopupMenu(anchor, true)}>
+                        {'Rules'}
+                      </Button>
+                      <Drawer
+                        anchor={anchor}
+                        open={toggleDrawerState[anchor]}
+                        onClose={toggleNewGameForm(anchor, false)}
+                      >
+                        {newGameForm(anchor)}
                       </Drawer>
+                      <Dialog onClose={toggleRulesPopupMenu(anchor, false)} open={toggleRulesPopup[anchor]}>
+                        <DialogTitle style={{ margin: '0 auto' }}>Rules</DialogTitle>
+                        <div style={{ width: '500px', margin: '10px 0px 10px 15px' }}>
+                          <ol
+                            style={{
+                              listStyleType: 'decimal',
+                              paddingLeft: '20px',
+                              marginTop: '10px',
+                              margin: '0 auto',
+                              fontFamily: 'Arial, Helvetica, sans-serif'
+                            }}
+                          >
+                            <li style={{ marginBottom: '10px' }}>Buy in is $1</li>
+                            <li style={{ marginBottom: '10px' }}>
+                              Minimum of 6 games against 3 different people to get ranked
+                            </li>
+                            <li style={{ marginBottom: '10px' }}>Ranking is based on Win/Loss ratio</li>
+                            <li style={{ marginBottom: '10px' }}>
+                              Duration and remaining life are optional when adding a new game
+                            </li>
+                            <li style={{ marginBottom: '10px' }}>
+                              First gets the pot at the end of the month to go towards a pack
+                            </li>
+                          </ol>
+                        </div>
+                      </Dialog>
                     </React.Fragment>
                   ))}
                 </div>
@@ -241,4 +288,4 @@ export const CustomToolbar = () => {
   )
 }
 
-export default CustomToolbar
+export default AddGameForm
