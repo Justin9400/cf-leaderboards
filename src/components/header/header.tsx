@@ -5,9 +5,11 @@ import AccountMenu from '../account-icon-menu/account-icon-menu'
 import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container } from '@mui/material'
 import { useAppSelector } from '../../redux/hooks'
 import { RootState } from '../../redux/store'
+import { useNavigate } from 'react-router-dom'
 
 function Header() {
   const auth = useAppSelector((state: RootState) => state.authentication.isAuthenticated)
+  const navigate = useNavigate()
   // const [showContent, setShowContent] = useState(false);
 
   // const handleHover = () => {
@@ -25,7 +27,8 @@ function Header() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            // href="/"
+            onClick={() => navigate('/', { replace: true })}
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -33,7 +36,8 @@ function Header() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
-              textDecoration: 'none'
+              textDecoration: 'none',
+              cursor:'pointer'
             }}
           >
             <img src={logo} alt="" style={{ width: '30px', height: '50px' }} />
@@ -63,7 +67,7 @@ function Header() {
               <MenuIcon />
             </IconButton>
           </Box>
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -78,7 +82,7 @@ function Header() {
               color: 'inherit',
               textDecoration: 'none'
             }}
-          ></Typography>
+          ></Typography> */}
 
           {/* <Stack direction={'row'} spacing={5}  >
             {Object.values(GameInfoMap).map((page) => (
