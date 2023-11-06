@@ -10,7 +10,7 @@ export const darkTheme = createTheme({
       default: '#0E0E0E'
     },
     text: {
-      primary: '#fff'
+      primary: '#DEDCDC'
     },
     divider: 'rgba(98,98,98,0.12)'
   },
