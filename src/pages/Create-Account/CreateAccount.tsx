@@ -39,7 +39,6 @@ function Signup() {
     })
     if (data.user !== null) {
       setSuccessfulAccountCreation(true)
-      console.log('DATA:', data)
     } else {
       setSuccessfulAccountCreation(false)
       console.log('ERROR:', error)
