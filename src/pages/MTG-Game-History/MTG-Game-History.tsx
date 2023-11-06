@@ -3,7 +3,7 @@ import { supabase } from '../../supabaseClient'
 import { GameInfoMap } from '../../maps/GameInfoMap'
 import { IMtgGameHistory } from '../../models/models'
 import DataTable from '../../components/data-table/DataTable'
-import CustomToolbar from '../../components/add-game-form/AddGameForm'
+import AddGameForm from '../../components/add-game-form/AddGameForm'
 import RedManaImage from '../../img/mana/red.svg'
 import BlackManaImage from '../../img/mana/black.svg'
 import WhiteManaImage from '../../img/mana/white.svg'
@@ -30,7 +30,7 @@ function MTGGameHistory() {
         Magic The Gathering Game History
       </h1>
 
-      <CustomToolbar />
+      <AddGameForm />
 
       <DataTable
         greenColumns={[1, 2, 3]}
