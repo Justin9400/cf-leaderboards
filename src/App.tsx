@@ -1,4 +1,3 @@
-import './App.css'
 import Home from './pages/Home'
 import Layout from './pages/Layout'
 import Login from './pages/Login/Login'
@@ -9,11 +8,14 @@ import MTGGameHistory from './pages/MTG-Game-History/MTG-Game-History'
 import { ProtectedRoute } from './components/protected-route/ProtectedRoute'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from './redux/store'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Profile from './pages/Profile/Profile'
 import { checkTokenExpiration } from './redux/authSlice'
 import FoosballLeaderBoard from './pages/Foosball-Leaderboard/foosball-leaderboard'
 import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-History'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import { darkTheme } from './darkTheme'
 
 function App() {
   const isAuthenticated = useSelector((state: RootState) => state.authentication.isAuthenticated)
@@ -32,62 +34,65 @@ function App() {
   }, [dispatch])
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Signup />} />
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
-                <Home />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="mtg-leaderboard"
-            element={
-              <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
-                <MTGLeaderboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="mtg-game-history"
-            element={
-              <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
-                <MTGGameHistory />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="foosball-leaderboard"
-            element={
-              <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
-                <FoosballLeaderBoard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="foosball-game-history"
-            element={
-              <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
-                <FoosballGameHistory />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="profile"
-            element={
-              <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Signup />} />
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="mtg-leaderboard"
+              element={
+                <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
+                  <MTGLeaderboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="mtg-game-history"
+              element={
+                <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
+                  <MTGGameHistory />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="foosball-leaderboard"
+              element={
+                <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
+                  <FoosballLeaderBoard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="foosball-game-history"
+              element={
+                <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
+                  <FoosballGameHistory />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="profile"
+              element={
+                <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

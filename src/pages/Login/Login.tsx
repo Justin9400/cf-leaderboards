@@ -74,8 +74,7 @@ function Login() {
         padding: '20px',
         marginTop: '10vh',
         borderRadius: '10px',
-        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)',
-        backgroundColor: '#fff'
+        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)'
       }}
     >
       <Stack spacing={3}>
