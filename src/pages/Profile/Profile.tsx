@@ -11,7 +11,7 @@ else {
   console.log(numberOfGames)
 }
 
-const temp = [{ mtgtotalgames: 18, mtgtotalwins: 1, mtgtotallosses: 17 }]
+// const temp = [{ mtgtotalgames: 18, mtgtotalwins: 1, mtgtotallosses: 17 }]
 // else mtgGameHistory = mtgGameHistoryDB as IMtgGameHistory[]
 
 function Profile() {
