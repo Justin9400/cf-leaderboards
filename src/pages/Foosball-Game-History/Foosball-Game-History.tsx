@@ -11,7 +11,7 @@ let soloFoosballGameHistory: IFoosballGameHistory[] = []
 let { data: soloFoosballHistoryDB, error } = await supabase.from('vw_currentsolosfoosballgames').select('*')
 let { data: foosballHistoryDB, error: error2 } = await supabase.from('vw_currentfoosballgames').select('*')
 
-if (error || error2) console.log('error', error, '    error2', error2)
+if (error || error2) console.log('error: ', error, '    error2: ', error2)
 else {
   foosballGameHistory = foosballHistoryDB as IFoosballGameHistory[]
   soloFoosballGameHistory = soloFoosballHistoryDB as IFoosballGameHistory[]

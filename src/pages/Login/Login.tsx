@@ -13,15 +13,11 @@ import {
   Paper,
   TextField
 } from '@mui/material'
-import { authenticate, setAuthToken } from '../../redux/authSlice' // Import your Redux actions
+import { authenticate, setAuthToken } from '../../redux/authSlice'
 import { useAppDispatch } from '../../redux/hooks'
 import { setUserEmail } from '../../redux/profileSlice'
 
-export type ILoginProps = {
-  // setAuth?: React.Dispatch<React.SetStateAction<boolean | null>>
-}
-
-function Login(props: ILoginProps) {
+function Login() {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const [email, setEmail] = React.useState('')

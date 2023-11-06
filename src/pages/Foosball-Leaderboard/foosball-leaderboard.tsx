@@ -1,16 +1,13 @@
 import { Stack } from '@mui/system'
-import { Paper } from '@mui/material'
 
 function FoosballLeaderBoard() {
   return (
-    <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto' }}>
-      <h1 style={{ margin: '5% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>Foosball Leaderboard</h1>
-      <Stack direction="row" spacing={10}>
-        <Paper></Paper>
-        <Paper></Paper>
+    <>
+      <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto' }}>
+        <h1 style={{ margin: '5% auto', fontFamily: 'Arial, Helvetica, sans-serif' }}>Foosball Leaderboard</h1>
+        <img src="/src/img/working.gif" alt="sucks to not see the gif (jif) huh" />
       </Stack>
-      {/* <Leaderboard pageName={GameInfoMap.Foosball}/> */}
-    </Stack>
+    </>
   )
 }
 

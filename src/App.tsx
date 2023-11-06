@@ -7,16 +7,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MTGLeaderboard from './pages/MTG-Leaderboard/mtg-leaderboard'
 import MTGGameHistory from './pages/MTG-Game-History/MTG-Game-History'
 import { ProtectedRoute } from './components/protected-route/ProtectedRoute'
-import { useSelector, useDispatch } from 'react-redux' // Import useDispatch
+import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from './redux/store'
-import React, { useEffect } from 'react' // Import useEffect
+import React, { useEffect } from 'react'
 import Profile from './pages/profile/Profile'
-import { checkTokenExpiration } from './redux/authSlice' // Import the checkTokenExpiration action
+import { checkTokenExpiration } from './redux/authSlice'
+import FoosballLeaderBoard from './pages/Foosball-Leaderboard/foosball-leaderboard'
+import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-History'
 
 function App() {
   const isAuthenticated = useSelector((state: RootState) => state.authentication.isAuthenticated)
   const authToken = useSelector((state: RootState) => state.authentication.authToken)
-  const dispatch = useDispatch() // Initialize the dispatch function
+  const dispatch = useDispatch()
 
   // Add an effect to check token expiration
   useEffect(() => {
@@ -56,6 +58,22 @@ function App() {
             element={
               <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
                 <MTGGameHistory />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="foosball-leaderboard"
+            element={
+              <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
+                <FoosballLeaderBoard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="foosball-game-history"
+            element={
+              <ProtectedRoute user={isAuthenticated ? { authToken } : null}>
+                <FoosballGameHistory />
               </ProtectedRoute>
             }
           />

@@ -7,7 +7,6 @@ unassigned bugs:
 ## P1
 - Access tokens moved to refresh tokens
 - MTG pretty up gamehistory and leaderboard pages
-- Add mana colors to mtg game history
 - refresh data when updated (on add)
 - fix UX for unranked players on homepage leaderboard
 
