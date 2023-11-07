@@ -2,14 +2,24 @@ import { styles } from './styles'
 import logo from '../../img/logo.svg'
 import MenuIcon from '@mui/icons-material/Menu'
 import AccountMenu from '../account-icon-menu/account-icon-menu'
-import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container } from '@mui/material'
-import { useAppSelector } from '../../redux/hooks'
+import { AppBar, IconButton, Toolbar, Box, Typography, Tooltip, Container, Switch, Stack } from '@mui/material'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { RootState } from '../../redux/store'
 import { useNavigate } from 'react-router-dom'
+import { setDarkMode } from '../../redux/darkModeSlice'
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 function Header() {
   const auth = useAppSelector((state: RootState) => state.authentication.isAuthenticated)
+  const darkMode = useSelector((state: RootState) => state.darkMode.isDarkMode)
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
+
+  const toggleDarkMode = () => {
+    dispatch(setDarkMode())
+  }
+
   // const [showContent, setShowContent] = useState(false);
 
   // const handleHover = () => {
@@ -37,7 +47,7 @@ function Header() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
-              cursor:'pointer'
+              cursor: 'pointer'
             }}
           >
             <img src={logo} alt="" style={{ width: '30px', height: '50px' }} />
@@ -107,9 +117,18 @@ function Header() {
               </Button>
             ))}
           </Box> */}
-          <Box sx={{ marginLeft: 'auto' }}>
-            <Tooltip title="Brandon Camerer">{auth ? <AccountMenu /> : <></>}</Tooltip>
-          </Box>
+          <Stack direction={'row'} sx={{ marginLeft: 'auto' }}>
+            <Switch
+              checked={darkMode}
+              onChange={toggleDarkMode}
+              color="primary"
+              name="darkModeSwitch"
+              inputProps={{ 'aria-label': 'toggle dark mode' }}
+            />
+            <Box sx={{ marginLeft: 'auto' }}>
+              <Tooltip title="Brandon Camerer">{auth ? <AccountMenu /> : <></>}</Tooltip>
+            </Box>
+          </Stack>
         </Toolbar>
       </Container>
     </AppBar>
