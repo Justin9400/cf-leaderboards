@@ -221,7 +221,11 @@ export const AddGameForm = () => {
       <Button sx={{ width: '30%', ml: 3 }} variant="contained" onClick={() => handleAddButtonClick(anchor)}>
         Add Game
       </Button>
-      <Button sx={{ width: '30%', ml: 3 }} variant="outlined" onClick={() => handleCancelClick(anchor)}>
+      <Button
+        sx={{ color: '#ffffff', width: '30%', ml: 3 }}
+        variant="outlined"
+        onClick={() => handleCancelClick(anchor)}
+      >
         Cancel
       </Button>
     </Box>
