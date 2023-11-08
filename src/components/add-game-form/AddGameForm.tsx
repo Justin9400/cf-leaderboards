@@ -127,7 +127,9 @@ export const AddGameForm = () => {
 
   const newGameForm = (anchor: Anchor) => (
     <Box sx={{ width: 800 }} role="permanent">
-      <Typography sx={{ pl: 3, pt: 3, fontSize: '18px', fontWeight: '500' }}>Add a MTG game</Typography>
+      <Typography sx={{ color: '#ffffff', pl: 3, pt: 3, fontSize: '18px', fontWeight: '500' }}>
+        Add a MTG game
+      </Typography>
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <List>
@@ -235,10 +237,18 @@ export const AddGameForm = () => {
                 <div>
                   {(['right'] as const).map((anchor) => (
                     <React.Fragment key={anchor}>
-                      <Button startIcon={<AddIcon />} onClick={toggleNewGameForm(anchor, true)}>
+                      <Button
+                        sx={{ color: '#ffffff' }}
+                        startIcon={<AddIcon />}
+                        onClick={toggleNewGameForm(anchor, true)}
+                      >
                         {'Add Game'}
                       </Button>
-                      <Button startIcon={<GavelIcon />} onClick={toggleRulesPopupMenu(anchor, true)}>
+                      <Button
+                        sx={{ color: '#ffffff' }}
+                        startIcon={<GavelIcon />}
+                        onClick={toggleRulesPopupMenu(anchor, true)}
+                      >
                         {'Rules'}
                       </Button>
                       <Drawer

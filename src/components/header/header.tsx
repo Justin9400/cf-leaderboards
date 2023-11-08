@@ -30,7 +30,7 @@ function Header() {
   //   setShowContent(false);
   // };
   return (
-    <AppBar sx={{ background: '#465FE2' }} position="static">
+    <AppBar sx={{ background: '#3c3d3d' }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -60,8 +60,8 @@ function Header() {
                 color: 'black'
               }}
             >
-              <span style={{ fontWeight: 'bold' }}>CloudFit</span>
-              <span style={{ fontWeight: 'lighter' }}>Leaderboards</span>
+              <span style={{ color: 'white', fontWeight: 'bold' }}>CloudFit</span>
+              <span style={{ color: 'white', fontWeight: 'lighter' }}>Leaderboards</span>
             </Typography>
           </Typography>
 

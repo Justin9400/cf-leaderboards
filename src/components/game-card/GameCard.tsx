@@ -70,10 +70,10 @@ export default function GameCard(props: IGameCardProps) {
         )}
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={navigateToPage(props.leaderboardURL)}>
+        <Button sx={{ color: '#ffffff' }} size="small" onClick={navigateToPage(props.leaderboardURL)}>
           Leaderboards
         </Button>
-        <Button size="small" onClick={navigateToPage(props.gameHistoryURL)}>
+        <Button sx={{ color: '#ffffff' }} size="small" onClick={navigateToPage(props.gameHistoryURL)}>
           Game History
         </Button>
       </CardActions>
