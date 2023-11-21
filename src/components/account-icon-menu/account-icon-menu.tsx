@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Menu from '@mui/material/Menu'
 import Avatar from '@mui/material/Avatar'
 import Tooltip from '@mui/material/Tooltip'
-import brandon from '../../img/brandon.jpg'
+import brandon from '../../img/babycloud.png'
 import Divider from '@mui/material/Divider'
 import MenuItem from '@mui/material/MenuItem'
 import { useNavigate } from 'react-router-dom'
@@ -51,7 +51,7 @@ export default function AccountMenu() {
           <IconButton
             onClick={handleClick}
             size="small"
-            sx={{ ml: 2, border: '1px solid #bcbcbc' }}
+            sx={{ ml: 2 }}
             aria-controls={open ? 'account-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}

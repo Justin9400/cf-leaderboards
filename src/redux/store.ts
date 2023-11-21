@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authReducer from './authSlice'
 import profileReducer from './profileSlice'
+import darkModeReducer from './darkModeSlice'
 
 const storedAuthState = localStorage.getItem('authState')
 const initialAuthState = storedAuthState ? JSON.parse(storedAuthState) : authReducer(undefined, { type: 'INIT' })
@@ -8,7 +9,8 @@ const initialAuthState = storedAuthState ? JSON.parse(storedAuthState) : authRed
 export const store = configureStore({
   reducer: {
     authentication: authReducer,
-    profile: profileReducer
+    profile: profileReducer,
+    darkMode: darkModeReducer
   },
   preloadedState: {
     authentication: initialAuthState

@@ -7,9 +7,6 @@ import { supabase } from '../../supabaseClient'
 // let { data: numberOfGames, error } = await supabase.from('mtgGameHistory').select('count(*)').eq('Loser1', 'Justin')
 let { data: numberOfGames, error } = await supabase.from('vw_justinkachornvanich').select('*')
 if (error) console.log('error', error)
-else {
-  console.log(numberOfGames)
-}
 
 // const temp = [{ mtgtotalgames: 18, mtgtotalwins: 1, mtgtotallosses: 17 }]
 // else mtgGameHistory = mtgGameHistoryDB as IMtgGameHistory[]
@@ -35,14 +32,11 @@ function Profile() {
           }
         ]}
         tableContainerSX={{
-          backgroundColor: '#fff',
-          color: 'rgba(0, 0, 0, 0.87)',
           WebkitTransition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
           transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
           borderRadius: '4px',
           boxShadow:
             '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)',
-          height: '60%',
           maxWidth: '50%',
           margin: '0 auto'
         }}

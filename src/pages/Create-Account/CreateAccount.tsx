@@ -39,7 +39,6 @@ function Signup() {
     })
     if (data.user !== null) {
       setSuccessfulAccountCreation(true)
-      console.log('DATA:', data)
     } else {
       setSuccessfulAccountCreation(false)
       console.log('ERROR:', error)
@@ -63,8 +62,7 @@ function Signup() {
         padding: '20px',
         marginTop: '10vh',
         borderRadius: '10px', // Added a subtle border radius
-        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)', // Added a soft shadow
-        backgroundColor: '#fff' // White background color
+        boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)' // Added a soft shadow
       }}
     >
       <Stack spacing={3}>

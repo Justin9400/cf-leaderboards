@@ -55,9 +55,9 @@ export default function DataTable(props: IDataTableProps) {
                       sx={{
                         backgroundColor: props.winnerLoserHighlight
                           ? isGreenColumn(columnIndex)
-                            ? '#e7ffe7'
+                            ? '#007B23'
                             : isRedColumn(columnIndex)
-                            ? '#ffebeb'
+                            ? '#AF000D'
                             : 'background.paper'
                           : 'background.paper'
                       }}
