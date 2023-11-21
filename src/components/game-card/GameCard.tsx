@@ -1,4 +1,4 @@
-import { Game } from '../../models/models'
+import { ChildPage, Game } from '../../models/models'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../supabaseClient'
 import DataTable from '../data-table/DataTable'
@@ -6,8 +6,9 @@ import { Alert, Button, Card, CardActions, CardContent, CardMedia, Typography } 
 
 export type IGameCardProps = {
   game: Game
-  leaderboardURL: string
-  gameHistoryURL: string
+  childPages?: ChildPage[]
+  childPageNames?: string[]
+  childPageURLs?: string[]
   banner: string
   loc: number
 }
@@ -40,6 +41,15 @@ export default function GameCard(props: IGameCardProps) {
   }
 
   const columns = props.game.LeaderboardColumns.slice(0, 5)
+  const buttons: Array<JSX.Element> = []
+
+  props.childPages?.forEach((page: ChildPage) => {
+    buttons.push(
+      <Button size="small" onClick={navigateToPage(page.url)}>
+        {page.name}
+      </Button>
+    )
+  })
 
   return (
     <Card sx={{ mt: 2 }}>
@@ -69,14 +79,7 @@ export default function GameCard(props: IGameCardProps) {
           </>
         )}
       </CardContent>
-      <CardActions>
-        <Button size="small" onClick={navigateToPage(props.leaderboardURL)}>
-          Leaderboards
-        </Button>
-        <Button size="small" onClick={navigateToPage(props.gameHistoryURL)}>
-          Game History
-        </Button>
-      </CardActions>
+      <CardActions>{buttons}</CardActions>
     </Card>
   )
 }

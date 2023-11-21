@@ -1,6 +1,9 @@
 export enum Games {
   MagicTheGathering = 'MagicTheGathering',
-  Foosball = 'Foosball'
+  Foosball = 'Foosball',
+  Golf = 'Golf',
+  DiscGolf = 'DiscGolf',
+  PickleBall = 'PickleBall'
   // MarchMadness = 'MarchMadness',
   // FitnessChallenge = 'FitnessChallenge',
   // Cornhole = 'Cornhole'
@@ -11,10 +14,7 @@ export type Game = {
   PageName: string
   gameCardDescription: string
   gameBanner: string
-  Pages: string[]
-  LeaderBoardUrl: string
-  GameHistoryUrl?: string
-  DropDownOptions: string[]
+  childPages: ChildPage[]
   GameHistoryColumns: ColumnData[]
   LeaderboardColumns: ColumnData[]
   SoloLeaderboardColumnNames?: ColumnData[]
@@ -56,4 +56,9 @@ export interface IFoosballGameHistory {
   Winner: string[]
   Loser: string[]
   Date: Date
+}
+
+export interface ChildPage {
+  name: string
+  url: string
 }

@@ -5,7 +5,7 @@ import DataTable from '../../components/data-table/DataTable'
 import { supabase } from '../../supabaseClient'
 
 // let { data: numberOfGames, error } = await supabase.from('mtgGameHistory').select('count(*)').eq('Loser1', 'Justin')
-let { data: numberOfGames, error } = await supabase.from('vw_justin').select('*')
+let { data: numberOfGames, error } = await supabase.from('vw_justinkachornvanich').select('*')
 if (error) console.log('error', error)
 else {
   console.log(numberOfGames)
@@ -16,6 +16,7 @@ else {
 
 function Profile() {
   const profile = useAppSelector((state: RootState) => state.profile)
+  // const email = profile.email
 
   return (
     <Stack sx={{ display: 'flex', height: '100vh', margin: '0 auto' }}>

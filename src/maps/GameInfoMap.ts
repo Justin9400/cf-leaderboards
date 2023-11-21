@@ -1,6 +1,9 @@
 import { GamesMap } from '../models/models'
 import mtgBanner from '../img/mtg.png'
 import fbBanner from '../img/fb.png'
+import golfBanner from '../img/golf.png'
+import discGolfBanner from '../img/discgolf.png'
+import pickleballBanner from '../img/pickleball.png'
 // import fitBanner from '../img/fit.png'
 // import marchMadnessBanner from '../img/march-madness.png'
 // import cornHoleBanner from '../img/cornhole.png'
@@ -12,10 +15,10 @@ export const GameInfoMap: GamesMap = {
     gameCardDescription:
       'Magic the Gathering Leaderboards, where legends are forged and destinies are sealed with every card drawn.',
     gameBanner: mtgBanner,
-    Pages: ['Leaderboard', 'History'],
-    LeaderBoardUrl: 'mtg-leaderboard',
-    GameHistoryUrl: 'mtg-game-history',
-    DropDownOptions: ['Leaderboard', 'Game History'],
+    childPages: [
+      { name: 'Leaderboard', url: 'mtg-leaderboard' },
+      { name: 'History', url: 'mtg-game-history' }
+    ],
     GameHistoryColumns: [
       { key: 'Date', name: 'Date' },
       { key: 'Winner', name: 'Winner' },
@@ -44,10 +47,10 @@ export const GameInfoMap: GamesMap = {
     gameCardDescription:
       'Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.',
     gameBanner: fbBanner,
-    Pages: ['Leaderboard', 'History'],
-    LeaderBoardUrl: 'foosball-leaderboard',
-    GameHistoryUrl: 'foosball-game-history',
-    DropDownOptions: ['Leaderboard', 'Game History'],
+    childPages: [
+      { name: 'Leaderboard', url: 'foosball-leaderboard' },
+      { name: 'History', url: 'foosball-game-history' }
+    ],
     GameHistoryColumns: [
       { key: 'Date', name: 'Date' },
       { key: 'Winner', name: 'Winner(s)' },
@@ -64,6 +67,88 @@ export const GameInfoMap: GamesMap = {
     //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
     PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred'],
     loc: 1
+  },
+  Golf: {
+    key: 'Golf',
+    PageName: 'Golf',
+    gameCardDescription:
+      'Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.',
+    gameBanner: golfBanner,
+    childPages: [
+      { name: 'Leaderboard', url: 'golf-leaderboard' },
+      { name: 'History', url: 'golf-game-history' },
+      { name: 'Scorecard', url: 'golf-scorecard' }
+    ],
+    GameHistoryColumns: [
+      { key: 'Date', name: 'Date' },
+      { key: 'Winner', name: 'Winner(s)' },
+      { key: 'Loser', name: 'Loser(s)' }
+    ],
+    LeaderboardColumns: [
+      { key: 'Rank', name: 'Rank' },
+      { key: 'Name', name: 'Name' },
+      { key: 'Ratio', name: 'W/L Ratio' },
+      { key: 'Wins', name: 'Wins' },
+      { key: 'Losses', name: 'Losses' }
+    ],
+    //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
+    //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
+    PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred'],
+    loc: 2
+  },
+  DiscGolf: {
+    key: 'DiscGolf',
+    PageName: 'Disc Golf',
+    gameCardDescription:
+      'Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.',
+    gameBanner: discGolfBanner,
+    childPages: [
+      { name: 'Leaderboard', url: 'foosball-leaderboard' },
+      { name: 'History', url: 'foosball-game-history' }
+    ],
+    GameHistoryColumns: [
+      { key: 'Date', name: 'Date' },
+      { key: 'Winner', name: 'Winner(s)' },
+      { key: 'Loser', name: 'Loser(s)' }
+    ],
+    LeaderboardColumns: [
+      { key: 'Rank', name: 'Rank' },
+      { key: 'Name', name: 'Name' },
+      { key: 'Ratio', name: 'W/L Ratio' },
+      { key: 'Wins', name: 'Wins' },
+      { key: 'Losses', name: 'Losses' }
+    ],
+    //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
+    //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
+    PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred'],
+    loc: 3
+  },
+  PickleBall: {
+    key: 'PickleBall',
+    PageName: 'PickleBall',
+    gameCardDescription:
+      'Foosball leaderboards are a dynamic and competitive arena for enthusiasts of the game from various corners of the company.',
+    gameBanner: pickleballBanner,
+    childPages: [
+      { name: 'Leaderboard', url: 'foosball-leaderboard' },
+      { name: 'History', url: 'foosball-game-history' }
+    ],
+    GameHistoryColumns: [
+      { key: 'Date', name: 'Date' },
+      { key: 'Winner', name: 'Winner(s)' },
+      { key: 'Loser', name: 'Loser(s)' }
+    ],
+    LeaderboardColumns: [
+      { key: 'Rank', name: 'Rank' },
+      { key: 'Name', name: 'Name' },
+      { key: 'Ratio', name: 'W/L Ratio' },
+      { key: 'Wins', name: 'Wins' },
+      { key: 'Losses', name: 'Losses' }
+    ],
+    //SoloLeaderboardColumnNames: ['Rank', 'Name', 'W/L Ratio', 'Wins', 'Losses'],
+    //TeamLeaderboardColumnNames: ['Rank', 'Team', 'W/L Ratio', 'Wins', 'Losses'],
+    PlayersList: ['Dusty', 'Chris', 'Justin', 'Bryan', 'Jarred'],
+    loc: 4
   }
   // MarchMadness: {
   //   key: 'MarchMadness',
