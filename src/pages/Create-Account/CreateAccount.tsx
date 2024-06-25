@@ -17,6 +17,8 @@ import {
 
 function Signup() {
   const navigate = useNavigate()
+  const [firstName, setFirstName] = React.useState('') //* set initial state of firstName to empty string
+  const [lastName, setLastName] = React.useState('') //* same for lastname
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [successfulAccountCreation, setSuccessfulAccountCreation] = React.useState<boolean | null>(null)
@@ -43,6 +45,15 @@ function Signup() {
       setSuccessfulAccountCreation(false)
       console.log('ERROR:', error)
     }
+    //* Update user profile with first name and last name
+    const { data, error: profileError } = await supabase
+      .from('users')
+      .update({ first_name: firstName, last_name: lastName })
+      .eq('id', user.id)
+
+    if (profileError) {
+      throw profileError
+    }
   }
 
   const handleOnChange = (stateUpdater: any) => (event: any) => {
@@ -67,6 +78,20 @@ function Signup() {
     >
       <Stack spacing={3}>
         <h1 style={{ margin: '0 auto', fontSize: '2em' }}>Join Us</h1> {/* Improved heading style */}
+        <TextField
+          id="outlined-basic"
+          label="First Name"
+          variant="outlined"
+          value={firstName}
+          onChange={handleOnChange(setFirstName)}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Last Name"
+          variant="outlined"
+          value={lastName}
+          onChange={handleOnChange(setLastName)}
+        />
         <TextField
           id="outlined-basic"
           label="Email"

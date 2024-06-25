@@ -37,6 +37,7 @@ function Login() {
     const {
       data: { user }
     } = await supabase.auth.getUser()
+    // when we get the user first and last names from creating an account, we can store the user names above
     if (data.user !== null && data.session !== null) {
       const authToken = data.session.access_token
 
