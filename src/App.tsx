@@ -16,9 +16,11 @@ import FoosballGameHistory from './pages/Foosball-Game-History/Foosball-Game-His
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { darkTheme } from './darkTheme'
+import { lightTheme } from './lightTheme'
 
 function App() {
   const isAuthenticated = useSelector((state: RootState) => state.authentication.isAuthenticated)
+  const isDarkMode = useSelector((state: RootState) => state.darkMode.isDarkMode)
   const authToken = useSelector((state: RootState) => state.authentication.authToken)
   const dispatch = useDispatch()
 
@@ -34,7 +36,7 @@ function App() {
   }, [dispatch])
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
       <BrowserRouter>
         <Routes>
