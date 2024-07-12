@@ -19,10 +19,16 @@ import {
 } from '@mui/material'
 import GavelIcon from '@mui/icons-material/Gavel'
 import AddIcon from '@mui/icons-material/Add'
+import { RootState } from '../../redux/store'
+import { darkTheme } from '../../darkTheme'
+import { lightTheme } from '../../lightTheme'
+import { useSelector } from 'react-redux'
 
 type Anchor = 'right' | 'left'
 
 export const AddGameForm = () => {
+  const isDarkMode = useSelector((state: RootState) => state.darkMode.isDarkMode)
+
   const [winner, setWinner] = useState('')
   const [wdeckstrat, setWDeckStrat] = useState('')
   const [wdeckcolor, setWDeckColor] = useState([])
@@ -127,7 +133,8 @@ export const AddGameForm = () => {
 
   const newGameForm = (anchor: Anchor) => (
     <Box sx={{ width: 800 }} role="permanent">
-      <Typography sx={{ color: '#ffffff', pl: 3, pt: 3, fontSize: '18px', fontWeight: '500' }}>
+      
+      <Typography sx={{ color: isDarkMode ? '#ffffff' : '#000000', pl: 3, pt: 3, fontSize: '18px', fontWeight: '500' }}>
         Add a MTG game
       </Typography>
       <Grid container spacing={2}>
@@ -222,7 +229,7 @@ export const AddGameForm = () => {
         Add Game
       </Button>
       <Button
-        sx={{ color: '#ffffff', width: '30%', ml: 3 }}
+        sx={{ color: isDarkMode ? '#ffffff' : '#000000', width: '30%', ml: 3 }}
         variant="outlined"
         onClick={() => handleCancelClick(anchor)}
       >
@@ -242,14 +249,15 @@ export const AddGameForm = () => {
                   {(['right'] as const).map((anchor) => (
                     <React.Fragment key={anchor}>
                       <Button
-                        sx={{ color: '#ffffff' }}
+                        sx={{ color: isDarkMode ? '#ffffff' : "#333" }}
                         startIcon={<AddIcon />}
                         onClick={toggleNewGameForm(anchor, true)}
                       >
                         {'Add Game'}
                       </Button>
+                      
                       <Button
-                        sx={{ color: '#ffffff' }}
+                        sx={{ color: isDarkMode ? '#ffffff' : "#333" }}
                         startIcon={<GavelIcon />}
                         onClick={toggleRulesPopupMenu(anchor, true)}
                       >
@@ -263,7 +271,7 @@ export const AddGameForm = () => {
                         {newGameForm(anchor)}
                       </Drawer>
                       <Dialog onClose={toggleRulesPopupMenu(anchor, false)} open={toggleRulesPopup[anchor]}>
-                        <DialogTitle style={{ margin: '0 auto' }}>Rules</DialogTitle>
+                        <DialogTitle style={{ margin: '0 auto'}}>Rules</DialogTitle>
                         <div style={{ width: '500px', margin: '10px 0px 10px 15px' }}>
                           <ol
                             style={{
